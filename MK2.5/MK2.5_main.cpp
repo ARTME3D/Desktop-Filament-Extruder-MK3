@@ -719,7 +719,7 @@ void loop()
       // MYSERIAL.print("elapsed time: ");
       // MYSERIAL.println(elapsedTimeMS, DEC);
       if (elapsedTimeMS > 30000) {
-        LCD_ALERTMESSAGEPGM("SENSOR RUNOUT");
+        LCD_ALERTMESSAGEPGM(MSG_sensor_runout);
         while(1)
         {
           disable_heater();
@@ -761,7 +761,7 @@ void loop()
       // MYSERIAL.print("elapsed time: ");
       // MYSERIAL.println(elapsedTimeMS, DEC);
       if (elapsedTimeMS > 3000000) {
-        LCD_ALERTMESSAGEPGM("SAFETY COOLDOWN");
+        LCD_ALERTMESSAGEPGM(MSG_SAFETY_COOLDOWN);
         while(1)
         {
           disable_heater();

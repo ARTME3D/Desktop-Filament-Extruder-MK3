@@ -11,6 +11,7 @@
 #include "ultralcd.h"
 #include "temperature.h"
 #include "watchdog.h"
+#include "language.h"
 
 //===========================================================================
 //=============================public variables============================
@@ -1022,7 +1023,7 @@ void thermal_runaway_protection(int *state, unsigned long *timer, float temperat
           SERIAL_ERRORLNPGM("bed");
         else
           SERIAL_ERRORLN((int)heater_id);
-        LCD_ALERTMESSAGEPGM("THERMAL RUNAWAY");
+        LCD_ALERTMESSAGEPGM(MSG_thermal_runaway);
         thermal_runaway = true;
         while(1)
         {
@@ -1094,7 +1095,7 @@ void max_temp_error(uint8_t e) {
     SERIAL_ERROR_START;
     SERIAL_ERRORLN((int)e);
     SERIAL_ERRORLNPGM(": Extruder switched off. MAXTEMP triggered !");
-    LCD_ALERTMESSAGEPGM("Err: MAXTEMP");
+    LCD_ALERTMESSAGEPGM(MSG_MAX_TEMP);
   }
   #ifndef BOGUS_TEMPERATURE_FAILSAFE_OVERRIDE
   Stop();
@@ -1107,7 +1108,7 @@ void min_temp_error(uint8_t e) {
     SERIAL_ERROR_START;
     SERIAL_ERRORLN((int)e);
     SERIAL_ERRORLNPGM(": Extruder switched off. MINTEMP triggered !");
-    LCD_ALERTMESSAGEPGM("Err: MINTEMP");
+    LCD_ALERTMESSAGEPGM(MSG_MIN_TEMP);
   }
   #ifndef BOGUS_TEMPERATURE_FAILSAFE_OVERRIDE
   Stop();

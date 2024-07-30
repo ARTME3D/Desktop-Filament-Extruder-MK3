@@ -415,14 +415,14 @@ static void lcd_implementation_status_screen()
         lcd.print(' ');
     
     lcd.setCursor(10, 0); //Änderunge 31.05.2020
-    lcd_printPGM(PSTR("E:"));
+    lcd_printPGM(PSTR(MSG_DISPLAY_E));
     if((extrude_status & ES_SWITCH_SET) && (extrude_status & ES_HOT_SET))  //check if extruder motor switch is on
        	lcd.print(ftostr22(extruder_rpm));  //convert to rpm
        else if(extrude_status & ES_HOT_SET)
-       	lcd_printPGM(PSTR("OFF "));
+       	lcd_printPGM(PSTR(MSG_DISPLAY_OFF));
        else
-       	lcd_printPGM(PSTR("COLD"));
-    lcd_printPGM(PSTR("rpm "));
+       	lcd_printPGM(PSTR(MSG_DISPLAY_COLD));
+    lcd_printPGM(PSTR(MSG_DISPLAY_rpm2));
     
     
     
@@ -486,19 +486,19 @@ static void lcd_implementation_status_screen()
     lcd.setCursor(0, 1);
     //Check for filament sensor and show width
    #ifdef FILAMENT_SENSOR
-      lcd.print("S:");
+      lcd.print(MSG_DISPLAY_S);
       //lcd.print(ftostr12(analog2widthFil()));
       lcd.print(ftostr12(current_filwidth));
       if (alt_cnt<5){
-         lcd_printPGM(PSTR(" Av"));
+         lcd_printPGM(PSTR(MSG_DISPLAY_AV));
    lcd.print(ftostr12(avg_measured_filament_width));
       };
       if (alt_cnt>=5 && alt_cnt <10){       
-        lcd_printPGM(PSTR(" Mx"));
+        lcd_printPGM(PSTR(MSG_DISPLAY_MaxWidth));
         lcd.print(ftostr12(max_measured_filament_width));
       };
       if (alt_cnt>=10 && alt_cnt<15){
-        lcd_printPGM(PSTR(" Mn"));
+        lcd_printPGM(PSTR(MSG_DISPLAY_MinWidth));
         lcd.print(ftostr12(min_measured_filament_width));
       };                      
       alt_cnt = alt_cnt + 1;
@@ -508,9 +508,9 @@ static void lcd_implementation_status_screen()
       lcd_printPGM(PSTR(""));   
    #endif   
      
-  lcd_printPGM(PSTR(" L:"));
+  lcd_printPGM(PSTR(MSG_DISPLAY_Length));
  lcd.print(ftostr3(extrude_length/1000)); // divided by 1000 to get value in meters
- lcd_printPGM(PSTR("m"));
+ lcd_printPGM(PSTR(MSG_DISPLAY_Meter));
    
    
 
@@ -528,9 +528,9 @@ static void lcd_implementation_status_screen()
     //lcd.print(LCD_STR_FEEDRATE[0]);
     //lcd.print(ftostr22(puller_feedrate));  //give the feed rate in mm/sec
     
-    lcd_printPGM(PSTR("Puller:"));
+    lcd_printPGM(PSTR(MSG_DISPLAY_Puller));
     lcd.print(ftostr22(puller_feedrate*(60.0/pcirc)));
-    lcd_printPGM(PSTR("rpm     "));
+    lcd_printPGM(PSTR(MSG_DISPLAY_rpm));
 
     /*
 #if (FILWIDTH_PIN > -1)

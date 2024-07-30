@@ -70,7 +70,27 @@
 
 // LCD Menu Messages
 // Please note these are limited to 17 characters!
-
+  #define MSG_DISPLAY_Meter "m"
+  #define MSG_DISPLAY_Length " L:"
+  #define MSG_DISPLAY_S "S:"
+  #define MSG_DISPLAY_AV " Av"
+  #define MSG_DISPLAY_MinWidth " Mn"
+  #define MSG_DISPLAY_MaxWidth " Mx"
+  #define MSG_DISPLAY_rpm2 "rpm "
+  #define MSG_DISPLAY_COLD "COLD"
+  #define MSG_DISPLAY_OFF "OFF "
+  #define MSG_DISPLAY_E "E:"
+  #define MSG_DISPLAY_rpm "rpm     "
+  #define MSG_DISPLAY_Puller "Puller:"
+  #define MSG_SAFETY_COOLDOWN "SAFETY COOLDOWN"
+  #define MSG_EX_WARM_UP "Extruder Warming Up"
+  #define MSG_EX_COOL "Extruder Cooling"
+  #define MSG_AUTOT_SEQU "Autotune Sequence"
+  #define MSG_AUTOT_COMPL "Autotune Complete"
+  #define MSG_MIN_TEMP "Err: MINTEMP"
+  #define MSG_MAX_TEMP "Err: MAXTEMP"
+  #define MSG_thermal_runaway "THERMAL RUNAWAY"
+  #define MSG_sensor_runout "SENSOR RUNOUT"
 	#define WELCOME_MSG MACHINE_NAME " OK"
 	#define MSG_SD_INSERTED "Card inserted"
 	#define MSG_SD_REMOVED "Card removed"

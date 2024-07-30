@@ -358,7 +358,7 @@ void lcd_preheat_extruder()
     setTargetHotend0(absPreheatHotendTemp);
    // setTargetBed(absPreheatHPBTemp);
     
-    LCD_MESSAGEPGM("Extruder Warming Up");
+    LCD_MESSAGEPGM(MSG_EX_WARM_UP);
     lcd_return_to_status();
     setWatch(); // heater sanity check timer
 }
@@ -371,7 +371,7 @@ void lcd_cooldown()
     setTargetHotend2(0);
     setTargetBed(0);
 
-    LCD_MESSAGEPGM("Extruder Cooling");
+    LCD_MESSAGEPGM(MSG_EX_COOL);
     lcd_return_to_status();
 }
 
@@ -577,7 +577,7 @@ void lcd_preheat_abs0()
     setTargetHotend0(absPreheatHotendTemp);
     setTargetBed(absPreheatHPBTemp);
     
-    LCD_MESSAGEPGM("Extruder Warming Up");
+    LCD_MESSAGEPGM(MSG_EX_WARM_UP);
     lcd_return_to_status();
     setWatch(); // heater sanity check timer
 }
@@ -1002,10 +1002,10 @@ static void lcd_control_Filament_PID_menu()
 
 static void pid_autotune_action()
 	{
-	LCD_MESSAGEPGM("Autotune Sequence");
+	LCD_MESSAGEPGM(MSG_AUTOT_SEQU);
 	PID_autotune(absPreheatHotendTemp, 0, 5);  //run autotune with 5 cycles and temp= preheat config temp
 	WRITE(BEEPER,HIGH);
-	LCD_MESSAGEPGM("Autotune Complete");
+	LCD_MESSAGEPGM(MSG_AUTOT_COMPL);
 	lcd_return_to_control_temperature();
 	}
 
