@@ -991,11 +991,11 @@ static void lcd_control_Filament_PID_menu()
 	MENU_ITEM_EDIT(float53, MSG_PID_P, &fwidthKp, 0.0, 99.999);
 	MENU_ITEM_EDIT(float53, MSG_PID_I, &fwidthKi, 0.0, 99.999);
 	MENU_ITEM_EDIT(float53, MSG_PID_D, &fwidthKd, 0.0, 99.999);
-    MENU_ITEM_EDIT(float5, "Faktor 1", &fFactor1, 1000, 50000);
-    MENU_ITEM_EDIT(float32, "Faktor 2", &fFactor2, 1, 20);
-    MENU_ITEM_EDIT(float32, "P Circ", &pcirc, 1, 300);
-    MENU_ITEM_EDIT(float32, "Sens RO Min", &sensorRunoutMin, 0, 8);
-    MENU_ITEM_EDIT(float32, "Sens RO Max", &sensorRunoutMax, 1, 15);
+    MENU_ITEM_EDIT(float5, MSG_DISPLAY_Factor1, &fFactor1, 1000, 50000);
+    MENU_ITEM_EDIT(float32, MSG_DISPLAY_Factor2, &fFactor2, 1, 20);
+    MENU_ITEM_EDIT(float32, MSG_DISPLAY_Pcirc, &pcirc, 1, 300);
+    MENU_ITEM_EDIT(float32, MSG_DISPLAY_SensROmin, &sensorRunoutMin, 0, 8);
+    MENU_ITEM_EDIT(float32, MSG_DISPLAY_SensROmax, &sensorRunoutMax, 1, 15);
     END_MENU();
 	}
 
