@@ -8,9 +8,9 @@
 
 // Languages
 // 1  English
-// 2  Polish
+// 2  German
 // 3  French
-// 4  German
+// 4  Polish
 // 5  Spanish
 // 6  Russian
 // 7  Italian
@@ -20,7 +20,7 @@
 // 11 Dutch
 
 #ifndef LANGUAGE_CHOICE
-	#define LANGUAGE_CHOICE 1  // Pick your language from the list above
+	#define LANGUAGE_CHOICE 2  // Pick your language from the list above
 #endif
 
 #define PROTOCOL_VERSION "1.0"
@@ -68,7 +68,7 @@
 
 #if LANGUAGE_CHOICE == 1
 
-// LCD Menu Messages
+// LCD Menu Messages MK3 English
 // Please note these are limited to 17 characters!
   #define MSG_DISPLAY_SensROmax "Sens RO Max" //MK3
   #define MSG_DISPLAY_SensROmin "Sens RO Min" //MK3
@@ -97,9 +97,51 @@
   #define MSG_thermal_runaway "THERMAL RUNAWAY" //MK3
   #define MSG_sensor_runout "SENSOR RUNOUT" //MK3
 	#define WELCOME_MSG MACHINE_NAME " OK" //MK3
-	#define MSG_SD_INSERTED "Card inserted"           
-	#define MSG_SD_REMOVED "Card removed"
 	#define MSG_MAIN "Main" //MK3
+  #define MSG_PREHEAT_ABS "Preheat"  //MK3
+  #define MSG_PREHEAT_ABS_SETTINGS "Preheat config" //MK3
+	#define MSG_COOLDOWN "Cooldown" //MK3
+  #define MSG_MOVE_E "Extruder" //MK3
+	#define MSG_MOVE_P "Puller" //MK3
+  #define MSG_EXT_RPM "Extruder RPM" //MK3
+	#define MSG_NOZZLE "Nozzle" //MK3
+	#define MSG_HEATER "Extruder Temp" //MK3
+  #define MSG_LENGTH_CUTOFF "L cutoff" //MK3
+  #define MSG_FILAMENT "Sensor Pos." //MK3
+  #define MSG_WINDER_SPEED "Fan Speed" //MK3
+  #define MSG_WINDER_RPM_FACTOR "Winder RPM Factor" //MK3
+  #define MSG_PID_P "PID-P" //MK3
+	#define MSG_PID_I "PID-I" //MK3
+	#define MSG_PID_D "PID-D" //MK3
+	#define MSG_PID_C "PID-C" //MK3
+  #define MSG_AUTOTUNE "PID Autotune" //MK3
+  #define MSG_CONTROL "Control" //MK3
+  #define MSG_VE_JERK "Ve-jerk" //MK3
+	#define MSG_E "e" //MK3
+  #define MSG_WATCH "Info screen" //MK3
+  #define MSG_STATS "Filament Statistics" //MK3
+	#define MSG_PREPARE "Prepare" //MK3
+	#define MSG_TUNE "Tune" //MK3
+  #define MSG_ESTEPS "Esteps/rev/100" //MK3
+	#define MSG_PSTEPS "Psteps/mm" //MK3
+  #define MSG_A_RETRACT "Motor Acc" //MK3
+  #define MSG_STORE_EPROM "Store memory" //MK3
+	#define MSG_LOAD_EPROM "Load memory" //MK3
+	#define MSG_RESTORE_FAILSAFE "Restore failsafe" //MK3
+  #define MSG_TEMPERATURE "Temperature" //MK3
+	#define MSG_MOTION "Motion" //MK3
+  #define MSG_FILAMENT_PID "Puller PID" //MK3
+  #define MSG_PAUSE_EXTRUDER "STOP Extruder" //MK3
+	#define MSG_RESUME_EXTRUDER "START Extruder" //MK3
+  #define MSG_AUTO_EXTRUDER "Automatic pulling" //MK3
+  #define MSG_MAN_EXTRUDER "Manually pulling" //MK3
+	#define MSG_CLEAR_STATS "Clear Statistics" //MK3
+	#define MSG_ENABLE_STATS "Enable Statistics" //MK3
+	#define MSG_DISABLE_STATS "Pause Statistics" //MK3
+  #define MSG_VMAX "Vmax " //MK3
+  // LCD Menu Messages ferz
+  #define MSG_SD_INSERTED "Card inserted"           
+	#define MSG_SD_REMOVED "Card removed"
 	#define MSG_AUTOSTART "Autostart"
 	#define MSG_DISABLE_STEPPERS "Disable steppers"
 	#define MSG_AUTO_HOME "Auto home"
@@ -111,14 +153,11 @@
 	#define MSG_PREHEAT_PLA012 "Preheat PLA All"
 	#define MSG_PREHEAT_PLA_BEDONLY "Preheat PLA Bed"
 	#define MSG_PREHEAT_PLA_SETTINGS "Preheat PLA conf"
-	#define MSG_PREHEAT_ABS "Preheat"  //MK3
 	#define MSG_PREHEAT_ABS0 "Preheat ABS 1"
 	#define MSG_PREHEAT_ABS1 "Preheat ABS 2"
 	#define MSG_PREHEAT_ABS2 "Preheat ABS 3"
 	#define MSG_PREHEAT_ABS012 "Preheat ABS All"
 	#define MSG_PREHEAT_ABS_BEDONLY "Preheat ABS Bed"
-	#define MSG_PREHEAT_ABS_SETTINGS "Preheat config" //MK3
-	#define MSG_COOLDOWN "Cooldown" //MK3
 	#define MSG_SWITCH_PS_ON "Switch power on"
 	#define MSG_SWITCH_PS_OFF "Switch power off"
 	#define MSG_EXTRUDE "Extrude"
@@ -127,78 +166,40 @@
 	#define MSG_MOVE_X "Move X"
 	#define MSG_MOVE_Y "Move Y"
 	#define MSG_MOVE_Z "Move Z"
-	#define MSG_MOVE_E "Extruder" //MK3
-	#define MSG_MOVE_P "Puller" //MK3
 	#define MSG_MOVE_01MM "Move 0.1mm"
 	#define MSG_MOVE_1MM "Move 1mm"
 	#define MSG_MOVE_10MM "Move 10mm"
 	#define MSG_SPEED   "Puller mm/s"
-  #define MSG_EXT_RPM "Extruder RPM" //MK3
-	#define MSG_NOZZLE "Nozzle" //MK3
-	#define MSG_HEATER "Extruder Temp" //MK3
-  #define MSG_LENGTH_CUTOFF "L cutoff" //MK3
-  #define MSG_FILAMENT "Sensor Pos." //MK3
 	#define MSG_NOZZLE1 "Nozzle2"
 	#define MSG_NOZZLE2 "Nozzle3"
 	#define MSG_BED "Bed"
-	#define MSG_WINDER_SPEED "Fan Speed" //MK3
-  #define MSG_WINDER_RPM_FACTOR "Winder RPM Factor" //MK3
 	#define MSG_FLOW "Flow"
 	#define MSG_FLOW0 "Flow 0"
 	#define MSG_FLOW1 "Flow 1"
 	#define MSG_FLOW2 "Flow 2"
-	#define MSG_CONTROL "Control" //MK3
 	#define MSG_MIN " \002 Min"
 	#define MSG_MAX " \002 Max"
 	#define MSG_FACTOR " \002 Fact"
 	#define MSG_AUTOTEMP "Autotemp"
 	#define MSG_ON "On "
 	#define MSG_OFF "Off"
-	#define MSG_PID_P "PID-P" //MK3
-	#define MSG_PID_I "PID-I" //MK3
-	#define MSG_PID_D "PID-D" //MK3
-	#define MSG_PID_C "PID-C" //MK3
-  #define MSG_AUTOTUNE "PID Autotune" //MK3
 	#define MSG_ACC  "Accel"
 	#define MSG_VXY_JERK "Vxy-jerk" 
 	#define MSG_VZ_JERK "Vz-jerk" 
-	#define MSG_VE_JERK "Ve-jerk" //MK3
-	#define MSG_VMAX "Vmax " 
 	#define MSG_X "x"
 	#define MSG_Y "y"
 	#define MSG_Z "z"
-	#define MSG_E "e" //MK3
 	#define MSG_VMIN "Vmin"
 	#define MSG_VTRAV_MIN "VTrav min"
 	#define MSG_AMAX "Amax "
-	#define MSG_A_RETRACT "Motor Acc" //MK3
 	#define MSG_XSTEPS "Xsteps/mm"
 	#define MSG_YSTEPS "Ysteps/mm"
 	#define MSG_ZSTEPS "Zsteps/mm"
-	#define MSG_ESTEPS "Esteps/rev/100" //MK3
-	#define MSG_PSTEPS "Psteps/mm" //MK3
 	#define MSG_RECTRACT "Rectract"
-	#define MSG_TEMPERATURE "Temperature" //MK3
-	#define MSG_MOTION "Motion" //MK3
-  #define MSG_FILAMENT_PID "Puller PID" //MK3
 	#define MSG_CONTRAST "LCD contrast"
-	#define MSG_STORE_EPROM "Store memory" //MK3
-	#define MSG_LOAD_EPROM "Load memory" //MK3
-	#define MSG_RESTORE_FAILSAFE "Restore failsafe" //MK3
 	#define MSG_REFRESH "Refresh"
-	#define MSG_WATCH "Info screen" //MK3
-  #define MSG_STATS "Filament Statistics" //MK3
-	#define MSG_PREPARE "Prepare" //MK3
-	#define MSG_TUNE "Tune" //MK3
 	#define MSG_PAUSE_PRINT "Pause print"
 	#define MSG_RESUME_PRINT "Resume print"
-  #define MSG_PAUSE_EXTRUDER "STOP Extruder" //MK3
-	#define MSG_RESUME_EXTRUDER "START Extruder" //MK3
-  #define MSG_AUTO_EXTRUDER "Automatic pulling" //MK3
-  #define MSG_MAN_EXTRUDER "Manually pulling" //MK3
-	#define MSG_CLEAR_STATS "Clear Statistics" //MK3
-	#define MSG_ENABLE_STATS "Enable Statistics" //MK3
-	#define MSG_DISABLE_STATS "Pause Statistics" //MK3
 	#define MSG_STOP_PRINT "Stop print"
 	#define MSG_CARD_MENU "Print from SD"
 	#define MSG_NO_CARD "No SD card"
@@ -278,7 +279,6 @@
 	#define MSG_ENDSTOP_HIT "TRIGGERED"
 	#define MSG_ENDSTOP_OPEN "open"
 	#define MSG_HOTEND_OFFSET "Hotend offsets:"
-
 	#define MSG_SD_CANT_OPEN_SUBDIR "Cannot open subdir"
 	#define MSG_SD_INIT_FAIL "SD init fail"
 	#define MSG_SD_VOL_INIT_FAIL "volume.init failed"
@@ -294,7 +294,6 @@
 	#define MSG_SD_NOT_PRINTING "Not SD printing"
 	#define MSG_SD_ERR_WRITE_TO_FILE "error writing to file"
 	#define MSG_SD_CANT_ENTER_SUBDIR "Cannot enter subdir: "
-
 	#define MSG_STEPPER_TOO_HIGH "Steprate too high: "
 	#define MSG_ENDSTOPS_HIT "endstops hit: "
 	#define MSG_ERR_COLD_EXTRUDE_STOP " cold extrusion prevented"
@@ -309,9 +308,242 @@
 
 #if LANGUAGE_CHOICE == 2
 
-// LCD Menu Messages
+// LCD Menu Messages MK3 German
 // Please note these are limited to 17 characters!
+  #define MSG_DISPLAY_SensROmax "Sens RO Max" //MK3
+  #define MSG_DISPLAY_SensROmin "Sens RO Min" //MK3
+  #define MSG_DISPLAY_Pcirc "P circ" //MK3
+  #define MSG_DISPLAY_Factor2 "Faktor 2" //MK3
+  #define MSG_DISPLAY_Factor1 "Faktor 1" //MK3
+  #define MSG_DISPLAY_Meter "m" //MK3
+  #define MSG_DISPLAY_Length " L:" //MK3
+  #define MSG_DISPLAY_S "S:" //MK3
+  #define MSG_DISPLAY_AV "  D" //MK3
+  #define MSG_DISPLAY_MinWidth " Mn" //MK3
+  #define MSG_DISPLAY_MaxWidth " Mx" //MK3
+  #define MSG_DISPLAY_rpm2 "rpm " //MK3
+  #define MSG_DISPLAY_COLD "KALT" //MK3
+  #define MSG_DISPLAY_OFF "AUS " //MK3
+  #define MSG_DISPLAY_E "E:" //MK3
+  #define MSG_DISPLAY_rpm "rpm     " //MK3
+  #define MSG_DISPLAY_Puller "Puller:" //MK3
+  #define MSG_SAFETY_COOLDOWN "SAFETY COOLDOWN" //MK3
+  #define MSG_EX_WARM_UP "Extruder Aufwaermen" //MK3
+  #define MSG_EX_COOL "Extruder Kuehlen" //MK3
+  #define MSG_AUTOT_SEQU "Autotune Sequenz" //MK3
+  #define MSG_AUTOT_COMPL "Autotune Feritg" //MK3
+  #define MSG_MIN_TEMP "Err: MINTEMP" //MK3
+  #define MSG_MAX_TEMP "Err: MAXTEMP" //MK3
+  #define MSG_thermal_runaway "THERMAL RUNAWAY" //MK3
+  #define MSG_sensor_runout "SENSOR RUNOUT" //MK3
+	#define WELCOME_MSG MACHINE_NAME " OK" //MK3
+	#define MSG_MAIN "Hauptmenue" //MK3
+  #define MSG_PREHEAT_ABS "Vorheizen"  //MK3
+  #define MSG_PREHEAT_ABS_SETTINGS "Vorheizen config" //MK3
+	#define MSG_COOLDOWN "Abkuehlen" //MK3
+  #define MSG_MOVE_E "Extruder" //MK3
+	#define MSG_MOVE_P "Puller" //MK3
+  #define MSG_EXT_RPM "Extruder RPM" //MK3
+	#define MSG_NOZZLE "Nozzle" //MK3
+	#define MSG_HEATER "Extruder Temp" //MK3
+  #define MSG_LENGTH_CUTOFF "L cutoff" //MK3
+  #define MSG_FILAMENT "Sensor Pos." //MK3
+  #define MSG_WINDER_SPEED "Fan Speed" //MK3
+  #define MSG_WINDER_RPM_FACTOR "Winder RPM Factor" //MK3
+  #define MSG_PID_P "PID-P" //MK3
+	#define MSG_PID_I "PID-I" //MK3
+	#define MSG_PID_D "PID-D" //MK3
+	#define MSG_PID_C "PID-C" //MK3
+  #define MSG_AUTOTUNE "PID Autotune" //MK3
+  #define MSG_CONTROL "Control" //MK3
+  #define MSG_VE_JERK "Ve-jerk" //MK3
+	#define MSG_E "e" //MK3
+  #define MSG_WATCH "Information" //MK3
+  #define MSG_STATS "Filament Statistik" //MK3
+	#define MSG_PREPARE "Vorbereiten" //MK3
+	#define MSG_TUNE "Tune" //MK3
+  #define MSG_ESTEPS "Esteps/rev/100" //MK3
+	#define MSG_PSTEPS "Psteps/mm" //MK3
+  #define MSG_A_RETRACT "Motor Acc" //MK3
+  #define MSG_STORE_EPROM "Speichern" //MK3
+	#define MSG_LOAD_EPROM "Lade Speicher" //MK3
+	#define MSG_RESTORE_FAILSAFE "Restore failsafe" //MK3
+  #define MSG_TEMPERATURE "Temperature" //MK3
+	#define MSG_MOTION "Bewegung" //MK3
+  #define MSG_FILAMENT_PID "Puller PID" //MK3
+  #define MSG_PAUSE_EXTRUDER "STOP Extruder" //MK3
+	#define MSG_RESUME_EXTRUDER "START Extruder" //MK3
+  #define MSG_AUTO_EXTRUDER "Automatik pulling" //MK3
+  #define MSG_MAN_EXTRUDER "Manuell pulling" //MK3
+	#define MSG_CLEAR_STATS "Statistik loeschen" //MK3
+	#define MSG_ENABLE_STATS "Statistik an" //MK3
+	#define MSG_DISABLE_STATS "Statistik pause" //MK3
+  #define MSG_VMAX "Vmax " //MK3
+  // LCD Menu Messages ferz
+  #define MSG_SD_INSERTED "Card inserted"           
+	#define MSG_SD_REMOVED "Card removed"
+	#define MSG_AUTOSTART "Autostart"
+	#define MSG_DISABLE_STEPPERS "Disable steppers"
+	#define MSG_AUTO_HOME "Auto home"
+	#define MSG_SET_ORIGIN "Set origin"
+	#define MSG_PREHEAT_PLA "Preheat PLA"
+	#define MSG_PREHEAT_PLA0 "Preheat PLA 1"
+	#define MSG_PREHEAT_PLA1 "Preheat PLA 2"
+	#define MSG_PREHEAT_PLA2 "Preheat PLA 3"
+	#define MSG_PREHEAT_PLA012 "Preheat PLA All"
+	#define MSG_PREHEAT_PLA_BEDONLY "Preheat PLA Bed"
+	#define MSG_PREHEAT_PLA_SETTINGS "Preheat PLA conf"
+	#define MSG_PREHEAT_ABS0 "Preheat ABS 1"
+	#define MSG_PREHEAT_ABS1 "Preheat ABS 2"
+	#define MSG_PREHEAT_ABS2 "Preheat ABS 3"
+	#define MSG_PREHEAT_ABS012 "Preheat ABS All"
+	#define MSG_PREHEAT_ABS_BEDONLY "Preheat ABS Bed"
+	#define MSG_SWITCH_PS_ON "Switch power on"
+	#define MSG_SWITCH_PS_OFF "Switch power off"
+	#define MSG_EXTRUDE "Extrude"
+	#define MSG_RETRACT "Retract"
+	#define MSG_MOVE_AXIS "Move axis"
+	#define MSG_MOVE_X "Move X"
+	#define MSG_MOVE_Y "Move Y"
+	#define MSG_MOVE_Z "Move Z"
+	#define MSG_MOVE_01MM "Move 0.1mm"
+	#define MSG_MOVE_1MM "Move 1mm"
+	#define MSG_MOVE_10MM "Move 10mm"
+	#define MSG_SPEED   "Puller mm/s"
+	#define MSG_NOZZLE1 "Nozzle2"
+	#define MSG_NOZZLE2 "Nozzle3"
+	#define MSG_BED "Bed"
+	#define MSG_FLOW "Flow"
+	#define MSG_FLOW0 "Flow 0"
+	#define MSG_FLOW1 "Flow 1"
+	#define MSG_FLOW2 "Flow 2"
+	#define MSG_MIN " \002 Min"
+	#define MSG_MAX " \002 Max"
+	#define MSG_FACTOR " \002 Fact"
+	#define MSG_AUTOTEMP "Autotemp"
+	#define MSG_ON "On "
+	#define MSG_OFF "Off"
+	#define MSG_ACC  "Accel"
+	#define MSG_VXY_JERK "Vxy-jerk" 
+	#define MSG_VZ_JERK "Vz-jerk" 
+	#define MSG_X "x"
+	#define MSG_Y "y"
+	#define MSG_Z "z"
+	#define MSG_VMIN "Vmin"
+	#define MSG_VTRAV_MIN "VTrav min"
+	#define MSG_AMAX "Amax "
+	#define MSG_XSTEPS "Xsteps/mm"
+	#define MSG_YSTEPS "Ysteps/mm"
+	#define MSG_ZSTEPS "Zsteps/mm"
+	#define MSG_RECTRACT "Rectract"
+	#define MSG_CONTRAST "LCD contrast"
+	#define MSG_REFRESH "Refresh"
+	#define MSG_PAUSE_PRINT "Pause print"
+	#define MSG_RESUME_PRINT "Resume print"
+	#define MSG_STOP_PRINT "Stop print"
+	#define MSG_CARD_MENU "Print from SD"
+	#define MSG_NO_CARD "No SD card"
+	#define MSG_DWELL "Sleep..."
+	#define MSG_USERWAIT "Wait for user..."
+	#define MSG_RESUMING "Resuming print"
+	#define MSG_NO_MOVE "No move."
+	#define MSG_KILLED "KILLED. "
+	#define MSG_STOPPED "STOPPED. "
+	#define MSG_CONTROL_RETRACT  "Retract mm"
+	#define MSG_CONTROL_RETRACTF "Retract  F"
+	#define MSG_CONTROL_RETRACT_ZLIFT "Hop mm"
+	#define MSG_CONTROL_RETRACT_RECOVER "UnRet +mm"
+	#define MSG_CONTROL_RETRACT_RECOVERF "UnRet  F"
+	#define MSG_AUTORETRACT "AutoRetr."
+	#define MSG_FILAMENTCHANGE "Change filament"
+	#define MSG_INIT_SDCARD "Init. SD card"
+	#define MSG_CNG_SDCARD "Change SD card"
+	#define MSG_ZPROBE_OUT "Z probe out. bed"
+	#define MSG_POSITION_UNKNOWN "Home X/Y before Z"
+	#define MSG_ZPROBE_ZOFFSET "Z Offset"
+	#define MSG_BABYSTEP_X "Babystep X"
+	#define MSG_BABYSTEP_Y "Babystep Y"
+	#define MSG_BABYSTEP_Z "Babystep Z"
+	#define MSG_ENDSTOP_ABORT "Endstop abort"
 
+// Serial Console Messages
+
+	#define MSG_Enqueing "enqueing \""
+	#define MSG_POWERUP "PowerUp"
+	#define MSG_EXTERNAL_RESET " External Reset"
+	#define MSG_BROWNOUT_RESET " Brown out Reset"
+	#define MSG_WATCHDOG_RESET " Watchdog Reset"
+	#define MSG_SOFTWARE_RESET " Software Reset"
+	#define MSG_AUTHOR " | Author: "
+	#define MSG_CONFIGURATION_VER " Last Updated: "
+	#define MSG_FREE_MEMORY " Free Memory: "
+	#define MSG_PLANNER_BUFFER_BYTES "  PlannerBufferBytes: "
+	#define MSG_OK "ok"
+	#define MSG_FILE_SAVED "Done saving file."
+	#define MSG_ERR_LINE_NO "Line Number is not Last Line Number+1, Last Line: "
+	#define MSG_ERR_CHECKSUM_MISMATCH "checksum mismatch, Last Line: "
+	#define MSG_ERR_NO_CHECKSUM "No Checksum with line number, Last Line: "
+	#define MSG_ERR_NO_LINENUMBER_WITH_CHECKSUM "No Line Number with checksum, Last Line: "
+	#define MSG_FILE_PRINTED "Done printing file"
+	#define MSG_BEGIN_FILE_LIST "Begin file list"
+	#define MSG_END_FILE_LIST "End file list"
+	#define MSG_M104_INVALID_EXTRUDER "M104 Invalid extruder "
+	#define MSG_M105_INVALID_EXTRUDER "M105 Invalid extruder "
+	#define MSG_M200_INVALID_EXTRUDER "M200 Invalid extruder "
+	#define MSG_M218_INVALID_EXTRUDER "M218 Invalid extruder "
+	#define MSG_M221_INVALID_EXTRUDER "M221 Invalid extruder "
+	#define MSG_ERR_NO_THERMISTORS "No thermistors - no temperature"
+	#define MSG_M109_INVALID_EXTRUDER "M109 Invalid extruder "
+	#define MSG_HEATING "Heating..."
+	#define MSG_HEATING_COMPLETE "Heating done.       "
+  #define MSG_EXTRUDER_RUNNING "Extruder running"
+  #define MSG_EXTRUDER_STOPPED "Extruder stopped"
+  #define MSG_EXTRUDE_COMPLETE "Extrude Run Complete"
+	#define MSG_BED_HEATING "Bed Heating."
+	#define MSG_BED_DONE "Bed done."
+	#define MSG_M115_REPORT "FIRMWARE_NAME:Mackerel V1; Marlin mashup for Filament Extruders FIRMWARE_URL:" FIRMWARE_URL " PROTOCOL_VERSION:" PROTOCOL_VERSION " MACHINE_TYPE:" MACHINE_NAME " EXTRUDER_COUNT:" STRINGIFY(EXTRUDERS) " UUID:" MACHINE_UUID "\n"
+	#define MSG_COUNT_X " Count X: "
+	#define MSG_ERR_KILLED "Printer halted. kill() called!"
+	#define MSG_ERR_STOPPED "Printer stopped due to errors. Fix the error and use M999 to restart. (Temperature is reset. Set it after restarting)"
+	#define MSG_RESEND "Resend: "
+	#define MSG_UNKNOWN_COMMAND "Unknown command: \""
+	#define MSG_ACTIVE_EXTRUDER "Active Extruder: "
+	#define MSG_INVALID_EXTRUDER "Invalid extruder"
+	#define MSG_X_MIN "x_min: "
+	#define MSG_X_MAX "x_max: "
+	#define MSG_Y_MIN "y_min: "
+	#define MSG_Y_MAX "y_max: "
+	#define MSG_Z_MIN "z_min: "
+	#define MSG_Z_MAX "z_max: "
+	#define MSG_M119_REPORT "Reporting endstop status"
+	#define MSG_ENDSTOP_HIT "TRIGGERED"
+	#define MSG_ENDSTOP_OPEN "open"
+	#define MSG_HOTEND_OFFSET "Hotend offsets:"
+	#define MSG_SD_CANT_OPEN_SUBDIR "Cannot open subdir"
+	#define MSG_SD_INIT_FAIL "SD init fail"
+	#define MSG_SD_VOL_INIT_FAIL "volume.init failed"
+	#define MSG_SD_OPENROOT_FAIL "openRoot failed"
+	#define MSG_SD_CARD_OK "SD card ok"
+	#define MSG_SD_WORKDIR_FAIL "workDir open failed"
+	#define MSG_SD_OPEN_FILE_FAIL "open failed, File: "
+	#define MSG_SD_FILE_OPENED "File opened: "
+	#define MSG_SD_SIZE " Size: "
+	#define MSG_SD_FILE_SELECTED "File selected"
+	#define MSG_SD_WRITE_TO_FILE "Writing to file: "
+	#define MSG_SD_PRINTING_BYTE "SD printing byte "
+	#define MSG_SD_NOT_PRINTING "Not SD printing"
+	#define MSG_SD_ERR_WRITE_TO_FILE "error writing to file"
+	#define MSG_SD_CANT_ENTER_SUBDIR "Cannot enter subdir: "
+	#define MSG_STEPPER_TOO_HIGH "Steprate too high: "
+	#define MSG_ENDSTOPS_HIT "endstops hit: "
+	#define MSG_ERR_COLD_EXTRUDE_STOP " cold extrusion prevented"
+	#define MSG_ERR_LONG_EXTRUDE_STOP " too long extrusion prevented"
+	#define MSG_BABYSTEPPING_X "Babystepping X"
+	#define MSG_BABYSTEPPING_Y "Babystepping Y"
+	#define MSG_BABYSTEPPING_Z "Babystepping Z"
+	#define MSG_SERIAL_ERROR_MENU_STRUCTURE "Error in menu structure"
+
+/* alt Polnisch
 	#define WELCOME_MSG MACHINE_NAME " gotowy."
 	#define MSG_SD_INSERTED "Karta wlozona"
 	#define MSG_SD_REMOVED "Karta usunieta"
@@ -372,7 +604,7 @@
 	#define MSG_VXY_JERK "Zryw Vxy"
 	#define MSG_VZ_JERK "Zryw Vz"
 	#define MSG_VE_JERK "Zryw Ve"
-	#define MSG_VMAX "Vmax" //MK3
+	#define MSG_VMAX "Vmax" 
 	#define MSG_X "x"
 	#define MSG_Y "y"
 	#define MSG_Z "z"
@@ -502,7 +734,7 @@
 	#define MSG_BABYSTEPPING_Y "Babystepping w osi Y"
 	#define MSG_BABYSTEPPING_Z "Babystepping w osi Z"
 	#define MSG_SERIAL_ERROR_MENU_STRUCTURE "Error in menu structure"
-
+*/
 #endif
 
 
@@ -511,6 +743,240 @@
 // LCD Menu Messages
 // Please note these are limited to 17 characters!
 
+  #define MSG_DISPLAY_SensROmax "Sens RO Max" //MK3
+  #define MSG_DISPLAY_SensROmin "Sens RO Min" //MK3
+  #define MSG_DISPLAY_Pcirc "P circ" //MK3
+  #define MSG_DISPLAY_Factor2 "Factor 2" //MK3
+  #define MSG_DISPLAY_Factor1 "Factor 1" //MK3
+  #define MSG_DISPLAY_Meter "m" //MK3
+  #define MSG_DISPLAY_Length " L:" //MK3
+  #define MSG_DISPLAY_S "S:" //MK3
+  #define MSG_DISPLAY_AV " Av" //MK3
+  #define MSG_DISPLAY_MinWidth " Mn" //MK3
+  #define MSG_DISPLAY_MaxWidth " Mx" //MK3
+  #define MSG_DISPLAY_rpm2 "rpm " //MK3
+  #define MSG_DISPLAY_COLD "COLD" //MK3
+  #define MSG_DISPLAY_OFF "OFF " //MK3
+  #define MSG_DISPLAY_E "E:" //MK3
+  #define MSG_DISPLAY_rpm "rpm     " //MK3
+  #define MSG_DISPLAY_Puller "Puller:" //MK3
+  #define MSG_SAFETY_COOLDOWN "SAFETY COOLDOWN" //MK3
+  #define MSG_EX_WARM_UP "Extruder Warming Up" //MK3
+  #define MSG_EX_COOL "Extruder Cooling" //MK3
+  #define MSG_AUTOT_SEQU "Autotune Sequence" //MK3
+  #define MSG_AUTOT_COMPL "Autotune Complete" //MK3
+  #define MSG_MIN_TEMP "Err: MINTEMP" //MK3
+  #define MSG_MAX_TEMP "Err: MAXTEMP" //MK3
+  #define MSG_thermal_runaway "THERMAL RUNAWAY" //MK3
+  #define MSG_sensor_runout "SENSOR RUNOUT" //MK3
+	#define WELCOME_MSG MACHINE_NAME " OK" //MK3
+	#define MSG_MAIN "Main" //MK3
+  #define MSG_PREHEAT_ABS "Preheat"  //MK3
+  #define MSG_PREHEAT_ABS_SETTINGS "Preheat config" //MK3
+	#define MSG_COOLDOWN "Cooldown" //MK3
+  #define MSG_MOVE_E "Extruder" //MK3
+	#define MSG_MOVE_P "Puller" //MK3
+  #define MSG_EXT_RPM "Extruder RPM" //MK3
+	#define MSG_NOZZLE "Nozzle" //MK3
+	#define MSG_HEATER "Extruder Temp" //MK3
+  #define MSG_LENGTH_CUTOFF "L cutoff" //MK3
+  #define MSG_FILAMENT "Sensor Pos." //MK3
+  #define MSG_WINDER_SPEED "Fan Speed" //MK3
+  #define MSG_WINDER_RPM_FACTOR "Winder RPM Factor" //MK3
+  #define MSG_PID_P "PID-P" //MK3
+	#define MSG_PID_I "PID-I" //MK3
+	#define MSG_PID_D "PID-D" //MK3
+	#define MSG_PID_C "PID-C" //MK3
+  #define MSG_AUTOTUNE "PID Autotune" //MK3
+  #define MSG_CONTROL "Control" //MK3
+  #define MSG_VE_JERK "Ve-jerk" //MK3
+	#define MSG_E "e" //MK3
+  #define MSG_WATCH "Info screen" //MK3
+  #define MSG_STATS "Filament Statistics" //MK3
+	#define MSG_PREPARE "Prepare" //MK3
+	#define MSG_TUNE "Tune" //MK3
+  #define MSG_ESTEPS "Esteps/rev/100" //MK3
+	#define MSG_PSTEPS "Psteps/mm" //MK3
+  #define MSG_A_RETRACT "Motor Acc" //MK3
+  #define MSG_STORE_EPROM "Store memory" //MK3
+	#define MSG_LOAD_EPROM "Load memory" //MK3
+	#define MSG_RESTORE_FAILSAFE "Restore failsafe" //MK3
+  #define MSG_TEMPERATURE "Temperature" //MK3
+	#define MSG_MOTION "Motion" //MK3
+  #define MSG_FILAMENT_PID "Puller PID" //MK3
+  #define MSG_PAUSE_EXTRUDER "STOP Extruder" //MK3
+	#define MSG_RESUME_EXTRUDER "START Extruder" //MK3
+  #define MSG_AUTO_EXTRUDER "Automatic pulling" //MK3
+  #define MSG_MAN_EXTRUDER "Manually pulling" //MK3
+	#define MSG_CLEAR_STATS "Clear Statistics" //MK3
+	#define MSG_ENABLE_STATS "Enable Statistics" //MK3
+	#define MSG_DISABLE_STATS "Pause Statistics" //MK3
+  #define MSG_VMAX "Vmax " //MK3
+  // LCD Menu Messages ferz
+  #define MSG_SD_INSERTED "Card inserted"           
+	#define MSG_SD_REMOVED "Card removed"
+	#define MSG_AUTOSTART "Autostart"
+	#define MSG_DISABLE_STEPPERS "Disable steppers"
+	#define MSG_AUTO_HOME "Auto home"
+	#define MSG_SET_ORIGIN "Set origin"
+	#define MSG_PREHEAT_PLA "Preheat PLA"
+	#define MSG_PREHEAT_PLA0 "Preheat PLA 1"
+	#define MSG_PREHEAT_PLA1 "Preheat PLA 2"
+	#define MSG_PREHEAT_PLA2 "Preheat PLA 3"
+	#define MSG_PREHEAT_PLA012 "Preheat PLA All"
+	#define MSG_PREHEAT_PLA_BEDONLY "Preheat PLA Bed"
+	#define MSG_PREHEAT_PLA_SETTINGS "Preheat PLA conf"
+	#define MSG_PREHEAT_ABS0 "Preheat ABS 1"
+	#define MSG_PREHEAT_ABS1 "Preheat ABS 2"
+	#define MSG_PREHEAT_ABS2 "Preheat ABS 3"
+	#define MSG_PREHEAT_ABS012 "Preheat ABS All"
+	#define MSG_PREHEAT_ABS_BEDONLY "Preheat ABS Bed"
+	#define MSG_SWITCH_PS_ON "Switch power on"
+	#define MSG_SWITCH_PS_OFF "Switch power off"
+	#define MSG_EXTRUDE "Extrude"
+	#define MSG_RETRACT "Retract"
+	#define MSG_MOVE_AXIS "Move axis"
+	#define MSG_MOVE_X "Move X"
+	#define MSG_MOVE_Y "Move Y"
+	#define MSG_MOVE_Z "Move Z"
+	#define MSG_MOVE_01MM "Move 0.1mm"
+	#define MSG_MOVE_1MM "Move 1mm"
+	#define MSG_MOVE_10MM "Move 10mm"
+	#define MSG_SPEED   "Puller mm/s"
+	#define MSG_NOZZLE1 "Nozzle2"
+	#define MSG_NOZZLE2 "Nozzle3"
+	#define MSG_BED "Bed"
+	#define MSG_FLOW "Flow"
+	#define MSG_FLOW0 "Flow 0"
+	#define MSG_FLOW1 "Flow 1"
+	#define MSG_FLOW2 "Flow 2"
+	#define MSG_MIN " \002 Min"
+	#define MSG_MAX " \002 Max"
+	#define MSG_FACTOR " \002 Fact"
+	#define MSG_AUTOTEMP "Autotemp"
+	#define MSG_ON "On "
+	#define MSG_OFF "Off"
+	#define MSG_ACC  "Accel"
+	#define MSG_VXY_JERK "Vxy-jerk" 
+	#define MSG_VZ_JERK "Vz-jerk" 
+	#define MSG_X "x"
+	#define MSG_Y "y"
+	#define MSG_Z "z"
+	#define MSG_VMIN "Vmin"
+	#define MSG_VTRAV_MIN "VTrav min"
+	#define MSG_AMAX "Amax "
+	#define MSG_XSTEPS "Xsteps/mm"
+	#define MSG_YSTEPS "Ysteps/mm"
+	#define MSG_ZSTEPS "Zsteps/mm"
+	#define MSG_RECTRACT "Rectract"
+	#define MSG_CONTRAST "LCD contrast"
+	#define MSG_REFRESH "Refresh"
+	#define MSG_PAUSE_PRINT "Pause print"
+	#define MSG_RESUME_PRINT "Resume print"
+	#define MSG_STOP_PRINT "Stop print"
+	#define MSG_CARD_MENU "Print from SD"
+	#define MSG_NO_CARD "No SD card"
+	#define MSG_DWELL "Sleep..."
+	#define MSG_USERWAIT "Wait for user..."
+	#define MSG_RESUMING "Resuming print"
+	#define MSG_NO_MOVE "No move."
+	#define MSG_KILLED "KILLED. "
+	#define MSG_STOPPED "STOPPED. "
+	#define MSG_CONTROL_RETRACT  "Retract mm"
+	#define MSG_CONTROL_RETRACTF "Retract  F"
+	#define MSG_CONTROL_RETRACT_ZLIFT "Hop mm"
+	#define MSG_CONTROL_RETRACT_RECOVER "UnRet +mm"
+	#define MSG_CONTROL_RETRACT_RECOVERF "UnRet  F"
+	#define MSG_AUTORETRACT "AutoRetr."
+	#define MSG_FILAMENTCHANGE "Change filament"
+	#define MSG_INIT_SDCARD "Init. SD card"
+	#define MSG_CNG_SDCARD "Change SD card"
+	#define MSG_ZPROBE_OUT "Z probe out. bed"
+	#define MSG_POSITION_UNKNOWN "Home X/Y before Z"
+	#define MSG_ZPROBE_ZOFFSET "Z Offset"
+	#define MSG_BABYSTEP_X "Babystep X"
+	#define MSG_BABYSTEP_Y "Babystep Y"
+	#define MSG_BABYSTEP_Z "Babystep Z"
+	#define MSG_ENDSTOP_ABORT "Endstop abort"
+
+// Serial Console Messages
+
+	#define MSG_Enqueing "enqueing \""
+	#define MSG_POWERUP "PowerUp"
+	#define MSG_EXTERNAL_RESET " External Reset"
+	#define MSG_BROWNOUT_RESET " Brown out Reset"
+	#define MSG_WATCHDOG_RESET " Watchdog Reset"
+	#define MSG_SOFTWARE_RESET " Software Reset"
+	#define MSG_AUTHOR " | Author: "
+	#define MSG_CONFIGURATION_VER " Last Updated: "
+	#define MSG_FREE_MEMORY " Free Memory: "
+	#define MSG_PLANNER_BUFFER_BYTES "  PlannerBufferBytes: "
+	#define MSG_OK "ok"
+	#define MSG_FILE_SAVED "Done saving file."
+	#define MSG_ERR_LINE_NO "Line Number is not Last Line Number+1, Last Line: "
+	#define MSG_ERR_CHECKSUM_MISMATCH "checksum mismatch, Last Line: "
+	#define MSG_ERR_NO_CHECKSUM "No Checksum with line number, Last Line: "
+	#define MSG_ERR_NO_LINENUMBER_WITH_CHECKSUM "No Line Number with checksum, Last Line: "
+	#define MSG_FILE_PRINTED "Done printing file"
+	#define MSG_BEGIN_FILE_LIST "Begin file list"
+	#define MSG_END_FILE_LIST "End file list"
+	#define MSG_M104_INVALID_EXTRUDER "M104 Invalid extruder "
+	#define MSG_M105_INVALID_EXTRUDER "M105 Invalid extruder "
+	#define MSG_M200_INVALID_EXTRUDER "M200 Invalid extruder "
+	#define MSG_M218_INVALID_EXTRUDER "M218 Invalid extruder "
+	#define MSG_M221_INVALID_EXTRUDER "M221 Invalid extruder "
+	#define MSG_ERR_NO_THERMISTORS "No thermistors - no temperature"
+	#define MSG_M109_INVALID_EXTRUDER "M109 Invalid extruder "
+	#define MSG_HEATING "Heating..."
+	#define MSG_HEATING_COMPLETE "Heating done.       "
+  #define MSG_EXTRUDER_RUNNING "Extruder running"
+  #define MSG_EXTRUDER_STOPPED "Extruder stopped"
+  #define MSG_EXTRUDE_COMPLETE "Extrude Run Complete"
+	#define MSG_BED_HEATING "Bed Heating."
+	#define MSG_BED_DONE "Bed done."
+	#define MSG_M115_REPORT "FIRMWARE_NAME:Mackerel V1; Marlin mashup for Filament Extruders FIRMWARE_URL:" FIRMWARE_URL " PROTOCOL_VERSION:" PROTOCOL_VERSION " MACHINE_TYPE:" MACHINE_NAME " EXTRUDER_COUNT:" STRINGIFY(EXTRUDERS) " UUID:" MACHINE_UUID "\n"
+	#define MSG_COUNT_X " Count X: "
+	#define MSG_ERR_KILLED "Printer halted. kill() called!"
+	#define MSG_ERR_STOPPED "Printer stopped due to errors. Fix the error and use M999 to restart. (Temperature is reset. Set it after restarting)"
+	#define MSG_RESEND "Resend: "
+	#define MSG_UNKNOWN_COMMAND "Unknown command: \""
+	#define MSG_ACTIVE_EXTRUDER "Active Extruder: "
+	#define MSG_INVALID_EXTRUDER "Invalid extruder"
+	#define MSG_X_MIN "x_min: "
+	#define MSG_X_MAX "x_max: "
+	#define MSG_Y_MIN "y_min: "
+	#define MSG_Y_MAX "y_max: "
+	#define MSG_Z_MIN "z_min: "
+	#define MSG_Z_MAX "z_max: "
+	#define MSG_M119_REPORT "Reporting endstop status"
+	#define MSG_ENDSTOP_HIT "TRIGGERED"
+	#define MSG_ENDSTOP_OPEN "open"
+	#define MSG_HOTEND_OFFSET "Hotend offsets:"
+	#define MSG_SD_CANT_OPEN_SUBDIR "Cannot open subdir"
+	#define MSG_SD_INIT_FAIL "SD init fail"
+	#define MSG_SD_VOL_INIT_FAIL "volume.init failed"
+	#define MSG_SD_OPENROOT_FAIL "openRoot failed"
+	#define MSG_SD_CARD_OK "SD card ok"
+	#define MSG_SD_WORKDIR_FAIL "workDir open failed"
+	#define MSG_SD_OPEN_FILE_FAIL "open failed, File: "
+	#define MSG_SD_FILE_OPENED "File opened: "
+	#define MSG_SD_SIZE " Size: "
+	#define MSG_SD_FILE_SELECTED "File selected"
+	#define MSG_SD_WRITE_TO_FILE "Writing to file: "
+	#define MSG_SD_PRINTING_BYTE "SD printing byte "
+	#define MSG_SD_NOT_PRINTING "Not SD printing"
+	#define MSG_SD_ERR_WRITE_TO_FILE "error writing to file"
+	#define MSG_SD_CANT_ENTER_SUBDIR "Cannot enter subdir: "
+	#define MSG_STEPPER_TOO_HIGH "Steprate too high: "
+	#define MSG_ENDSTOPS_HIT "endstops hit: "
+	#define MSG_ERR_COLD_EXTRUDE_STOP " cold extrusion prevented"
+	#define MSG_ERR_LONG_EXTRUDE_STOP " too long extrusion prevented"
+	#define MSG_BABYSTEPPING_X "Babystepping X"
+	#define MSG_BABYSTEPPING_Y "Babystepping Y"
+	#define MSG_BABYSTEPPING_Z "Babystepping Z"
+	#define MSG_SERIAL_ERROR_MENU_STRUCTURE "Error in menu structure"
+
+/* alt
 	#define WELCOME_MSG MACHINE_NAME " prete."
 	#define MSG_SD_INSERTED "Carte inseree"
 	#define MSG_SD_REMOVED "Carte retiree"
@@ -573,7 +1039,7 @@
 	#define MSG_VXY_JERK "Vxy-jerk"
 	#define MSG_VZ_JERK "Vz-jerk"
 	#define MSG_VE_JERK "Ve-jerk"
-	#define MSG_VMAX "Vmax"
+	#define MSG_VMAX "Vmax" 
 	#define MSG_X "x"
 	#define MSG_Y "y"
 	#define MSG_Z "z"
@@ -701,7 +1167,7 @@
 	#define MSG_BABYSTEPPING_Y "Babystepping Y"
 	#define MSG_BABYSTEPPING_Z "Babystepping Z"
 	#define MSG_SERIAL_ERROR_MENU_STRUCTURE "Error in menu structure"
-
+*/
 #endif
 
 
@@ -709,7 +1175,240 @@
 
 // LCD Menu Messages
 // Please note these are limited to 17 characters!
+  #define MSG_DISPLAY_SensROmax "Sens RO Max" //MK3
+  #define MSG_DISPLAY_SensROmin "Sens RO Min" //MK3
+  #define MSG_DISPLAY_Pcirc "P circ" //MK3
+  #define MSG_DISPLAY_Factor2 "Factor 2" //MK3
+  #define MSG_DISPLAY_Factor1 "Factor 1" //MK3
+  #define MSG_DISPLAY_Meter "m" //MK3
+  #define MSG_DISPLAY_Length " L:" //MK3
+  #define MSG_DISPLAY_S "S:" //MK3
+  #define MSG_DISPLAY_AV " Av" //MK3
+  #define MSG_DISPLAY_MinWidth " Mn" //MK3
+  #define MSG_DISPLAY_MaxWidth " Mx" //MK3
+  #define MSG_DISPLAY_rpm2 "rpm " //MK3
+  #define MSG_DISPLAY_COLD "COLD" //MK3
+  #define MSG_DISPLAY_OFF "OFF " //MK3
+  #define MSG_DISPLAY_E "E:" //MK3
+  #define MSG_DISPLAY_rpm "rpm     " //MK3
+  #define MSG_DISPLAY_Puller "Puller:" //MK3
+  #define MSG_SAFETY_COOLDOWN "SAFETY COOLDOWN" //MK3
+  #define MSG_EX_WARM_UP "Extruder Warming Up" //MK3
+  #define MSG_EX_COOL "Extruder Cooling" //MK3
+  #define MSG_AUTOT_SEQU "Autotune Sequence" //MK3
+  #define MSG_AUTOT_COMPL "Autotune Complete" //MK3
+  #define MSG_MIN_TEMP "Err: MINTEMP" //MK3
+  #define MSG_MAX_TEMP "Err: MAXTEMP" //MK3
+  #define MSG_thermal_runaway "THERMAL RUNAWAY" //MK3
+  #define MSG_sensor_runout "SENSOR RUNOUT" //MK3
+	#define WELCOME_MSG MACHINE_NAME " OK" //MK3
+	#define MSG_MAIN "Main" //MK3
+  #define MSG_PREHEAT_ABS "Preheat"  //MK3
+  #define MSG_PREHEAT_ABS_SETTINGS "Preheat config" //MK3
+	#define MSG_COOLDOWN "Cooldown" //MK3
+  #define MSG_MOVE_E "Extruder" //MK3
+	#define MSG_MOVE_P "Puller" //MK3
+  #define MSG_EXT_RPM "Extruder RPM" //MK3
+	#define MSG_NOZZLE "Nozzle" //MK3
+	#define MSG_HEATER "Extruder Temp" //MK3
+  #define MSG_LENGTH_CUTOFF "L cutoff" //MK3
+  #define MSG_FILAMENT "Sensor Pos." //MK3
+  #define MSG_WINDER_SPEED "Fan Speed" //MK3
+  #define MSG_WINDER_RPM_FACTOR "Winder RPM Factor" //MK3
+  #define MSG_PID_P "PID-P" //MK3
+	#define MSG_PID_I "PID-I" //MK3
+	#define MSG_PID_D "PID-D" //MK3
+	#define MSG_PID_C "PID-C" //MK3
+  #define MSG_AUTOTUNE "PID Autotune" //MK3
+  #define MSG_CONTROL "Control" //MK3
+  #define MSG_VE_JERK "Ve-jerk" //MK3
+	#define MSG_E "e" //MK3
+  #define MSG_WATCH "Info screen" //MK3
+  #define MSG_STATS "Filament Statistics" //MK3
+	#define MSG_PREPARE "Prepare" //MK3
+	#define MSG_TUNE "Tune" //MK3
+  #define MSG_ESTEPS "Esteps/rev/100" //MK3
+	#define MSG_PSTEPS "Psteps/mm" //MK3
+  #define MSG_A_RETRACT "Motor Acc" //MK3
+  #define MSG_STORE_EPROM "Store memory" //MK3
+	#define MSG_LOAD_EPROM "Load memory" //MK3
+	#define MSG_RESTORE_FAILSAFE "Restore failsafe" //MK3
+  #define MSG_TEMPERATURE "Temperature" //MK3
+	#define MSG_MOTION "Motion" //MK3
+  #define MSG_FILAMENT_PID "Puller PID" //MK3
+  #define MSG_PAUSE_EXTRUDER "STOP Extruder" //MK3
+	#define MSG_RESUME_EXTRUDER "START Extruder" //MK3
+  #define MSG_AUTO_EXTRUDER "Automatic pulling" //MK3
+  #define MSG_MAN_EXTRUDER "Manually pulling" //MK3
+	#define MSG_CLEAR_STATS "Clear Statistics" //MK3
+	#define MSG_ENABLE_STATS "Enable Statistics" //MK3
+	#define MSG_DISABLE_STATS "Pause Statistics" //MK3
+  #define MSG_VMAX "Vmax " //MK3
+  // LCD Menu Messages ferz
+  #define MSG_SD_INSERTED "Card inserted"           
+	#define MSG_SD_REMOVED "Card removed"
+	#define MSG_AUTOSTART "Autostart"
+	#define MSG_DISABLE_STEPPERS "Disable steppers"
+	#define MSG_AUTO_HOME "Auto home"
+	#define MSG_SET_ORIGIN "Set origin"
+	#define MSG_PREHEAT_PLA "Preheat PLA"
+	#define MSG_PREHEAT_PLA0 "Preheat PLA 1"
+	#define MSG_PREHEAT_PLA1 "Preheat PLA 2"
+	#define MSG_PREHEAT_PLA2 "Preheat PLA 3"
+	#define MSG_PREHEAT_PLA012 "Preheat PLA All"
+	#define MSG_PREHEAT_PLA_BEDONLY "Preheat PLA Bed"
+	#define MSG_PREHEAT_PLA_SETTINGS "Preheat PLA conf"
+	#define MSG_PREHEAT_ABS0 "Preheat ABS 1"
+	#define MSG_PREHEAT_ABS1 "Preheat ABS 2"
+	#define MSG_PREHEAT_ABS2 "Preheat ABS 3"
+	#define MSG_PREHEAT_ABS012 "Preheat ABS All"
+	#define MSG_PREHEAT_ABS_BEDONLY "Preheat ABS Bed"
+	#define MSG_SWITCH_PS_ON "Switch power on"
+	#define MSG_SWITCH_PS_OFF "Switch power off"
+	#define MSG_EXTRUDE "Extrude"
+	#define MSG_RETRACT "Retract"
+	#define MSG_MOVE_AXIS "Move axis"
+	#define MSG_MOVE_X "Move X"
+	#define MSG_MOVE_Y "Move Y"
+	#define MSG_MOVE_Z "Move Z"
+	#define MSG_MOVE_01MM "Move 0.1mm"
+	#define MSG_MOVE_1MM "Move 1mm"
+	#define MSG_MOVE_10MM "Move 10mm"
+	#define MSG_SPEED   "Puller mm/s"
+	#define MSG_NOZZLE1 "Nozzle2"
+	#define MSG_NOZZLE2 "Nozzle3"
+	#define MSG_BED "Bed"
+	#define MSG_FLOW "Flow"
+	#define MSG_FLOW0 "Flow 0"
+	#define MSG_FLOW1 "Flow 1"
+	#define MSG_FLOW2 "Flow 2"
+	#define MSG_MIN " \002 Min"
+	#define MSG_MAX " \002 Max"
+	#define MSG_FACTOR " \002 Fact"
+	#define MSG_AUTOTEMP "Autotemp"
+	#define MSG_ON "On "
+	#define MSG_OFF "Off"
+	#define MSG_ACC  "Accel"
+	#define MSG_VXY_JERK "Vxy-jerk" 
+	#define MSG_VZ_JERK "Vz-jerk" 
+	#define MSG_X "x"
+	#define MSG_Y "y"
+	#define MSG_Z "z"
+	#define MSG_VMIN "Vmin"
+	#define MSG_VTRAV_MIN "VTrav min"
+	#define MSG_AMAX "Amax "
+	#define MSG_XSTEPS "Xsteps/mm"
+	#define MSG_YSTEPS "Ysteps/mm"
+	#define MSG_ZSTEPS "Zsteps/mm"
+	#define MSG_RECTRACT "Rectract"
+	#define MSG_CONTRAST "LCD contrast"
+	#define MSG_REFRESH "Refresh"
+	#define MSG_PAUSE_PRINT "Pause print"
+	#define MSG_RESUME_PRINT "Resume print"
+	#define MSG_STOP_PRINT "Stop print"
+	#define MSG_CARD_MENU "Print from SD"
+	#define MSG_NO_CARD "No SD card"
+	#define MSG_DWELL "Sleep..."
+	#define MSG_USERWAIT "Wait for user..."
+	#define MSG_RESUMING "Resuming print"
+	#define MSG_NO_MOVE "No move."
+	#define MSG_KILLED "KILLED. "
+	#define MSG_STOPPED "STOPPED. "
+	#define MSG_CONTROL_RETRACT  "Retract mm"
+	#define MSG_CONTROL_RETRACTF "Retract  F"
+	#define MSG_CONTROL_RETRACT_ZLIFT "Hop mm"
+	#define MSG_CONTROL_RETRACT_RECOVER "UnRet +mm"
+	#define MSG_CONTROL_RETRACT_RECOVERF "UnRet  F"
+	#define MSG_AUTORETRACT "AutoRetr."
+	#define MSG_FILAMENTCHANGE "Change filament"
+	#define MSG_INIT_SDCARD "Init. SD card"
+	#define MSG_CNG_SDCARD "Change SD card"
+	#define MSG_ZPROBE_OUT "Z probe out. bed"
+	#define MSG_POSITION_UNKNOWN "Home X/Y before Z"
+	#define MSG_ZPROBE_ZOFFSET "Z Offset"
+	#define MSG_BABYSTEP_X "Babystep X"
+	#define MSG_BABYSTEP_Y "Babystep Y"
+	#define MSG_BABYSTEP_Z "Babystep Z"
+	#define MSG_ENDSTOP_ABORT "Endstop abort"
 
+// Serial Console Messages
+
+	#define MSG_Enqueing "enqueing \""
+	#define MSG_POWERUP "PowerUp"
+	#define MSG_EXTERNAL_RESET " External Reset"
+	#define MSG_BROWNOUT_RESET " Brown out Reset"
+	#define MSG_WATCHDOG_RESET " Watchdog Reset"
+	#define MSG_SOFTWARE_RESET " Software Reset"
+	#define MSG_AUTHOR " | Author: "
+	#define MSG_CONFIGURATION_VER " Last Updated: "
+	#define MSG_FREE_MEMORY " Free Memory: "
+	#define MSG_PLANNER_BUFFER_BYTES "  PlannerBufferBytes: "
+	#define MSG_OK "ok"
+	#define MSG_FILE_SAVED "Done saving file."
+	#define MSG_ERR_LINE_NO "Line Number is not Last Line Number+1, Last Line: "
+	#define MSG_ERR_CHECKSUM_MISMATCH "checksum mismatch, Last Line: "
+	#define MSG_ERR_NO_CHECKSUM "No Checksum with line number, Last Line: "
+	#define MSG_ERR_NO_LINENUMBER_WITH_CHECKSUM "No Line Number with checksum, Last Line: "
+	#define MSG_FILE_PRINTED "Done printing file"
+	#define MSG_BEGIN_FILE_LIST "Begin file list"
+	#define MSG_END_FILE_LIST "End file list"
+	#define MSG_M104_INVALID_EXTRUDER "M104 Invalid extruder "
+	#define MSG_M105_INVALID_EXTRUDER "M105 Invalid extruder "
+	#define MSG_M200_INVALID_EXTRUDER "M200 Invalid extruder "
+	#define MSG_M218_INVALID_EXTRUDER "M218 Invalid extruder "
+	#define MSG_M221_INVALID_EXTRUDER "M221 Invalid extruder "
+	#define MSG_ERR_NO_THERMISTORS "No thermistors - no temperature"
+	#define MSG_M109_INVALID_EXTRUDER "M109 Invalid extruder "
+	#define MSG_HEATING "Heating..."
+	#define MSG_HEATING_COMPLETE "Heating done.       "
+  #define MSG_EXTRUDER_RUNNING "Extruder running"
+  #define MSG_EXTRUDER_STOPPED "Extruder stopped"
+  #define MSG_EXTRUDE_COMPLETE "Extrude Run Complete"
+	#define MSG_BED_HEATING "Bed Heating."
+	#define MSG_BED_DONE "Bed done."
+	#define MSG_M115_REPORT "FIRMWARE_NAME:Mackerel V1; Marlin mashup for Filament Extruders FIRMWARE_URL:" FIRMWARE_URL " PROTOCOL_VERSION:" PROTOCOL_VERSION " MACHINE_TYPE:" MACHINE_NAME " EXTRUDER_COUNT:" STRINGIFY(EXTRUDERS) " UUID:" MACHINE_UUID "\n"
+	#define MSG_COUNT_X " Count X: "
+	#define MSG_ERR_KILLED "Printer halted. kill() called!"
+	#define MSG_ERR_STOPPED "Printer stopped due to errors. Fix the error and use M999 to restart. (Temperature is reset. Set it after restarting)"
+	#define MSG_RESEND "Resend: "
+	#define MSG_UNKNOWN_COMMAND "Unknown command: \""
+	#define MSG_ACTIVE_EXTRUDER "Active Extruder: "
+	#define MSG_INVALID_EXTRUDER "Invalid extruder"
+	#define MSG_X_MIN "x_min: "
+	#define MSG_X_MAX "x_max: "
+	#define MSG_Y_MIN "y_min: "
+	#define MSG_Y_MAX "y_max: "
+	#define MSG_Z_MIN "z_min: "
+	#define MSG_Z_MAX "z_max: "
+	#define MSG_M119_REPORT "Reporting endstop status"
+	#define MSG_ENDSTOP_HIT "TRIGGERED"
+	#define MSG_ENDSTOP_OPEN "open"
+	#define MSG_HOTEND_OFFSET "Hotend offsets:"
+	#define MSG_SD_CANT_OPEN_SUBDIR "Cannot open subdir"
+	#define MSG_SD_INIT_FAIL "SD init fail"
+	#define MSG_SD_VOL_INIT_FAIL "volume.init failed"
+	#define MSG_SD_OPENROOT_FAIL "openRoot failed"
+	#define MSG_SD_CARD_OK "SD card ok"
+	#define MSG_SD_WORKDIR_FAIL "workDir open failed"
+	#define MSG_SD_OPEN_FILE_FAIL "open failed, File: "
+	#define MSG_SD_FILE_OPENED "File opened: "
+	#define MSG_SD_SIZE " Size: "
+	#define MSG_SD_FILE_SELECTED "File selected"
+	#define MSG_SD_WRITE_TO_FILE "Writing to file: "
+	#define MSG_SD_PRINTING_BYTE "SD printing byte "
+	#define MSG_SD_NOT_PRINTING "Not SD printing"
+	#define MSG_SD_ERR_WRITE_TO_FILE "error writing to file"
+	#define MSG_SD_CANT_ENTER_SUBDIR "Cannot enter subdir: "
+	#define MSG_STEPPER_TOO_HIGH "Steprate too high: "
+	#define MSG_ENDSTOPS_HIT "endstops hit: "
+	#define MSG_ERR_COLD_EXTRUDE_STOP " cold extrusion prevented"
+	#define MSG_ERR_LONG_EXTRUDE_STOP " too long extrusion prevented"
+	#define MSG_BABYSTEPPING_X "Babystepping X"
+	#define MSG_BABYSTEPPING_Y "Babystepping Y"
+	#define MSG_BABYSTEPPING_Z "Babystepping Z"
+	#define MSG_SERIAL_ERROR_MENU_STRUCTURE "Error in menu structure"
+
+/* alt deutsch
 	#define WELCOME_MSG MACHINE_NAME " Bereit."
 
 	#define MSG_SD_INSERTED      "SDKarte erkannt"
@@ -901,7 +1600,7 @@
 	#define MSG_BABYSTEPPING_Y "Babystepping Y"
 	#define MSG_BABYSTEPPING_Z "Babystepping Z"
 	#define MSG_SERIAL_ERROR_MENU_STRUCTURE "Error in menu structure"
-
+*/
 #endif
 
 
@@ -909,7 +1608,240 @@
 
 // LCD Menu Messages
 // Please note these are limited to 17 characters!
+  #define MSG_DISPLAY_SensROmax "Sens RO Max" //MK3
+  #define MSG_DISPLAY_SensROmin "Sens RO Min" //MK3
+  #define MSG_DISPLAY_Pcirc "P circ" //MK3
+  #define MSG_DISPLAY_Factor2 "Factor 2" //MK3
+  #define MSG_DISPLAY_Factor1 "Factor 1" //MK3
+  #define MSG_DISPLAY_Meter "m" //MK3
+  #define MSG_DISPLAY_Length " L:" //MK3
+  #define MSG_DISPLAY_S "S:" //MK3
+  #define MSG_DISPLAY_AV " Av" //MK3
+  #define MSG_DISPLAY_MinWidth " Mn" //MK3
+  #define MSG_DISPLAY_MaxWidth " Mx" //MK3
+  #define MSG_DISPLAY_rpm2 "rpm " //MK3
+  #define MSG_DISPLAY_COLD "COLD" //MK3
+  #define MSG_DISPLAY_OFF "OFF " //MK3
+  #define MSG_DISPLAY_E "E:" //MK3
+  #define MSG_DISPLAY_rpm "rpm     " //MK3
+  #define MSG_DISPLAY_Puller "Puller:" //MK3
+  #define MSG_SAFETY_COOLDOWN "SAFETY COOLDOWN" //MK3
+  #define MSG_EX_WARM_UP "Extruder Warming Up" //MK3
+  #define MSG_EX_COOL "Extruder Cooling" //MK3
+  #define MSG_AUTOT_SEQU "Autotune Sequence" //MK3
+  #define MSG_AUTOT_COMPL "Autotune Complete" //MK3
+  #define MSG_MIN_TEMP "Err: MINTEMP" //MK3
+  #define MSG_MAX_TEMP "Err: MAXTEMP" //MK3
+  #define MSG_thermal_runaway "THERMAL RUNAWAY" //MK3
+  #define MSG_sensor_runout "SENSOR RUNOUT" //MK3
+	#define WELCOME_MSG MACHINE_NAME " OK" //MK3
+	#define MSG_MAIN "Main" //MK3
+  #define MSG_PREHEAT_ABS "Preheat"  //MK3
+  #define MSG_PREHEAT_ABS_SETTINGS "Preheat config" //MK3
+	#define MSG_COOLDOWN "Cooldown" //MK3
+  #define MSG_MOVE_E "Extruder" //MK3
+	#define MSG_MOVE_P "Puller" //MK3
+  #define MSG_EXT_RPM "Extruder RPM" //MK3
+	#define MSG_NOZZLE "Nozzle" //MK3
+	#define MSG_HEATER "Extruder Temp" //MK3
+  #define MSG_LENGTH_CUTOFF "L cutoff" //MK3
+  #define MSG_FILAMENT "Sensor Pos." //MK3
+  #define MSG_WINDER_SPEED "Fan Speed" //MK3
+  #define MSG_WINDER_RPM_FACTOR "Winder RPM Factor" //MK3
+  #define MSG_PID_P "PID-P" //MK3
+	#define MSG_PID_I "PID-I" //MK3
+	#define MSG_PID_D "PID-D" //MK3
+	#define MSG_PID_C "PID-C" //MK3
+  #define MSG_AUTOTUNE "PID Autotune" //MK3
+  #define MSG_CONTROL "Control" //MK3
+  #define MSG_VE_JERK "Ve-jerk" //MK3
+	#define MSG_E "e" //MK3
+  #define MSG_WATCH "Info screen" //MK3
+  #define MSG_STATS "Filament Statistics" //MK3
+	#define MSG_PREPARE "Prepare" //MK3
+	#define MSG_TUNE "Tune" //MK3
+  #define MSG_ESTEPS "Esteps/rev/100" //MK3
+	#define MSG_PSTEPS "Psteps/mm" //MK3
+  #define MSG_A_RETRACT "Motor Acc" //MK3
+  #define MSG_STORE_EPROM "Store memory" //MK3
+	#define MSG_LOAD_EPROM "Load memory" //MK3
+	#define MSG_RESTORE_FAILSAFE "Restore failsafe" //MK3
+  #define MSG_TEMPERATURE "Temperature" //MK3
+	#define MSG_MOTION "Motion" //MK3
+  #define MSG_FILAMENT_PID "Puller PID" //MK3
+  #define MSG_PAUSE_EXTRUDER "STOP Extruder" //MK3
+	#define MSG_RESUME_EXTRUDER "START Extruder" //MK3
+  #define MSG_AUTO_EXTRUDER "Automatic pulling" //MK3
+  #define MSG_MAN_EXTRUDER "Manually pulling" //MK3
+	#define MSG_CLEAR_STATS "Clear Statistics" //MK3
+	#define MSG_ENABLE_STATS "Enable Statistics" //MK3
+	#define MSG_DISABLE_STATS "Pause Statistics" //MK3
+  #define MSG_VMAX "Vmax " //MK3
+  // LCD Menu Messages ferz
+  #define MSG_SD_INSERTED "Card inserted"           
+	#define MSG_SD_REMOVED "Card removed"
+	#define MSG_AUTOSTART "Autostart"
+	#define MSG_DISABLE_STEPPERS "Disable steppers"
+	#define MSG_AUTO_HOME "Auto home"
+	#define MSG_SET_ORIGIN "Set origin"
+	#define MSG_PREHEAT_PLA "Preheat PLA"
+	#define MSG_PREHEAT_PLA0 "Preheat PLA 1"
+	#define MSG_PREHEAT_PLA1 "Preheat PLA 2"
+	#define MSG_PREHEAT_PLA2 "Preheat PLA 3"
+	#define MSG_PREHEAT_PLA012 "Preheat PLA All"
+	#define MSG_PREHEAT_PLA_BEDONLY "Preheat PLA Bed"
+	#define MSG_PREHEAT_PLA_SETTINGS "Preheat PLA conf"
+	#define MSG_PREHEAT_ABS0 "Preheat ABS 1"
+	#define MSG_PREHEAT_ABS1 "Preheat ABS 2"
+	#define MSG_PREHEAT_ABS2 "Preheat ABS 3"
+	#define MSG_PREHEAT_ABS012 "Preheat ABS All"
+	#define MSG_PREHEAT_ABS_BEDONLY "Preheat ABS Bed"
+	#define MSG_SWITCH_PS_ON "Switch power on"
+	#define MSG_SWITCH_PS_OFF "Switch power off"
+	#define MSG_EXTRUDE "Extrude"
+	#define MSG_RETRACT "Retract"
+	#define MSG_MOVE_AXIS "Move axis"
+	#define MSG_MOVE_X "Move X"
+	#define MSG_MOVE_Y "Move Y"
+	#define MSG_MOVE_Z "Move Z"
+	#define MSG_MOVE_01MM "Move 0.1mm"
+	#define MSG_MOVE_1MM "Move 1mm"
+	#define MSG_MOVE_10MM "Move 10mm"
+	#define MSG_SPEED   "Puller mm/s"
+	#define MSG_NOZZLE1 "Nozzle2"
+	#define MSG_NOZZLE2 "Nozzle3"
+	#define MSG_BED "Bed"
+	#define MSG_FLOW "Flow"
+	#define MSG_FLOW0 "Flow 0"
+	#define MSG_FLOW1 "Flow 1"
+	#define MSG_FLOW2 "Flow 2"
+	#define MSG_MIN " \002 Min"
+	#define MSG_MAX " \002 Max"
+	#define MSG_FACTOR " \002 Fact"
+	#define MSG_AUTOTEMP "Autotemp"
+	#define MSG_ON "On "
+	#define MSG_OFF "Off"
+	#define MSG_ACC  "Accel"
+	#define MSG_VXY_JERK "Vxy-jerk" 
+	#define MSG_VZ_JERK "Vz-jerk" 
+	#define MSG_X "x"
+	#define MSG_Y "y"
+	#define MSG_Z "z"
+	#define MSG_VMIN "Vmin"
+	#define MSG_VTRAV_MIN "VTrav min"
+	#define MSG_AMAX "Amax "
+	#define MSG_XSTEPS "Xsteps/mm"
+	#define MSG_YSTEPS "Ysteps/mm"
+	#define MSG_ZSTEPS "Zsteps/mm"
+	#define MSG_RECTRACT "Rectract"
+	#define MSG_CONTRAST "LCD contrast"
+	#define MSG_REFRESH "Refresh"
+	#define MSG_PAUSE_PRINT "Pause print"
+	#define MSG_RESUME_PRINT "Resume print"
+	#define MSG_STOP_PRINT "Stop print"
+	#define MSG_CARD_MENU "Print from SD"
+	#define MSG_NO_CARD "No SD card"
+	#define MSG_DWELL "Sleep..."
+	#define MSG_USERWAIT "Wait for user..."
+	#define MSG_RESUMING "Resuming print"
+	#define MSG_NO_MOVE "No move."
+	#define MSG_KILLED "KILLED. "
+	#define MSG_STOPPED "STOPPED. "
+	#define MSG_CONTROL_RETRACT  "Retract mm"
+	#define MSG_CONTROL_RETRACTF "Retract  F"
+	#define MSG_CONTROL_RETRACT_ZLIFT "Hop mm"
+	#define MSG_CONTROL_RETRACT_RECOVER "UnRet +mm"
+	#define MSG_CONTROL_RETRACT_RECOVERF "UnRet  F"
+	#define MSG_AUTORETRACT "AutoRetr."
+	#define MSG_FILAMENTCHANGE "Change filament"
+	#define MSG_INIT_SDCARD "Init. SD card"
+	#define MSG_CNG_SDCARD "Change SD card"
+	#define MSG_ZPROBE_OUT "Z probe out. bed"
+	#define MSG_POSITION_UNKNOWN "Home X/Y before Z"
+	#define MSG_ZPROBE_ZOFFSET "Z Offset"
+	#define MSG_BABYSTEP_X "Babystep X"
+	#define MSG_BABYSTEP_Y "Babystep Y"
+	#define MSG_BABYSTEP_Z "Babystep Z"
+	#define MSG_ENDSTOP_ABORT "Endstop abort"
 
+// Serial Console Messages
+
+	#define MSG_Enqueing "enqueing \""
+	#define MSG_POWERUP "PowerUp"
+	#define MSG_EXTERNAL_RESET " External Reset"
+	#define MSG_BROWNOUT_RESET " Brown out Reset"
+	#define MSG_WATCHDOG_RESET " Watchdog Reset"
+	#define MSG_SOFTWARE_RESET " Software Reset"
+	#define MSG_AUTHOR " | Author: "
+	#define MSG_CONFIGURATION_VER " Last Updated: "
+	#define MSG_FREE_MEMORY " Free Memory: "
+	#define MSG_PLANNER_BUFFER_BYTES "  PlannerBufferBytes: "
+	#define MSG_OK "ok"
+	#define MSG_FILE_SAVED "Done saving file."
+	#define MSG_ERR_LINE_NO "Line Number is not Last Line Number+1, Last Line: "
+	#define MSG_ERR_CHECKSUM_MISMATCH "checksum mismatch, Last Line: "
+	#define MSG_ERR_NO_CHECKSUM "No Checksum with line number, Last Line: "
+	#define MSG_ERR_NO_LINENUMBER_WITH_CHECKSUM "No Line Number with checksum, Last Line: "
+	#define MSG_FILE_PRINTED "Done printing file"
+	#define MSG_BEGIN_FILE_LIST "Begin file list"
+	#define MSG_END_FILE_LIST "End file list"
+	#define MSG_M104_INVALID_EXTRUDER "M104 Invalid extruder "
+	#define MSG_M105_INVALID_EXTRUDER "M105 Invalid extruder "
+	#define MSG_M200_INVALID_EXTRUDER "M200 Invalid extruder "
+	#define MSG_M218_INVALID_EXTRUDER "M218 Invalid extruder "
+	#define MSG_M221_INVALID_EXTRUDER "M221 Invalid extruder "
+	#define MSG_ERR_NO_THERMISTORS "No thermistors - no temperature"
+	#define MSG_M109_INVALID_EXTRUDER "M109 Invalid extruder "
+	#define MSG_HEATING "Heating..."
+	#define MSG_HEATING_COMPLETE "Heating done.       "
+  #define MSG_EXTRUDER_RUNNING "Extruder running"
+  #define MSG_EXTRUDER_STOPPED "Extruder stopped"
+  #define MSG_EXTRUDE_COMPLETE "Extrude Run Complete"
+	#define MSG_BED_HEATING "Bed Heating."
+	#define MSG_BED_DONE "Bed done."
+	#define MSG_M115_REPORT "FIRMWARE_NAME:Mackerel V1; Marlin mashup for Filament Extruders FIRMWARE_URL:" FIRMWARE_URL " PROTOCOL_VERSION:" PROTOCOL_VERSION " MACHINE_TYPE:" MACHINE_NAME " EXTRUDER_COUNT:" STRINGIFY(EXTRUDERS) " UUID:" MACHINE_UUID "\n"
+	#define MSG_COUNT_X " Count X: "
+	#define MSG_ERR_KILLED "Printer halted. kill() called!"
+	#define MSG_ERR_STOPPED "Printer stopped due to errors. Fix the error and use M999 to restart. (Temperature is reset. Set it after restarting)"
+	#define MSG_RESEND "Resend: "
+	#define MSG_UNKNOWN_COMMAND "Unknown command: \""
+	#define MSG_ACTIVE_EXTRUDER "Active Extruder: "
+	#define MSG_INVALID_EXTRUDER "Invalid extruder"
+	#define MSG_X_MIN "x_min: "
+	#define MSG_X_MAX "x_max: "
+	#define MSG_Y_MIN "y_min: "
+	#define MSG_Y_MAX "y_max: "
+	#define MSG_Z_MIN "z_min: "
+	#define MSG_Z_MAX "z_max: "
+	#define MSG_M119_REPORT "Reporting endstop status"
+	#define MSG_ENDSTOP_HIT "TRIGGERED"
+	#define MSG_ENDSTOP_OPEN "open"
+	#define MSG_HOTEND_OFFSET "Hotend offsets:"
+	#define MSG_SD_CANT_OPEN_SUBDIR "Cannot open subdir"
+	#define MSG_SD_INIT_FAIL "SD init fail"
+	#define MSG_SD_VOL_INIT_FAIL "volume.init failed"
+	#define MSG_SD_OPENROOT_FAIL "openRoot failed"
+	#define MSG_SD_CARD_OK "SD card ok"
+	#define MSG_SD_WORKDIR_FAIL "workDir open failed"
+	#define MSG_SD_OPEN_FILE_FAIL "open failed, File: "
+	#define MSG_SD_FILE_OPENED "File opened: "
+	#define MSG_SD_SIZE " Size: "
+	#define MSG_SD_FILE_SELECTED "File selected"
+	#define MSG_SD_WRITE_TO_FILE "Writing to file: "
+	#define MSG_SD_PRINTING_BYTE "SD printing byte "
+	#define MSG_SD_NOT_PRINTING "Not SD printing"
+	#define MSG_SD_ERR_WRITE_TO_FILE "error writing to file"
+	#define MSG_SD_CANT_ENTER_SUBDIR "Cannot enter subdir: "
+	#define MSG_STEPPER_TOO_HIGH "Steprate too high: "
+	#define MSG_ENDSTOPS_HIT "endstops hit: "
+	#define MSG_ERR_COLD_EXTRUDE_STOP " cold extrusion prevented"
+	#define MSG_ERR_LONG_EXTRUDE_STOP " too long extrusion prevented"
+	#define MSG_BABYSTEPPING_X "Babystepping X"
+	#define MSG_BABYSTEPPING_Y "Babystepping Y"
+	#define MSG_BABYSTEPPING_Z "Babystepping Z"
+	#define MSG_SERIAL_ERROR_MENU_STRUCTURE "Error in menu structure"
+
+/* alt
 	#define WELCOME_MSG MACHINE_NAME " lista."
 	#define MSG_SD_INSERTED "Tarjeta colocada"
 	#define MSG_SD_REMOVED "Tarjeta retirada"
@@ -1105,7 +2037,7 @@
 	#define MSG_BABYSTEPPING_Y "Babystepping Y"
 	#define MSG_BABYSTEPPING_Z "Babystepping Z"
 	#define MSG_SERIAL_ERROR_MENU_STRUCTURE "Error in menu structure"
-
+*/
 #endif
 
 #if LANGUAGE_CHOICE == 6
@@ -1113,7 +2045,240 @@
 
 // LCD Menu Messages
 // Please note these are limited to 17 characters!
+  #define MSG_DISPLAY_SensROmax "Sens RO Max" //MK3
+  #define MSG_DISPLAY_SensROmin "Sens RO Min" //MK3
+  #define MSG_DISPLAY_Pcirc "P circ" //MK3
+  #define MSG_DISPLAY_Factor2 "Factor 2" //MK3
+  #define MSG_DISPLAY_Factor1 "Factor 1" //MK3
+  #define MSG_DISPLAY_Meter "m" //MK3
+  #define MSG_DISPLAY_Length " L:" //MK3
+  #define MSG_DISPLAY_S "S:" //MK3
+  #define MSG_DISPLAY_AV " Av" //MK3
+  #define MSG_DISPLAY_MinWidth " Mn" //MK3
+  #define MSG_DISPLAY_MaxWidth " Mx" //MK3
+  #define MSG_DISPLAY_rpm2 "rpm " //MK3
+  #define MSG_DISPLAY_COLD "COLD" //MK3
+  #define MSG_DISPLAY_OFF "OFF " //MK3
+  #define MSG_DISPLAY_E "E:" //MK3
+  #define MSG_DISPLAY_rpm "rpm     " //MK3
+  #define MSG_DISPLAY_Puller "Puller:" //MK3
+  #define MSG_SAFETY_COOLDOWN "SAFETY COOLDOWN" //MK3
+  #define MSG_EX_WARM_UP "Extruder Warming Up" //MK3
+  #define MSG_EX_COOL "Extruder Cooling" //MK3
+  #define MSG_AUTOT_SEQU "Autotune Sequence" //MK3
+  #define MSG_AUTOT_COMPL "Autotune Complete" //MK3
+  #define MSG_MIN_TEMP "Err: MINTEMP" //MK3
+  #define MSG_MAX_TEMP "Err: MAXTEMP" //MK3
+  #define MSG_thermal_runaway "THERMAL RUNAWAY" //MK3
+  #define MSG_sensor_runout "SENSOR RUNOUT" //MK3
+	#define WELCOME_MSG MACHINE_NAME " OK" //MK3
+	#define MSG_MAIN "Main" //MK3
+  #define MSG_PREHEAT_ABS "Preheat"  //MK3
+  #define MSG_PREHEAT_ABS_SETTINGS "Preheat config" //MK3
+	#define MSG_COOLDOWN "Cooldown" //MK3
+  #define MSG_MOVE_E "Extruder" //MK3
+	#define MSG_MOVE_P "Puller" //MK3
+  #define MSG_EXT_RPM "Extruder RPM" //MK3
+	#define MSG_NOZZLE "Nozzle" //MK3
+	#define MSG_HEATER "Extruder Temp" //MK3
+  #define MSG_LENGTH_CUTOFF "L cutoff" //MK3
+  #define MSG_FILAMENT "Sensor Pos." //MK3
+  #define MSG_WINDER_SPEED "Fan Speed" //MK3
+  #define MSG_WINDER_RPM_FACTOR "Winder RPM Factor" //MK3
+  #define MSG_PID_P "PID-P" //MK3
+	#define MSG_PID_I "PID-I" //MK3
+	#define MSG_PID_D "PID-D" //MK3
+	#define MSG_PID_C "PID-C" //MK3
+  #define MSG_AUTOTUNE "PID Autotune" //MK3
+  #define MSG_CONTROL "Control" //MK3
+  #define MSG_VE_JERK "Ve-jerk" //MK3
+	#define MSG_E "e" //MK3
+  #define MSG_WATCH "Info screen" //MK3
+  #define MSG_STATS "Filament Statistics" //MK3
+	#define MSG_PREPARE "Prepare" //MK3
+	#define MSG_TUNE "Tune" //MK3
+  #define MSG_ESTEPS "Esteps/rev/100" //MK3
+	#define MSG_PSTEPS "Psteps/mm" //MK3
+  #define MSG_A_RETRACT "Motor Acc" //MK3
+  #define MSG_STORE_EPROM "Store memory" //MK3
+	#define MSG_LOAD_EPROM "Load memory" //MK3
+	#define MSG_RESTORE_FAILSAFE "Restore failsafe" //MK3
+  #define MSG_TEMPERATURE "Temperature" //MK3
+	#define MSG_MOTION "Motion" //MK3
+  #define MSG_FILAMENT_PID "Puller PID" //MK3
+  #define MSG_PAUSE_EXTRUDER "STOP Extruder" //MK3
+	#define MSG_RESUME_EXTRUDER "START Extruder" //MK3
+  #define MSG_AUTO_EXTRUDER "Automatic pulling" //MK3
+  #define MSG_MAN_EXTRUDER "Manually pulling" //MK3
+	#define MSG_CLEAR_STATS "Clear Statistics" //MK3
+	#define MSG_ENABLE_STATS "Enable Statistics" //MK3
+	#define MSG_DISABLE_STATS "Pause Statistics" //MK3
+  #define MSG_VMAX "Vmax " //MK3
+  // LCD Menu Messages ferz
+  #define MSG_SD_INSERTED "Card inserted"           
+	#define MSG_SD_REMOVED "Card removed"
+	#define MSG_AUTOSTART "Autostart"
+	#define MSG_DISABLE_STEPPERS "Disable steppers"
+	#define MSG_AUTO_HOME "Auto home"
+	#define MSG_SET_ORIGIN "Set origin"
+	#define MSG_PREHEAT_PLA "Preheat PLA"
+	#define MSG_PREHEAT_PLA0 "Preheat PLA 1"
+	#define MSG_PREHEAT_PLA1 "Preheat PLA 2"
+	#define MSG_PREHEAT_PLA2 "Preheat PLA 3"
+	#define MSG_PREHEAT_PLA012 "Preheat PLA All"
+	#define MSG_PREHEAT_PLA_BEDONLY "Preheat PLA Bed"
+	#define MSG_PREHEAT_PLA_SETTINGS "Preheat PLA conf"
+	#define MSG_PREHEAT_ABS0 "Preheat ABS 1"
+	#define MSG_PREHEAT_ABS1 "Preheat ABS 2"
+	#define MSG_PREHEAT_ABS2 "Preheat ABS 3"
+	#define MSG_PREHEAT_ABS012 "Preheat ABS All"
+	#define MSG_PREHEAT_ABS_BEDONLY "Preheat ABS Bed"
+	#define MSG_SWITCH_PS_ON "Switch power on"
+	#define MSG_SWITCH_PS_OFF "Switch power off"
+	#define MSG_EXTRUDE "Extrude"
+	#define MSG_RETRACT "Retract"
+	#define MSG_MOVE_AXIS "Move axis"
+	#define MSG_MOVE_X "Move X"
+	#define MSG_MOVE_Y "Move Y"
+	#define MSG_MOVE_Z "Move Z"
+	#define MSG_MOVE_01MM "Move 0.1mm"
+	#define MSG_MOVE_1MM "Move 1mm"
+	#define MSG_MOVE_10MM "Move 10mm"
+	#define MSG_SPEED   "Puller mm/s"
+	#define MSG_NOZZLE1 "Nozzle2"
+	#define MSG_NOZZLE2 "Nozzle3"
+	#define MSG_BED "Bed"
+	#define MSG_FLOW "Flow"
+	#define MSG_FLOW0 "Flow 0"
+	#define MSG_FLOW1 "Flow 1"
+	#define MSG_FLOW2 "Flow 2"
+	#define MSG_MIN " \002 Min"
+	#define MSG_MAX " \002 Max"
+	#define MSG_FACTOR " \002 Fact"
+	#define MSG_AUTOTEMP "Autotemp"
+	#define MSG_ON "On "
+	#define MSG_OFF "Off"
+	#define MSG_ACC  "Accel"
+	#define MSG_VXY_JERK "Vxy-jerk" 
+	#define MSG_VZ_JERK "Vz-jerk" 
+	#define MSG_X "x"
+	#define MSG_Y "y"
+	#define MSG_Z "z"
+	#define MSG_VMIN "Vmin"
+	#define MSG_VTRAV_MIN "VTrav min"
+	#define MSG_AMAX "Amax "
+	#define MSG_XSTEPS "Xsteps/mm"
+	#define MSG_YSTEPS "Ysteps/mm"
+	#define MSG_ZSTEPS "Zsteps/mm"
+	#define MSG_RECTRACT "Rectract"
+	#define MSG_CONTRAST "LCD contrast"
+	#define MSG_REFRESH "Refresh"
+	#define MSG_PAUSE_PRINT "Pause print"
+	#define MSG_RESUME_PRINT "Resume print"
+	#define MSG_STOP_PRINT "Stop print"
+	#define MSG_CARD_MENU "Print from SD"
+	#define MSG_NO_CARD "No SD card"
+	#define MSG_DWELL "Sleep..."
+	#define MSG_USERWAIT "Wait for user..."
+	#define MSG_RESUMING "Resuming print"
+	#define MSG_NO_MOVE "No move."
+	#define MSG_KILLED "KILLED. "
+	#define MSG_STOPPED "STOPPED. "
+	#define MSG_CONTROL_RETRACT  "Retract mm"
+	#define MSG_CONTROL_RETRACTF "Retract  F"
+	#define MSG_CONTROL_RETRACT_ZLIFT "Hop mm"
+	#define MSG_CONTROL_RETRACT_RECOVER "UnRet +mm"
+	#define MSG_CONTROL_RETRACT_RECOVERF "UnRet  F"
+	#define MSG_AUTORETRACT "AutoRetr."
+	#define MSG_FILAMENTCHANGE "Change filament"
+	#define MSG_INIT_SDCARD "Init. SD card"
+	#define MSG_CNG_SDCARD "Change SD card"
+	#define MSG_ZPROBE_OUT "Z probe out. bed"
+	#define MSG_POSITION_UNKNOWN "Home X/Y before Z"
+	#define MSG_ZPROBE_ZOFFSET "Z Offset"
+	#define MSG_BABYSTEP_X "Babystep X"
+	#define MSG_BABYSTEP_Y "Babystep Y"
+	#define MSG_BABYSTEP_Z "Babystep Z"
+	#define MSG_ENDSTOP_ABORT "Endstop abort"
 
+// Serial Console Messages
+
+	#define MSG_Enqueing "enqueing \""
+	#define MSG_POWERUP "PowerUp"
+	#define MSG_EXTERNAL_RESET " External Reset"
+	#define MSG_BROWNOUT_RESET " Brown out Reset"
+	#define MSG_WATCHDOG_RESET " Watchdog Reset"
+	#define MSG_SOFTWARE_RESET " Software Reset"
+	#define MSG_AUTHOR " | Author: "
+	#define MSG_CONFIGURATION_VER " Last Updated: "
+	#define MSG_FREE_MEMORY " Free Memory: "
+	#define MSG_PLANNER_BUFFER_BYTES "  PlannerBufferBytes: "
+	#define MSG_OK "ok"
+	#define MSG_FILE_SAVED "Done saving file."
+	#define MSG_ERR_LINE_NO "Line Number is not Last Line Number+1, Last Line: "
+	#define MSG_ERR_CHECKSUM_MISMATCH "checksum mismatch, Last Line: "
+	#define MSG_ERR_NO_CHECKSUM "No Checksum with line number, Last Line: "
+	#define MSG_ERR_NO_LINENUMBER_WITH_CHECKSUM "No Line Number with checksum, Last Line: "
+	#define MSG_FILE_PRINTED "Done printing file"
+	#define MSG_BEGIN_FILE_LIST "Begin file list"
+	#define MSG_END_FILE_LIST "End file list"
+	#define MSG_M104_INVALID_EXTRUDER "M104 Invalid extruder "
+	#define MSG_M105_INVALID_EXTRUDER "M105 Invalid extruder "
+	#define MSG_M200_INVALID_EXTRUDER "M200 Invalid extruder "
+	#define MSG_M218_INVALID_EXTRUDER "M218 Invalid extruder "
+	#define MSG_M221_INVALID_EXTRUDER "M221 Invalid extruder "
+	#define MSG_ERR_NO_THERMISTORS "No thermistors - no temperature"
+	#define MSG_M109_INVALID_EXTRUDER "M109 Invalid extruder "
+	#define MSG_HEATING "Heating..."
+	#define MSG_HEATING_COMPLETE "Heating done.       "
+  #define MSG_EXTRUDER_RUNNING "Extruder running"
+  #define MSG_EXTRUDER_STOPPED "Extruder stopped"
+  #define MSG_EXTRUDE_COMPLETE "Extrude Run Complete"
+	#define MSG_BED_HEATING "Bed Heating."
+	#define MSG_BED_DONE "Bed done."
+	#define MSG_M115_REPORT "FIRMWARE_NAME:Mackerel V1; Marlin mashup for Filament Extruders FIRMWARE_URL:" FIRMWARE_URL " PROTOCOL_VERSION:" PROTOCOL_VERSION " MACHINE_TYPE:" MACHINE_NAME " EXTRUDER_COUNT:" STRINGIFY(EXTRUDERS) " UUID:" MACHINE_UUID "\n"
+	#define MSG_COUNT_X " Count X: "
+	#define MSG_ERR_KILLED "Printer halted. kill() called!"
+	#define MSG_ERR_STOPPED "Printer stopped due to errors. Fix the error and use M999 to restart. (Temperature is reset. Set it after restarting)"
+	#define MSG_RESEND "Resend: "
+	#define MSG_UNKNOWN_COMMAND "Unknown command: \""
+	#define MSG_ACTIVE_EXTRUDER "Active Extruder: "
+	#define MSG_INVALID_EXTRUDER "Invalid extruder"
+	#define MSG_X_MIN "x_min: "
+	#define MSG_X_MAX "x_max: "
+	#define MSG_Y_MIN "y_min: "
+	#define MSG_Y_MAX "y_max: "
+	#define MSG_Z_MIN "z_min: "
+	#define MSG_Z_MAX "z_max: "
+	#define MSG_M119_REPORT "Reporting endstop status"
+	#define MSG_ENDSTOP_HIT "TRIGGERED"
+	#define MSG_ENDSTOP_OPEN "open"
+	#define MSG_HOTEND_OFFSET "Hotend offsets:"
+	#define MSG_SD_CANT_OPEN_SUBDIR "Cannot open subdir"
+	#define MSG_SD_INIT_FAIL "SD init fail"
+	#define MSG_SD_VOL_INIT_FAIL "volume.init failed"
+	#define MSG_SD_OPENROOT_FAIL "openRoot failed"
+	#define MSG_SD_CARD_OK "SD card ok"
+	#define MSG_SD_WORKDIR_FAIL "workDir open failed"
+	#define MSG_SD_OPEN_FILE_FAIL "open failed, File: "
+	#define MSG_SD_FILE_OPENED "File opened: "
+	#define MSG_SD_SIZE " Size: "
+	#define MSG_SD_FILE_SELECTED "File selected"
+	#define MSG_SD_WRITE_TO_FILE "Writing to file: "
+	#define MSG_SD_PRINTING_BYTE "SD printing byte "
+	#define MSG_SD_NOT_PRINTING "Not SD printing"
+	#define MSG_SD_ERR_WRITE_TO_FILE "error writing to file"
+	#define MSG_SD_CANT_ENTER_SUBDIR "Cannot enter subdir: "
+	#define MSG_STEPPER_TOO_HIGH "Steprate too high: "
+	#define MSG_ENDSTOPS_HIT "endstops hit: "
+	#define MSG_ERR_COLD_EXTRUDE_STOP " cold extrusion prevented"
+	#define MSG_ERR_LONG_EXTRUDE_STOP " too long extrusion prevented"
+	#define MSG_BABYSTEPPING_X "Babystepping X"
+	#define MSG_BABYSTEPPING_Y "Babystepping Y"
+	#define MSG_BABYSTEPPING_Z "Babystepping Z"
+	#define MSG_SERIAL_ERROR_MENU_STRUCTURE "Error in menu structure"
+
+/* alt russisch
 	#define WELCOME_MSG MACHINE_NAME			        "Ãƒï¿½Ã¢â‚¬Å“Ãƒï¿½Ã‚Â¾Ãƒâ€˜Ã¢â‚¬Å¡Ãƒï¿½Ã‚Â¾Ãƒï¿½Ã‚Â²."
 	#define MSG_SD_INSERTED						"Ãƒï¿½Ã…Â¡Ãƒï¿½Ã‚Â°Ãƒâ€˜Ã¢â€šÂ¬Ãƒâ€˜Ã¢â‚¬Å¡Ãƒï¿½Ã‚Â° Ãƒï¿½Ã‚Â²Ãƒâ€˜Ã¯Â¿Â½Ãƒâ€˜Ã¢â‚¬Å¡Ãƒï¿½Ã‚Â°Ãƒï¿½Ã‚Â²Ãƒï¿½Ã‚Â»Ãƒï¿½Ã‚ÂµÃƒï¿½Ã‚Â½Ãƒï¿½Ã‚Â°"
 	#define MSG_SD_REMOVED						"Ãƒï¿½Ã…Â¡Ãƒï¿½Ã‚Â°Ãƒâ€˜Ã¢â€šÂ¬Ãƒâ€˜Ã¢â‚¬Å¡Ãƒï¿½Ã‚Â° Ãƒï¿½Ã‚Â¸Ãƒï¿½Ã‚Â·Ãƒï¿½Ã‚Â²Ãƒï¿½Ã‚Â»Ãƒï¿½Ã‚ÂµÃƒâ€˜Ã¢â‚¬Â¡Ãƒï¿½Ã‚ÂµÃƒï¿½Ã‚Â½Ãƒï¿½Ã‚Â°"
@@ -1262,8 +2427,8 @@
 	#define MSG_M115_REPORT						"FIRMWARE_NAME:Marlin V1; Sprinter/grbl mashup for gen6 FIRMWARE_URL:" FIRMWARE_URL " PROTOCOL_VERSION:" PROTOCOL_VERSION " MACHINE_TYPE:" MACHINE_NAME " EXTRUDER_COUNT:" STRINGIFY(EXTRUDERS) " UUID:" MACHINE_UUID "\n"
 	#define MSG_COUNT_X							" Count X:"
 	#define MSG_ERR_KILLED						"Ãƒï¿½Ã…Â¸Ãƒâ€˜Ã¢â€šÂ¬Ãƒï¿½Ã‚Â¸Ãƒï¿½Ã‚Â½Ãƒâ€˜Ã¢â‚¬Å¡Ãƒï¿½Ã‚ÂµÃƒâ€˜Ã¢â€šÂ¬ Ãƒï¿½Ã‚Â¾Ãƒâ€˜Ã¯Â¿Â½Ãƒâ€˜Ã¢â‚¬Å¡Ãƒï¿½Ã‚Â°Ãƒï¿½Ã‚Â½Ãƒï¿½Ã‚Â¾Ãƒï¿½Ã‚Â²Ãƒï¿½Ã‚Â»Ãƒï¿½Ã‚ÂµÃƒï¿½Ã‚Â½. Ãƒï¿½Ã‚Â²Ãƒâ€˜Ã¢â‚¬Â¹Ãƒï¿½Ã‚Â·Ãƒï¿½Ã‚Â¾Ãƒï¿½Ã‚Â² kill() !!"
-	#define MSG_ERR_STOPPED						"Ãƒï¿½Ã…Â¾Ãƒâ€˜Ã‹â€ Ãƒï¿½Ã‚Â¸Ãƒï¿½Ã‚Â±Ãƒï¿½Ã‚ÂºÃƒï¿½Ã‚Â° Ãƒï¿½Ã‚Â¿Ãƒâ€˜Ã¢â€šÂ¬Ãƒï¿½Ã‚Â¸Ãƒï¿½Ã‚Â½Ãƒâ€˜Ã¢â‚¬Å¡Ãƒï¿½Ã‚ÂµÃƒâ€˜Ã¢â€šÂ¬Ãƒï¿½Ã‚Â°, Ãƒï¿½Ã‚Â¾Ãƒâ€˜Ã¯Â¿Â½Ãƒâ€˜Ã¢â‚¬Å¡Ãƒï¿½Ã‚Â°Ãƒï¿½Ã‚Â½Ãƒï¿½Ã‚Â¾Ãƒï¿½Ã‚Â². Ãƒï¿½Ã‚Â£Ãƒâ€˜Ã¯Â¿Â½Ãƒâ€˜Ã¢â‚¬Å¡Ãƒâ€˜Ã¢â€šÂ¬Ãƒï¿½Ã‚Â°Ãƒï¿½Ã‚Â½Ãƒï¿½Ã‚Â¸Ãƒâ€˜Ã¢â‚¬Å¡Ãƒï¿½Ã‚Âµ Ãƒï¿½Ã‚Â½Ãƒï¿½Ã‚ÂµÃƒï¿½Ã‚Â¸Ãƒâ€˜Ã¯Â¿Â½Ãƒï¿½Ã‚Â¿Ãƒâ€˜Ã¢â€šÂ¬Ãƒï¿½Ã‚Â°Ãƒï¿½Ã‚Â²Ãƒï¿½Ã‚Â½Ãƒï¿½Ã‚Â¾Ãƒâ€˜Ã¯Â¿Â½Ãƒâ€˜Ã¢â‚¬Å¡Ãƒâ€˜Ã…â€™ Ãƒï¿½Ã‚Â¸ Ãƒï¿½Ã‚Â¸Ãƒâ€˜Ã¯Â¿Â½Ãƒï¿½Ã‚Â¿Ãƒï¿½Ã‚Â¾Ãƒï¿½Ã‚Â»Ãƒâ€˜Ã…â€™Ãƒï¿½Ã‚Â·Ãƒâ€˜Ã†â€™Ãƒï¿½Ã‚Â¹Ãƒâ€˜Ã¢â‚¬Å¡Ãƒï¿½Ã‚Âµ M999 Ãƒï¿½Ã‚Â´Ãƒï¿½Ã‚Â»Ãƒâ€˜Ã¯Â¿Â½ Ãƒï¿½Ã‚Â¿Ãƒï¿½Ã‚ÂµÃƒâ€˜Ã¢â€šÂ¬Ãƒï¿½Ã‚ÂµÃƒï¿½Ã‚Â·Ãƒï¿½Ã‚Â°Ãƒï¿½Ã‚Â³Ãƒâ€˜Ã¢â€šÂ¬Ãƒâ€˜Ã†â€™Ãƒï¿½Ã‚Â·Ãƒï¿½Ã‚ÂºÃƒï¿½Ã‚Â¸!. (Ãƒï¿½Ã‚Â¢Ãƒï¿½Ã‚ÂµÃƒï¿½Ã‚Â¼Ãƒï¿½Ã‚Â¿Ãƒï¿½Ã‚ÂµÃƒâ€˜Ã¢â€šÂ¬Ãƒï¿½Ã‚Â°Ãƒâ€˜Ã¢â‚¬Å¡Ãƒâ€˜Ã†â€™Ãƒâ€˜Ã¢â€šÂ¬Ãƒï¿½Ã‚Â° Ãƒï¿½Ã‚Â½Ãƒï¿½Ã‚ÂµÃƒï¿½Ã‚Â´Ãƒï¿½Ã‚Â¾Ãƒâ€˜Ã¯Â¿Â½Ãƒâ€˜Ã¢â‚¬Å¡Ãƒâ€˜Ã†â€™Ãƒï¿½Ã‚Â¿Ãƒï¿½Ã‚Â½Ãƒï¿½Ã‚Â°. Ãƒï¿½Ã…Â¸Ãƒâ€˜Ã¢â€šÂ¬Ãƒï¿½Ã‚Â¾Ãƒï¿½Ã‚Â²Ãƒï¿½Ã‚ÂµÃƒâ€˜Ã¢â€šÂ¬Ãƒâ€˜Ã…â€™Ãƒâ€˜Ã¢â‚¬Å¡Ãƒï¿½Ã‚Âµ Ãƒï¿½Ã‚Â´Ãƒï¿½Ã‚Â°Ãƒâ€˜Ã¢â‚¬Å¡Ãƒâ€˜Ã¢â‚¬Â¡Ãƒï¿½Ã‚Â¸Ãƒï¿½Ã‚ÂºÃƒï¿½Ã‚Â¸)"
-	#define MSG_RESEND							"Ãƒï¿½Ã…Â¸Ãƒï¿½Ã‚ÂµÃƒâ€˜Ã¢â€šÂ¬Ãƒï¿½Ã‚ÂµÃƒï¿½Ã‚Â¾Ãƒâ€˜Ã¢â‚¬Å¡Ãƒï¿½Ã‚Â¿Ãƒâ€˜Ã¢â€šÂ¬Ãƒï¿½Ã‚Â°Ãƒï¿½Ã‚Â²Ãƒï¿½Ã‚ÂºÃƒï¿½Ã‚Â°:"
+	#define MSG_ERR_STOPPED						" ""
+	#define MSG_RESEND							""
 	#define MSG_UNKNOWN_COMMAND					"Ãƒï¿½Ã¯Â¿Â½Ãƒï¿½Ã‚ÂµÃƒï¿½Ã‚Â¸Ãƒï¿½Ã‚Â·Ãƒï¿½Ã‚Â²Ãƒï¿½Ã‚ÂµÃƒâ€˜Ã¯Â¿Â½Ãƒâ€˜Ã¢â‚¬Å¡Ãƒï¿½Ã‚Â½Ãƒï¿½Ã‚Â°Ãƒâ€˜Ã¯Â¿Â½ Ãƒï¿½Ã‚ÂºÃƒï¿½Ã‚Â¾Ãƒï¿½Ã‚Â¼Ãƒï¿½Ã‚Â°Ãƒï¿½Ã‚Â½Ãƒï¿½Ã‚Â´Ãƒï¿½Ã‚Â°:\""
 	#define MSG_ACTIVE_EXTRUDER					"Ãƒï¿½Ã¯Â¿Â½Ãƒï¿½Ã‚ÂºÃƒâ€˜Ã¢â‚¬Å¡Ãƒï¿½Ã‚Â¸Ãƒï¿½Ã‚Â²Ãƒï¿½Ã‚Â½Ãƒâ€˜Ã¢â‚¬Â¹Ãƒï¿½Ã‚Â¹ Ãƒâ€˜Ã¯Â¿Â½Ãƒï¿½Ã‚ÂºÃƒâ€˜Ã¯Â¿Â½Ãƒâ€˜Ã¢â‚¬Å¡Ãƒâ€˜Ã¢â€šÂ¬Ãƒâ€˜Ã†â€™Ãƒï¿½Ã‚Â´Ãƒï¿½Ã‚ÂµÃƒâ€˜Ã¢â€šÂ¬: "
 	#define MSG_INVALID_EXTRUDER				"Ãƒï¿½Ã…Â¾Ãƒâ€˜Ã‹â€ Ãƒï¿½Ã‚Â¸Ãƒï¿½Ã‚Â±Ãƒï¿½Ã‚ÂºÃƒï¿½Ã‚Â° Ãƒâ€˜Ã¯Â¿Â½Ãƒï¿½Ã‚ÂºÃƒâ€˜Ã¯Â¿Â½Ãƒâ€˜Ã¢â‚¬Å¡Ãƒâ€˜Ã¢â€šÂ¬Ãƒâ€˜Ã†â€™Ãƒï¿½Ã‚Â´Ãƒï¿½Ã‚ÂµÃƒâ€˜Ã¢â€šÂ¬Ãƒï¿½Ã‚Â°"
@@ -1300,7 +2465,7 @@
 	#define MSG_BABYSTEPPING_Y "Babystepping Y"
 	#define MSG_BABYSTEPPING_Z "Babystepping Z"
 	#define MSG_SERIAL_ERROR_MENU_STRUCTURE "Error in menu structure"
-
+*/
 #endif
 
 
@@ -1308,7 +2473,239 @@
 
 // LCD Menu Messages
 // Please note these are limited to 17 characters!
+  #define MSG_DISPLAY_SensROmax "Sens RO Max" //MK3
+  #define MSG_DISPLAY_SensROmin "Sens RO Min" //MK3
+  #define MSG_DISPLAY_Pcirc "P circ" //MK3
+  #define MSG_DISPLAY_Factor2 "Factor 2" //MK3
+  #define MSG_DISPLAY_Factor1 "Factor 1" //MK3
+  #define MSG_DISPLAY_Meter "m" //MK3
+  #define MSG_DISPLAY_Length " L:" //MK3
+  #define MSG_DISPLAY_S "S:" //MK3
+  #define MSG_DISPLAY_AV " Av" //MK3
+  #define MSG_DISPLAY_MinWidth " Mn" //MK3
+  #define MSG_DISPLAY_MaxWidth " Mx" //MK3
+  #define MSG_DISPLAY_rpm2 "rpm " //MK3
+  #define MSG_DISPLAY_COLD "COLD" //MK3
+  #define MSG_DISPLAY_OFF "OFF " //MK3
+  #define MSG_DISPLAY_E "E:" //MK3
+  #define MSG_DISPLAY_rpm "rpm     " //MK3
+  #define MSG_DISPLAY_Puller "Puller:" //MK3
+  #define MSG_SAFETY_COOLDOWN "SAFETY COOLDOWN" //MK3
+  #define MSG_EX_WARM_UP "Extruder Warming Up" //MK3
+  #define MSG_EX_COOL "Extruder Cooling" //MK3
+  #define MSG_AUTOT_SEQU "Autotune Sequence" //MK3
+  #define MSG_AUTOT_COMPL "Autotune Complete" //MK3
+  #define MSG_MIN_TEMP "Err: MINTEMP" //MK3
+  #define MSG_MAX_TEMP "Err: MAXTEMP" //MK3
+  #define MSG_thermal_runaway "THERMAL RUNAWAY" //MK3
+  #define MSG_sensor_runout "SENSOR RUNOUT" //MK3
+	#define WELCOME_MSG MACHINE_NAME " OK" //MK3
+	#define MSG_MAIN "Main" //MK3
+  #define MSG_PREHEAT_ABS "Preheat"  //MK3
+  #define MSG_PREHEAT_ABS_SETTINGS "Preheat config" //MK3
+	#define MSG_COOLDOWN "Cooldown" //MK3
+  #define MSG_MOVE_E "Extruder" //MK3
+	#define MSG_MOVE_P "Puller" //MK3
+  #define MSG_EXT_RPM "Extruder RPM" //MK3
+	#define MSG_NOZZLE "Nozzle" //MK3
+	#define MSG_HEATER "Extruder Temp" //MK3
+  #define MSG_LENGTH_CUTOFF "L cutoff" //MK3
+  #define MSG_FILAMENT "Sensor Pos." //MK3
+  #define MSG_WINDER_SPEED "Fan Speed" //MK3
+  #define MSG_WINDER_RPM_FACTOR "Winder RPM Factor" //MK3
+  #define MSG_PID_P "PID-P" //MK3
+	#define MSG_PID_I "PID-I" //MK3
+	#define MSG_PID_D "PID-D" //MK3
+	#define MSG_PID_C "PID-C" //MK3
+  #define MSG_AUTOTUNE "PID Autotune" //MK3
+  #define MSG_CONTROL "Control" //MK3
+  #define MSG_VE_JERK "Ve-jerk" //MK3
+	#define MSG_E "e" //MK3
+  #define MSG_WATCH "Info screen" //MK3
+  #define MSG_STATS "Filament Statistics" //MK3
+	#define MSG_PREPARE "Prepare" //MK3
+	#define MSG_TUNE "Tune" //MK3
+  #define MSG_ESTEPS "Esteps/rev/100" //MK3
+	#define MSG_PSTEPS "Psteps/mm" //MK3
+  #define MSG_A_RETRACT "Motor Acc" //MK3
+  #define MSG_STORE_EPROM "Store memory" //MK3
+	#define MSG_LOAD_EPROM "Load memory" //MK3
+	#define MSG_RESTORE_FAILSAFE "Restore failsafe" //MK3
+  #define MSG_TEMPERATURE "Temperature" //MK3
+	#define MSG_MOTION "Motion" //MK3
+  #define MSG_FILAMENT_PID "Puller PID" //MK3
+  #define MSG_PAUSE_EXTRUDER "STOP Extruder" //MK3
+	#define MSG_RESUME_EXTRUDER "START Extruder" //MK3
+  #define MSG_AUTO_EXTRUDER "Automatic pulling" //MK3
+  #define MSG_MAN_EXTRUDER "Manually pulling" //MK3
+	#define MSG_CLEAR_STATS "Clear Statistics" //MK3
+	#define MSG_ENABLE_STATS "Enable Statistics" //MK3
+	#define MSG_DISABLE_STATS "Pause Statistics" //MK3
+  #define MSG_VMAX "Vmax " //MK3
+  // LCD Menu Messages ferz
+  #define MSG_SD_INSERTED "Card inserted"           
+	#define MSG_SD_REMOVED "Card removed"
+	#define MSG_AUTOSTART "Autostart"
+	#define MSG_DISABLE_STEPPERS "Disable steppers"
+	#define MSG_AUTO_HOME "Auto home"
+	#define MSG_SET_ORIGIN "Set origin"
+	#define MSG_PREHEAT_PLA "Preheat PLA"
+	#define MSG_PREHEAT_PLA0 "Preheat PLA 1"
+	#define MSG_PREHEAT_PLA1 "Preheat PLA 2"
+	#define MSG_PREHEAT_PLA2 "Preheat PLA 3"
+	#define MSG_PREHEAT_PLA012 "Preheat PLA All"
+	#define MSG_PREHEAT_PLA_BEDONLY "Preheat PLA Bed"
+	#define MSG_PREHEAT_PLA_SETTINGS "Preheat PLA conf"
+	#define MSG_PREHEAT_ABS0 "Preheat ABS 1"
+	#define MSG_PREHEAT_ABS1 "Preheat ABS 2"
+	#define MSG_PREHEAT_ABS2 "Preheat ABS 3"
+	#define MSG_PREHEAT_ABS012 "Preheat ABS All"
+	#define MSG_PREHEAT_ABS_BEDONLY "Preheat ABS Bed"
+	#define MSG_SWITCH_PS_ON "Switch power on"
+	#define MSG_SWITCH_PS_OFF "Switch power off"
+	#define MSG_EXTRUDE "Extrude"
+	#define MSG_RETRACT "Retract"
+	#define MSG_MOVE_AXIS "Move axis"
+	#define MSG_MOVE_X "Move X"
+	#define MSG_MOVE_Y "Move Y"
+	#define MSG_MOVE_Z "Move Z"
+	#define MSG_MOVE_01MM "Move 0.1mm"
+	#define MSG_MOVE_1MM "Move 1mm"
+	#define MSG_MOVE_10MM "Move 10mm"
+	#define MSG_SPEED   "Puller mm/s"
+	#define MSG_NOZZLE1 "Nozzle2"
+	#define MSG_NOZZLE2 "Nozzle3"
+	#define MSG_BED "Bed"
+	#define MSG_FLOW "Flow"
+	#define MSG_FLOW0 "Flow 0"
+	#define MSG_FLOW1 "Flow 1"
+	#define MSG_FLOW2 "Flow 2"
+	#define MSG_MIN " \002 Min"
+	#define MSG_MAX " \002 Max"
+	#define MSG_FACTOR " \002 Fact"
+	#define MSG_AUTOTEMP "Autotemp"
+	#define MSG_ON "On "
+	#define MSG_OFF "Off"
+	#define MSG_ACC  "Accel"
+	#define MSG_VXY_JERK "Vxy-jerk" 
+	#define MSG_VZ_JERK "Vz-jerk" 
+	#define MSG_X "x"
+	#define MSG_Y "y"
+	#define MSG_Z "z"
+	#define MSG_VMIN "Vmin"
+	#define MSG_VTRAV_MIN "VTrav min"
+	#define MSG_AMAX "Amax "
+	#define MSG_XSTEPS "Xsteps/mm"
+	#define MSG_YSTEPS "Ysteps/mm"
+	#define MSG_ZSTEPS "Zsteps/mm"
+	#define MSG_RECTRACT "Rectract"
+	#define MSG_CONTRAST "LCD contrast"
+	#define MSG_REFRESH "Refresh"
+	#define MSG_PAUSE_PRINT "Pause print"
+	#define MSG_RESUME_PRINT "Resume print"
+	#define MSG_STOP_PRINT "Stop print"
+	#define MSG_CARD_MENU "Print from SD"
+	#define MSG_NO_CARD "No SD card"
+	#define MSG_DWELL "Sleep..."
+	#define MSG_USERWAIT "Wait for user..."
+	#define MSG_RESUMING "Resuming print"
+	#define MSG_NO_MOVE "No move."
+	#define MSG_KILLED "KILLED. "
+	#define MSG_STOPPED "STOPPED. "
+	#define MSG_CONTROL_RETRACT  "Retract mm"
+	#define MSG_CONTROL_RETRACTF "Retract  F"
+	#define MSG_CONTROL_RETRACT_ZLIFT "Hop mm"
+	#define MSG_CONTROL_RETRACT_RECOVER "UnRet +mm"
+	#define MSG_CONTROL_RETRACT_RECOVERF "UnRet  F"
+	#define MSG_AUTORETRACT "AutoRetr."
+	#define MSG_FILAMENTCHANGE "Change filament"
+	#define MSG_INIT_SDCARD "Init. SD card"
+	#define MSG_CNG_SDCARD "Change SD card"
+	#define MSG_ZPROBE_OUT "Z probe out. bed"
+	#define MSG_POSITION_UNKNOWN "Home X/Y before Z"
+	#define MSG_ZPROBE_ZOFFSET "Z Offset"
+	#define MSG_BABYSTEP_X "Babystep X"
+	#define MSG_BABYSTEP_Y "Babystep Y"
+	#define MSG_BABYSTEP_Z "Babystep Z"
+	#define MSG_ENDSTOP_ABORT "Endstop abort"
 
+// Serial Console Messages
+
+	#define MSG_Enqueing "enqueing \""
+	#define MSG_POWERUP "PowerUp"
+	#define MSG_EXTERNAL_RESET " External Reset"
+	#define MSG_BROWNOUT_RESET " Brown out Reset"
+	#define MSG_WATCHDOG_RESET " Watchdog Reset"
+	#define MSG_SOFTWARE_RESET " Software Reset"
+	#define MSG_AUTHOR " | Author: "
+	#define MSG_CONFIGURATION_VER " Last Updated: "
+	#define MSG_FREE_MEMORY " Free Memory: "
+	#define MSG_PLANNER_BUFFER_BYTES "  PlannerBufferBytes: "
+	#define MSG_OK "ok"
+	#define MSG_FILE_SAVED "Done saving file."
+	#define MSG_ERR_LINE_NO "Line Number is not Last Line Number+1, Last Line: "
+	#define MSG_ERR_CHECKSUM_MISMATCH "checksum mismatch, Last Line: "
+	#define MSG_ERR_NO_CHECKSUM "No Checksum with line number, Last Line: "
+	#define MSG_ERR_NO_LINENUMBER_WITH_CHECKSUM "No Line Number with checksum, Last Line: "
+	#define MSG_FILE_PRINTED "Done printing file"
+	#define MSG_BEGIN_FILE_LIST "Begin file list"
+	#define MSG_END_FILE_LIST "End file list"
+	#define MSG_M104_INVALID_EXTRUDER "M104 Invalid extruder "
+	#define MSG_M105_INVALID_EXTRUDER "M105 Invalid extruder "
+	#define MSG_M200_INVALID_EXTRUDER "M200 Invalid extruder "
+	#define MSG_M218_INVALID_EXTRUDER "M218 Invalid extruder "
+	#define MSG_M221_INVALID_EXTRUDER "M221 Invalid extruder "
+	#define MSG_ERR_NO_THERMISTORS "No thermistors - no temperature"
+	#define MSG_M109_INVALID_EXTRUDER "M109 Invalid extruder "
+	#define MSG_HEATING "Heating..."
+	#define MSG_HEATING_COMPLETE "Heating done.       "
+  #define MSG_EXTRUDER_RUNNING "Extruder running"
+  #define MSG_EXTRUDER_STOPPED "Extruder stopped"
+  #define MSG_EXTRUDE_COMPLETE "Extrude Run Complete"
+	#define MSG_BED_HEATING "Bed Heating."
+	#define MSG_BED_DONE "Bed done."
+	#define MSG_M115_REPORT "FIRMWARE_NAME:Mackerel V1; Marlin mashup for Filament Extruders FIRMWARE_URL:" FIRMWARE_URL " PROTOCOL_VERSION:" PROTOCOL_VERSION " MACHINE_TYPE:" MACHINE_NAME " EXTRUDER_COUNT:" STRINGIFY(EXTRUDERS) " UUID:" MACHINE_UUID "\n"
+	#define MSG_COUNT_X " Count X: "
+	#define MSG_ERR_KILLED "Printer halted. kill() called!"
+	#define MSG_ERR_STOPPED "Printer stopped due to errors. Fix the error and use M999 to restart. (Temperature is reset. Set it after restarting)"
+	#define MSG_RESEND "Resend: "
+	#define MSG_UNKNOWN_COMMAND "Unknown command: \""
+	#define MSG_ACTIVE_EXTRUDER "Active Extruder: "
+	#define MSG_INVALID_EXTRUDER "Invalid extruder"
+	#define MSG_X_MIN "x_min: "
+	#define MSG_X_MAX "x_max: "
+	#define MSG_Y_MIN "y_min: "
+	#define MSG_Y_MAX "y_max: "
+	#define MSG_Z_MIN "z_min: "
+	#define MSG_Z_MAX "z_max: "
+	#define MSG_M119_REPORT "Reporting endstop status"
+	#define MSG_ENDSTOP_HIT "TRIGGERED"
+	#define MSG_ENDSTOP_OPEN "open"
+	#define MSG_HOTEND_OFFSET "Hotend offsets:"
+	#define MSG_SD_CANT_OPEN_SUBDIR "Cannot open subdir"
+	#define MSG_SD_INIT_FAIL "SD init fail"
+	#define MSG_SD_VOL_INIT_FAIL "volume.init failed"
+	#define MSG_SD_OPENROOT_FAIL "openRoot failed"
+	#define MSG_SD_CARD_OK "SD card ok"
+	#define MSG_SD_WORKDIR_FAIL "workDir open failed"
+	#define MSG_SD_OPEN_FILE_FAIL "open failed, File: "
+	#define MSG_SD_FILE_OPENED "File opened: "
+	#define MSG_SD_SIZE " Size: "
+	#define MSG_SD_FILE_SELECTED "File selected"
+	#define MSG_SD_WRITE_TO_FILE "Writing to file: "
+	#define MSG_SD_PRINTING_BYTE "SD printing byte "
+	#define MSG_SD_NOT_PRINTING "Not SD printing"
+	#define MSG_SD_ERR_WRITE_TO_FILE "error writing to file"
+	#define MSG_SD_CANT_ENTER_SUBDIR "Cannot enter subdir: "
+	#define MSG_STEPPER_TOO_HIGH "Steprate too high: "
+	#define MSG_ENDSTOPS_HIT "endstops hit: "
+	#define MSG_ERR_COLD_EXTRUDE_STOP " cold extrusion prevented"
+	#define MSG_ERR_LONG_EXTRUDE_STOP " too long extrusion prevented"
+	#define MSG_BABYSTEPPING_X "Babystepping X"
+	#define MSG_BABYSTEPPING_Y "Babystepping Y"
+	#define MSG_BABYSTEPPING_Z "Babystepping Z"
+	#define MSG_SERIAL_ERROR_MENU_STRUCTURE "Error in menu structure"
+/* alt
 	#define WELCOME_MSG MACHINE_NAME " pronto."
 	#define MSG_SD_INSERTED          "SD Card inserita"
 	#define MSG_SD_REMOVED           "SD Card rimossa"
@@ -1497,7 +2894,7 @@
 	#define MSG_BABYSTEPPING_Y "Babystepping Y"
 	#define MSG_BABYSTEPPING_Z "Babystepping Z"
 	#define MSG_SERIAL_ERROR_MENU_STRUCTURE "Qualcosa non va in MenuStructure."
-
+*/
 #endif
 
 
@@ -1505,7 +2902,239 @@
 
 // LCD Menu Messages
 // Please note these are limited to 17 characters!
+  #define MSG_DISPLAY_SensROmax "Sens RO Max" //MK3
+  #define MSG_DISPLAY_SensROmin "Sens RO Min" //MK3
+  #define MSG_DISPLAY_Pcirc "P circ" //MK3
+  #define MSG_DISPLAY_Factor2 "Factor 2" //MK3
+  #define MSG_DISPLAY_Factor1 "Factor 1" //MK3
+  #define MSG_DISPLAY_Meter "m" //MK3
+  #define MSG_DISPLAY_Length " L:" //MK3
+  #define MSG_DISPLAY_S "S:" //MK3
+  #define MSG_DISPLAY_AV " Av" //MK3
+  #define MSG_DISPLAY_MinWidth " Mn" //MK3
+  #define MSG_DISPLAY_MaxWidth " Mx" //MK3
+  #define MSG_DISPLAY_rpm2 "rpm " //MK3
+  #define MSG_DISPLAY_COLD "COLD" //MK3
+  #define MSG_DISPLAY_OFF "OFF " //MK3
+  #define MSG_DISPLAY_E "E:" //MK3
+  #define MSG_DISPLAY_rpm "rpm     " //MK3
+  #define MSG_DISPLAY_Puller "Puller:" //MK3
+  #define MSG_SAFETY_COOLDOWN "SAFETY COOLDOWN" //MK3
+  #define MSG_EX_WARM_UP "Extruder Warming Up" //MK3
+  #define MSG_EX_COOL "Extruder Cooling" //MK3
+  #define MSG_AUTOT_SEQU "Autotune Sequence" //MK3
+  #define MSG_AUTOT_COMPL "Autotune Complete" //MK3
+  #define MSG_MIN_TEMP "Err: MINTEMP" //MK3
+  #define MSG_MAX_TEMP "Err: MAXTEMP" //MK3
+  #define MSG_thermal_runaway "THERMAL RUNAWAY" //MK3
+  #define MSG_sensor_runout "SENSOR RUNOUT" //MK3
+	#define WELCOME_MSG MACHINE_NAME " OK" //MK3
+	#define MSG_MAIN "Main" //MK3
+  #define MSG_PREHEAT_ABS "Preheat"  //MK3
+  #define MSG_PREHEAT_ABS_SETTINGS "Preheat config" //MK3
+	#define MSG_COOLDOWN "Cooldown" //MK3
+  #define MSG_MOVE_E "Extruder" //MK3
+	#define MSG_MOVE_P "Puller" //MK3
+  #define MSG_EXT_RPM "Extruder RPM" //MK3
+	#define MSG_NOZZLE "Nozzle" //MK3
+	#define MSG_HEATER "Extruder Temp" //MK3
+  #define MSG_LENGTH_CUTOFF "L cutoff" //MK3
+  #define MSG_FILAMENT "Sensor Pos." //MK3
+  #define MSG_WINDER_SPEED "Fan Speed" //MK3
+  #define MSG_WINDER_RPM_FACTOR "Winder RPM Factor" //MK3
+  #define MSG_PID_P "PID-P" //MK3
+	#define MSG_PID_I "PID-I" //MK3
+	#define MSG_PID_D "PID-D" //MK3
+	#define MSG_PID_C "PID-C" //MK3
+  #define MSG_AUTOTUNE "PID Autotune" //MK3
+  #define MSG_CONTROL "Control" //MK3
+  #define MSG_VE_JERK "Ve-jerk" //MK3
+	#define MSG_E "e" //MK3
+  #define MSG_WATCH "Info screen" //MK3
+  #define MSG_STATS "Filament Statistics" //MK3
+	#define MSG_PREPARE "Prepare" //MK3
+	#define MSG_TUNE "Tune" //MK3
+  #define MSG_ESTEPS "Esteps/rev/100" //MK3
+	#define MSG_PSTEPS "Psteps/mm" //MK3
+  #define MSG_A_RETRACT "Motor Acc" //MK3
+  #define MSG_STORE_EPROM "Store memory" //MK3
+	#define MSG_LOAD_EPROM "Load memory" //MK3
+	#define MSG_RESTORE_FAILSAFE "Restore failsafe" //MK3
+  #define MSG_TEMPERATURE "Temperature" //MK3
+	#define MSG_MOTION "Motion" //MK3
+  #define MSG_FILAMENT_PID "Puller PID" //MK3
+  #define MSG_PAUSE_EXTRUDER "STOP Extruder" //MK3
+	#define MSG_RESUME_EXTRUDER "START Extruder" //MK3
+  #define MSG_AUTO_EXTRUDER "Automatic pulling" //MK3
+  #define MSG_MAN_EXTRUDER "Manually pulling" //MK3
+	#define MSG_CLEAR_STATS "Clear Statistics" //MK3
+	#define MSG_ENABLE_STATS "Enable Statistics" //MK3
+	#define MSG_DISABLE_STATS "Pause Statistics" //MK3
+  #define MSG_VMAX "Vmax " //MK3
+  // LCD Menu Messages ferz
+  #define MSG_SD_INSERTED "Card inserted"           
+	#define MSG_SD_REMOVED "Card removed"
+	#define MSG_AUTOSTART "Autostart"
+	#define MSG_DISABLE_STEPPERS "Disable steppers"
+	#define MSG_AUTO_HOME "Auto home"
+	#define MSG_SET_ORIGIN "Set origin"
+	#define MSG_PREHEAT_PLA "Preheat PLA"
+	#define MSG_PREHEAT_PLA0 "Preheat PLA 1"
+	#define MSG_PREHEAT_PLA1 "Preheat PLA 2"
+	#define MSG_PREHEAT_PLA2 "Preheat PLA 3"
+	#define MSG_PREHEAT_PLA012 "Preheat PLA All"
+	#define MSG_PREHEAT_PLA_BEDONLY "Preheat PLA Bed"
+	#define MSG_PREHEAT_PLA_SETTINGS "Preheat PLA conf"
+	#define MSG_PREHEAT_ABS0 "Preheat ABS 1"
+	#define MSG_PREHEAT_ABS1 "Preheat ABS 2"
+	#define MSG_PREHEAT_ABS2 "Preheat ABS 3"
+	#define MSG_PREHEAT_ABS012 "Preheat ABS All"
+	#define MSG_PREHEAT_ABS_BEDONLY "Preheat ABS Bed"
+	#define MSG_SWITCH_PS_ON "Switch power on"
+	#define MSG_SWITCH_PS_OFF "Switch power off"
+	#define MSG_EXTRUDE "Extrude"
+	#define MSG_RETRACT "Retract"
+	#define MSG_MOVE_AXIS "Move axis"
+	#define MSG_MOVE_X "Move X"
+	#define MSG_MOVE_Y "Move Y"
+	#define MSG_MOVE_Z "Move Z"
+	#define MSG_MOVE_01MM "Move 0.1mm"
+	#define MSG_MOVE_1MM "Move 1mm"
+	#define MSG_MOVE_10MM "Move 10mm"
+	#define MSG_SPEED   "Puller mm/s"
+	#define MSG_NOZZLE1 "Nozzle2"
+	#define MSG_NOZZLE2 "Nozzle3"
+	#define MSG_BED "Bed"
+	#define MSG_FLOW "Flow"
+	#define MSG_FLOW0 "Flow 0"
+	#define MSG_FLOW1 "Flow 1"
+	#define MSG_FLOW2 "Flow 2"
+	#define MSG_MIN " \002 Min"
+	#define MSG_MAX " \002 Max"
+	#define MSG_FACTOR " \002 Fact"
+	#define MSG_AUTOTEMP "Autotemp"
+	#define MSG_ON "On "
+	#define MSG_OFF "Off"
+	#define MSG_ACC  "Accel"
+	#define MSG_VXY_JERK "Vxy-jerk" 
+	#define MSG_VZ_JERK "Vz-jerk" 
+	#define MSG_X "x"
+	#define MSG_Y "y"
+	#define MSG_Z "z"
+	#define MSG_VMIN "Vmin"
+	#define MSG_VTRAV_MIN "VTrav min"
+	#define MSG_AMAX "Amax "
+	#define MSG_XSTEPS "Xsteps/mm"
+	#define MSG_YSTEPS "Ysteps/mm"
+	#define MSG_ZSTEPS "Zsteps/mm"
+	#define MSG_RECTRACT "Rectract"
+	#define MSG_CONTRAST "LCD contrast"
+	#define MSG_REFRESH "Refresh"
+	#define MSG_PAUSE_PRINT "Pause print"
+	#define MSG_RESUME_PRINT "Resume print"
+	#define MSG_STOP_PRINT "Stop print"
+	#define MSG_CARD_MENU "Print from SD"
+	#define MSG_NO_CARD "No SD card"
+	#define MSG_DWELL "Sleep..."
+	#define MSG_USERWAIT "Wait for user..."
+	#define MSG_RESUMING "Resuming print"
+	#define MSG_NO_MOVE "No move."
+	#define MSG_KILLED "KILLED. "
+	#define MSG_STOPPED "STOPPED. "
+	#define MSG_CONTROL_RETRACT  "Retract mm"
+	#define MSG_CONTROL_RETRACTF "Retract  F"
+	#define MSG_CONTROL_RETRACT_ZLIFT "Hop mm"
+	#define MSG_CONTROL_RETRACT_RECOVER "UnRet +mm"
+	#define MSG_CONTROL_RETRACT_RECOVERF "UnRet  F"
+	#define MSG_AUTORETRACT "AutoRetr."
+	#define MSG_FILAMENTCHANGE "Change filament"
+	#define MSG_INIT_SDCARD "Init. SD card"
+	#define MSG_CNG_SDCARD "Change SD card"
+	#define MSG_ZPROBE_OUT "Z probe out. bed"
+	#define MSG_POSITION_UNKNOWN "Home X/Y before Z"
+	#define MSG_ZPROBE_ZOFFSET "Z Offset"
+	#define MSG_BABYSTEP_X "Babystep X"
+	#define MSG_BABYSTEP_Y "Babystep Y"
+	#define MSG_BABYSTEP_Z "Babystep Z"
+	#define MSG_ENDSTOP_ABORT "Endstop abort"
 
+// Serial Console Messages
+
+	#define MSG_Enqueing "enqueing \""
+	#define MSG_POWERUP "PowerUp"
+	#define MSG_EXTERNAL_RESET " External Reset"
+	#define MSG_BROWNOUT_RESET " Brown out Reset"
+	#define MSG_WATCHDOG_RESET " Watchdog Reset"
+	#define MSG_SOFTWARE_RESET " Software Reset"
+	#define MSG_AUTHOR " | Author: "
+	#define MSG_CONFIGURATION_VER " Last Updated: "
+	#define MSG_FREE_MEMORY " Free Memory: "
+	#define MSG_PLANNER_BUFFER_BYTES "  PlannerBufferBytes: "
+	#define MSG_OK "ok"
+	#define MSG_FILE_SAVED "Done saving file."
+	#define MSG_ERR_LINE_NO "Line Number is not Last Line Number+1, Last Line: "
+	#define MSG_ERR_CHECKSUM_MISMATCH "checksum mismatch, Last Line: "
+	#define MSG_ERR_NO_CHECKSUM "No Checksum with line number, Last Line: "
+	#define MSG_ERR_NO_LINENUMBER_WITH_CHECKSUM "No Line Number with checksum, Last Line: "
+	#define MSG_FILE_PRINTED "Done printing file"
+	#define MSG_BEGIN_FILE_LIST "Begin file list"
+	#define MSG_END_FILE_LIST "End file list"
+	#define MSG_M104_INVALID_EXTRUDER "M104 Invalid extruder "
+	#define MSG_M105_INVALID_EXTRUDER "M105 Invalid extruder "
+	#define MSG_M200_INVALID_EXTRUDER "M200 Invalid extruder "
+	#define MSG_M218_INVALID_EXTRUDER "M218 Invalid extruder "
+	#define MSG_M221_INVALID_EXTRUDER "M221 Invalid extruder "
+	#define MSG_ERR_NO_THERMISTORS "No thermistors - no temperature"
+	#define MSG_M109_INVALID_EXTRUDER "M109 Invalid extruder "
+	#define MSG_HEATING "Heating..."
+	#define MSG_HEATING_COMPLETE "Heating done.       "
+  #define MSG_EXTRUDER_RUNNING "Extruder running"
+  #define MSG_EXTRUDER_STOPPED "Extruder stopped"
+  #define MSG_EXTRUDE_COMPLETE "Extrude Run Complete"
+	#define MSG_BED_HEATING "Bed Heating."
+	#define MSG_BED_DONE "Bed done."
+	#define MSG_M115_REPORT "FIRMWARE_NAME:Mackerel V1; Marlin mashup for Filament Extruders FIRMWARE_URL:" FIRMWARE_URL " PROTOCOL_VERSION:" PROTOCOL_VERSION " MACHINE_TYPE:" MACHINE_NAME " EXTRUDER_COUNT:" STRINGIFY(EXTRUDERS) " UUID:" MACHINE_UUID "\n"
+	#define MSG_COUNT_X " Count X: "
+	#define MSG_ERR_KILLED "Printer halted. kill() called!"
+	#define MSG_ERR_STOPPED "Printer stopped due to errors. Fix the error and use M999 to restart. (Temperature is reset. Set it after restarting)"
+	#define MSG_RESEND "Resend: "
+	#define MSG_UNKNOWN_COMMAND "Unknown command: \""
+	#define MSG_ACTIVE_EXTRUDER "Active Extruder: "
+	#define MSG_INVALID_EXTRUDER "Invalid extruder"
+	#define MSG_X_MIN "x_min: "
+	#define MSG_X_MAX "x_max: "
+	#define MSG_Y_MIN "y_min: "
+	#define MSG_Y_MAX "y_max: "
+	#define MSG_Z_MIN "z_min: "
+	#define MSG_Z_MAX "z_max: "
+	#define MSG_M119_REPORT "Reporting endstop status"
+	#define MSG_ENDSTOP_HIT "TRIGGERED"
+	#define MSG_ENDSTOP_OPEN "open"
+	#define MSG_HOTEND_OFFSET "Hotend offsets:"
+	#define MSG_SD_CANT_OPEN_SUBDIR "Cannot open subdir"
+	#define MSG_SD_INIT_FAIL "SD init fail"
+	#define MSG_SD_VOL_INIT_FAIL "volume.init failed"
+	#define MSG_SD_OPENROOT_FAIL "openRoot failed"
+	#define MSG_SD_CARD_OK "SD card ok"
+	#define MSG_SD_WORKDIR_FAIL "workDir open failed"
+	#define MSG_SD_OPEN_FILE_FAIL "open failed, File: "
+	#define MSG_SD_FILE_OPENED "File opened: "
+	#define MSG_SD_SIZE " Size: "
+	#define MSG_SD_FILE_SELECTED "File selected"
+	#define MSG_SD_WRITE_TO_FILE "Writing to file: "
+	#define MSG_SD_PRINTING_BYTE "SD printing byte "
+	#define MSG_SD_NOT_PRINTING "Not SD printing"
+	#define MSG_SD_ERR_WRITE_TO_FILE "error writing to file"
+	#define MSG_SD_CANT_ENTER_SUBDIR "Cannot enter subdir: "
+	#define MSG_STEPPER_TOO_HIGH "Steprate too high: "
+	#define MSG_ENDSTOPS_HIT "endstops hit: "
+	#define MSG_ERR_COLD_EXTRUDE_STOP " cold extrusion prevented"
+	#define MSG_ERR_LONG_EXTRUDE_STOP " too long extrusion prevented"
+	#define MSG_BABYSTEPPING_X "Babystepping X"
+	#define MSG_BABYSTEPPING_Y "Babystepping Y"
+	#define MSG_BABYSTEPPING_Z "Babystepping Z"
+	#define MSG_SERIAL_ERROR_MENU_STRUCTURE "Error in menu structure"
+/* alt
 	#define WELCOME_MSG MACHINE_NAME " pronto."
 	#define MSG_SD_INSERTED "Cartao inserido"
 	#define MSG_SD_REMOVED "Cartao removido"
@@ -1700,7 +3329,7 @@
 	#define MSG_BABYSTEPPING_Y "Babystepping Y"
 	#define MSG_BABYSTEPPING_Z "Babystepping Z"
 	#define MSG_SERIAL_ERROR_MENU_STRUCTURE "Algo esta errado na estrutura do Menu."
-
+*/
 #endif
 
 
@@ -1709,7 +3338,239 @@
 
 // LCD Menu Messages
 // Please note these are limited to 17 characters!
+  #define MSG_DISPLAY_SensROmax "Sens RO Max" //MK3
+  #define MSG_DISPLAY_SensROmin "Sens RO Min" //MK3
+  #define MSG_DISPLAY_Pcirc "P circ" //MK3
+  #define MSG_DISPLAY_Factor2 "Factor 2" //MK3
+  #define MSG_DISPLAY_Factor1 "Factor 1" //MK3
+  #define MSG_DISPLAY_Meter "m" //MK3
+  #define MSG_DISPLAY_Length " L:" //MK3
+  #define MSG_DISPLAY_S "S:" //MK3
+  #define MSG_DISPLAY_AV " Av" //MK3
+  #define MSG_DISPLAY_MinWidth " Mn" //MK3
+  #define MSG_DISPLAY_MaxWidth " Mx" //MK3
+  #define MSG_DISPLAY_rpm2 "rpm " //MK3
+  #define MSG_DISPLAY_COLD "COLD" //MK3
+  #define MSG_DISPLAY_OFF "OFF " //MK3
+  #define MSG_DISPLAY_E "E:" //MK3
+  #define MSG_DISPLAY_rpm "rpm     " //MK3
+  #define MSG_DISPLAY_Puller "Puller:" //MK3
+  #define MSG_SAFETY_COOLDOWN "SAFETY COOLDOWN" //MK3
+  #define MSG_EX_WARM_UP "Extruder Warming Up" //MK3
+  #define MSG_EX_COOL "Extruder Cooling" //MK3
+  #define MSG_AUTOT_SEQU "Autotune Sequence" //MK3
+  #define MSG_AUTOT_COMPL "Autotune Complete" //MK3
+  #define MSG_MIN_TEMP "Err: MINTEMP" //MK3
+  #define MSG_MAX_TEMP "Err: MAXTEMP" //MK3
+  #define MSG_thermal_runaway "THERMAL RUNAWAY" //MK3
+  #define MSG_sensor_runout "SENSOR RUNOUT" //MK3
+	#define WELCOME_MSG MACHINE_NAME " OK" //MK3
+	#define MSG_MAIN "Main" //MK3
+  #define MSG_PREHEAT_ABS "Preheat"  //MK3
+  #define MSG_PREHEAT_ABS_SETTINGS "Preheat config" //MK3
+	#define MSG_COOLDOWN "Cooldown" //MK3
+  #define MSG_MOVE_E "Extruder" //MK3
+	#define MSG_MOVE_P "Puller" //MK3
+  #define MSG_EXT_RPM "Extruder RPM" //MK3
+	#define MSG_NOZZLE "Nozzle" //MK3
+	#define MSG_HEATER "Extruder Temp" //MK3
+  #define MSG_LENGTH_CUTOFF "L cutoff" //MK3
+  #define MSG_FILAMENT "Sensor Pos." //MK3
+  #define MSG_WINDER_SPEED "Fan Speed" //MK3
+  #define MSG_WINDER_RPM_FACTOR "Winder RPM Factor" //MK3
+  #define MSG_PID_P "PID-P" //MK3
+	#define MSG_PID_I "PID-I" //MK3
+	#define MSG_PID_D "PID-D" //MK3
+	#define MSG_PID_C "PID-C" //MK3
+  #define MSG_AUTOTUNE "PID Autotune" //MK3
+  #define MSG_CONTROL "Control" //MK3
+  #define MSG_VE_JERK "Ve-jerk" //MK3
+	#define MSG_E "e" //MK3
+  #define MSG_WATCH "Info screen" //MK3
+  #define MSG_STATS "Filament Statistics" //MK3
+	#define MSG_PREPARE "Prepare" //MK3
+	#define MSG_TUNE "Tune" //MK3
+  #define MSG_ESTEPS "Esteps/rev/100" //MK3
+	#define MSG_PSTEPS "Psteps/mm" //MK3
+  #define MSG_A_RETRACT "Motor Acc" //MK3
+  #define MSG_STORE_EPROM "Store memory" //MK3
+	#define MSG_LOAD_EPROM "Load memory" //MK3
+	#define MSG_RESTORE_FAILSAFE "Restore failsafe" //MK3
+  #define MSG_TEMPERATURE "Temperature" //MK3
+	#define MSG_MOTION "Motion" //MK3
+  #define MSG_FILAMENT_PID "Puller PID" //MK3
+  #define MSG_PAUSE_EXTRUDER "STOP Extruder" //MK3
+	#define MSG_RESUME_EXTRUDER "START Extruder" //MK3
+  #define MSG_AUTO_EXTRUDER "Automatic pulling" //MK3
+  #define MSG_MAN_EXTRUDER "Manually pulling" //MK3
+	#define MSG_CLEAR_STATS "Clear Statistics" //MK3
+	#define MSG_ENABLE_STATS "Enable Statistics" //MK3
+	#define MSG_DISABLE_STATS "Pause Statistics" //MK3
+  #define MSG_VMAX "Vmax " //MK3
+  // LCD Menu Messages ferz
+  #define MSG_SD_INSERTED "Card inserted"           
+	#define MSG_SD_REMOVED "Card removed"
+	#define MSG_AUTOSTART "Autostart"
+	#define MSG_DISABLE_STEPPERS "Disable steppers"
+	#define MSG_AUTO_HOME "Auto home"
+	#define MSG_SET_ORIGIN "Set origin"
+	#define MSG_PREHEAT_PLA "Preheat PLA"
+	#define MSG_PREHEAT_PLA0 "Preheat PLA 1"
+	#define MSG_PREHEAT_PLA1 "Preheat PLA 2"
+	#define MSG_PREHEAT_PLA2 "Preheat PLA 3"
+	#define MSG_PREHEAT_PLA012 "Preheat PLA All"
+	#define MSG_PREHEAT_PLA_BEDONLY "Preheat PLA Bed"
+	#define MSG_PREHEAT_PLA_SETTINGS "Preheat PLA conf"
+	#define MSG_PREHEAT_ABS0 "Preheat ABS 1"
+	#define MSG_PREHEAT_ABS1 "Preheat ABS 2"
+	#define MSG_PREHEAT_ABS2 "Preheat ABS 3"
+	#define MSG_PREHEAT_ABS012 "Preheat ABS All"
+	#define MSG_PREHEAT_ABS_BEDONLY "Preheat ABS Bed"
+	#define MSG_SWITCH_PS_ON "Switch power on"
+	#define MSG_SWITCH_PS_OFF "Switch power off"
+	#define MSG_EXTRUDE "Extrude"
+	#define MSG_RETRACT "Retract"
+	#define MSG_MOVE_AXIS "Move axis"
+	#define MSG_MOVE_X "Move X"
+	#define MSG_MOVE_Y "Move Y"
+	#define MSG_MOVE_Z "Move Z"
+	#define MSG_MOVE_01MM "Move 0.1mm"
+	#define MSG_MOVE_1MM "Move 1mm"
+	#define MSG_MOVE_10MM "Move 10mm"
+	#define MSG_SPEED   "Puller mm/s"
+	#define MSG_NOZZLE1 "Nozzle2"
+	#define MSG_NOZZLE2 "Nozzle3"
+	#define MSG_BED "Bed"
+	#define MSG_FLOW "Flow"
+	#define MSG_FLOW0 "Flow 0"
+	#define MSG_FLOW1 "Flow 1"
+	#define MSG_FLOW2 "Flow 2"
+	#define MSG_MIN " \002 Min"
+	#define MSG_MAX " \002 Max"
+	#define MSG_FACTOR " \002 Fact"
+	#define MSG_AUTOTEMP "Autotemp"
+	#define MSG_ON "On "
+	#define MSG_OFF "Off"
+	#define MSG_ACC  "Accel"
+	#define MSG_VXY_JERK "Vxy-jerk" 
+	#define MSG_VZ_JERK "Vz-jerk" 
+	#define MSG_X "x"
+	#define MSG_Y "y"
+	#define MSG_Z "z"
+	#define MSG_VMIN "Vmin"
+	#define MSG_VTRAV_MIN "VTrav min"
+	#define MSG_AMAX "Amax "
+	#define MSG_XSTEPS "Xsteps/mm"
+	#define MSG_YSTEPS "Ysteps/mm"
+	#define MSG_ZSTEPS "Zsteps/mm"
+	#define MSG_RECTRACT "Rectract"
+	#define MSG_CONTRAST "LCD contrast"
+	#define MSG_REFRESH "Refresh"
+	#define MSG_PAUSE_PRINT "Pause print"
+	#define MSG_RESUME_PRINT "Resume print"
+	#define MSG_STOP_PRINT "Stop print"
+	#define MSG_CARD_MENU "Print from SD"
+	#define MSG_NO_CARD "No SD card"
+	#define MSG_DWELL "Sleep..."
+	#define MSG_USERWAIT "Wait for user..."
+	#define MSG_RESUMING "Resuming print"
+	#define MSG_NO_MOVE "No move."
+	#define MSG_KILLED "KILLED. "
+	#define MSG_STOPPED "STOPPED. "
+	#define MSG_CONTROL_RETRACT  "Retract mm"
+	#define MSG_CONTROL_RETRACTF "Retract  F"
+	#define MSG_CONTROL_RETRACT_ZLIFT "Hop mm"
+	#define MSG_CONTROL_RETRACT_RECOVER "UnRet +mm"
+	#define MSG_CONTROL_RETRACT_RECOVERF "UnRet  F"
+	#define MSG_AUTORETRACT "AutoRetr."
+	#define MSG_FILAMENTCHANGE "Change filament"
+	#define MSG_INIT_SDCARD "Init. SD card"
+	#define MSG_CNG_SDCARD "Change SD card"
+	#define MSG_ZPROBE_OUT "Z probe out. bed"
+	#define MSG_POSITION_UNKNOWN "Home X/Y before Z"
+	#define MSG_ZPROBE_ZOFFSET "Z Offset"
+	#define MSG_BABYSTEP_X "Babystep X"
+	#define MSG_BABYSTEP_Y "Babystep Y"
+	#define MSG_BABYSTEP_Z "Babystep Z"
+	#define MSG_ENDSTOP_ABORT "Endstop abort"
 
+// Serial Console Messages
+
+	#define MSG_Enqueing "enqueing \""
+	#define MSG_POWERUP "PowerUp"
+	#define MSG_EXTERNAL_RESET " External Reset"
+	#define MSG_BROWNOUT_RESET " Brown out Reset"
+	#define MSG_WATCHDOG_RESET " Watchdog Reset"
+	#define MSG_SOFTWARE_RESET " Software Reset"
+	#define MSG_AUTHOR " | Author: "
+	#define MSG_CONFIGURATION_VER " Last Updated: "
+	#define MSG_FREE_MEMORY " Free Memory: "
+	#define MSG_PLANNER_BUFFER_BYTES "  PlannerBufferBytes: "
+	#define MSG_OK "ok"
+	#define MSG_FILE_SAVED "Done saving file."
+	#define MSG_ERR_LINE_NO "Line Number is not Last Line Number+1, Last Line: "
+	#define MSG_ERR_CHECKSUM_MISMATCH "checksum mismatch, Last Line: "
+	#define MSG_ERR_NO_CHECKSUM "No Checksum with line number, Last Line: "
+	#define MSG_ERR_NO_LINENUMBER_WITH_CHECKSUM "No Line Number with checksum, Last Line: "
+	#define MSG_FILE_PRINTED "Done printing file"
+	#define MSG_BEGIN_FILE_LIST "Begin file list"
+	#define MSG_END_FILE_LIST "End file list"
+	#define MSG_M104_INVALID_EXTRUDER "M104 Invalid extruder "
+	#define MSG_M105_INVALID_EXTRUDER "M105 Invalid extruder "
+	#define MSG_M200_INVALID_EXTRUDER "M200 Invalid extruder "
+	#define MSG_M218_INVALID_EXTRUDER "M218 Invalid extruder "
+	#define MSG_M221_INVALID_EXTRUDER "M221 Invalid extruder "
+	#define MSG_ERR_NO_THERMISTORS "No thermistors - no temperature"
+	#define MSG_M109_INVALID_EXTRUDER "M109 Invalid extruder "
+	#define MSG_HEATING "Heating..."
+	#define MSG_HEATING_COMPLETE "Heating done.       "
+  #define MSG_EXTRUDER_RUNNING "Extruder running"
+  #define MSG_EXTRUDER_STOPPED "Extruder stopped"
+  #define MSG_EXTRUDE_COMPLETE "Extrude Run Complete"
+	#define MSG_BED_HEATING "Bed Heating."
+	#define MSG_BED_DONE "Bed done."
+	#define MSG_M115_REPORT "FIRMWARE_NAME:Mackerel V1; Marlin mashup for Filament Extruders FIRMWARE_URL:" FIRMWARE_URL " PROTOCOL_VERSION:" PROTOCOL_VERSION " MACHINE_TYPE:" MACHINE_NAME " EXTRUDER_COUNT:" STRINGIFY(EXTRUDERS) " UUID:" MACHINE_UUID "\n"
+	#define MSG_COUNT_X " Count X: "
+	#define MSG_ERR_KILLED "Printer halted. kill() called!"
+	#define MSG_ERR_STOPPED "Printer stopped due to errors. Fix the error and use M999 to restart. (Temperature is reset. Set it after restarting)"
+	#define MSG_RESEND "Resend: "
+	#define MSG_UNKNOWN_COMMAND "Unknown command: \""
+	#define MSG_ACTIVE_EXTRUDER "Active Extruder: "
+	#define MSG_INVALID_EXTRUDER "Invalid extruder"
+	#define MSG_X_MIN "x_min: "
+	#define MSG_X_MAX "x_max: "
+	#define MSG_Y_MIN "y_min: "
+	#define MSG_Y_MAX "y_max: "
+	#define MSG_Z_MIN "z_min: "
+	#define MSG_Z_MAX "z_max: "
+	#define MSG_M119_REPORT "Reporting endstop status"
+	#define MSG_ENDSTOP_HIT "TRIGGERED"
+	#define MSG_ENDSTOP_OPEN "open"
+	#define MSG_HOTEND_OFFSET "Hotend offsets:"
+	#define MSG_SD_CANT_OPEN_SUBDIR "Cannot open subdir"
+	#define MSG_SD_INIT_FAIL "SD init fail"
+	#define MSG_SD_VOL_INIT_FAIL "volume.init failed"
+	#define MSG_SD_OPENROOT_FAIL "openRoot failed"
+	#define MSG_SD_CARD_OK "SD card ok"
+	#define MSG_SD_WORKDIR_FAIL "workDir open failed"
+	#define MSG_SD_OPEN_FILE_FAIL "open failed, File: "
+	#define MSG_SD_FILE_OPENED "File opened: "
+	#define MSG_SD_SIZE " Size: "
+	#define MSG_SD_FILE_SELECTED "File selected"
+	#define MSG_SD_WRITE_TO_FILE "Writing to file: "
+	#define MSG_SD_PRINTING_BYTE "SD printing byte "
+	#define MSG_SD_NOT_PRINTING "Not SD printing"
+	#define MSG_SD_ERR_WRITE_TO_FILE "error writing to file"
+	#define MSG_SD_CANT_ENTER_SUBDIR "Cannot enter subdir: "
+	#define MSG_STEPPER_TOO_HIGH "Steprate too high: "
+	#define MSG_ENDSTOPS_HIT "endstops hit: "
+	#define MSG_ERR_COLD_EXTRUDE_STOP " cold extrusion prevented"
+	#define MSG_ERR_LONG_EXTRUDE_STOP " too long extrusion prevented"
+	#define MSG_BABYSTEPPING_X "Babystepping X"
+	#define MSG_BABYSTEPPING_Y "Babystepping Y"
+	#define MSG_BABYSTEPPING_Z "Babystepping Z"
+	#define MSG_SERIAL_ERROR_MENU_STRUCTURE "Error in menu structure"
+/*alt
 	#define WELCOME_MSG MACHINE_NAME " valmis."
 	#define MSG_SD_INSERTED "Kortti asetettu"
 	#define MSG_SD_REMOVED "Kortti poistettu"
@@ -1899,14 +3760,246 @@
 	#define MSG_ENDSTOP_ABORT "Endstop abort"
 	#define MSG_CONTRAST "Kontrasti"
 	#define MSG_SERIAL_ERROR_MENU_STRUCTURE "Virhe valikon rakenteessa"
-
+*/
 #endif
 
 #if LANGUAGE_CHOICE == 10
 
 // LCD Menu Messages
 // Please note these are limited to 17 characters!
+  #define MSG_DISPLAY_SensROmax "Sens RO Max" //MK3
+  #define MSG_DISPLAY_SensROmin "Sens RO Min" //MK3
+  #define MSG_DISPLAY_Pcirc "P circ" //MK3
+  #define MSG_DISPLAY_Factor2 "Factor 2" //MK3
+  #define MSG_DISPLAY_Factor1 "Factor 1" //MK3
+  #define MSG_DISPLAY_Meter "m" //MK3
+  #define MSG_DISPLAY_Length " L:" //MK3
+  #define MSG_DISPLAY_S "S:" //MK3
+  #define MSG_DISPLAY_AV " Av" //MK3
+  #define MSG_DISPLAY_MinWidth " Mn" //MK3
+  #define MSG_DISPLAY_MaxWidth " Mx" //MK3
+  #define MSG_DISPLAY_rpm2 "rpm " //MK3
+  #define MSG_DISPLAY_COLD "COLD" //MK3
+  #define MSG_DISPLAY_OFF "OFF " //MK3
+  #define MSG_DISPLAY_E "E:" //MK3
+  #define MSG_DISPLAY_rpm "rpm     " //MK3
+  #define MSG_DISPLAY_Puller "Puller:" //MK3
+  #define MSG_SAFETY_COOLDOWN "SAFETY COOLDOWN" //MK3
+  #define MSG_EX_WARM_UP "Extruder Warming Up" //MK3
+  #define MSG_EX_COOL "Extruder Cooling" //MK3
+  #define MSG_AUTOT_SEQU "Autotune Sequence" //MK3
+  #define MSG_AUTOT_COMPL "Autotune Complete" //MK3
+  #define MSG_MIN_TEMP "Err: MINTEMP" //MK3
+  #define MSG_MAX_TEMP "Err: MAXTEMP" //MK3
+  #define MSG_thermal_runaway "THERMAL RUNAWAY" //MK3
+  #define MSG_sensor_runout "SENSOR RUNOUT" //MK3
+	#define WELCOME_MSG MACHINE_NAME " OK" //MK3
+	#define MSG_MAIN "Main" //MK3
+  #define MSG_PREHEAT_ABS "Preheat"  //MK3
+  #define MSG_PREHEAT_ABS_SETTINGS "Preheat config" //MK3
+	#define MSG_COOLDOWN "Cooldown" //MK3
+  #define MSG_MOVE_E "Extruder" //MK3
+	#define MSG_MOVE_P "Puller" //MK3
+  #define MSG_EXT_RPM "Extruder RPM" //MK3
+	#define MSG_NOZZLE "Nozzle" //MK3
+	#define MSG_HEATER "Extruder Temp" //MK3
+  #define MSG_LENGTH_CUTOFF "L cutoff" //MK3
+  #define MSG_FILAMENT "Sensor Pos." //MK3
+  #define MSG_WINDER_SPEED "Fan Speed" //MK3
+  #define MSG_WINDER_RPM_FACTOR "Winder RPM Factor" //MK3
+  #define MSG_PID_P "PID-P" //MK3
+	#define MSG_PID_I "PID-I" //MK3
+	#define MSG_PID_D "PID-D" //MK3
+	#define MSG_PID_C "PID-C" //MK3
+  #define MSG_AUTOTUNE "PID Autotune" //MK3
+  #define MSG_CONTROL "Control" //MK3
+  #define MSG_VE_JERK "Ve-jerk" //MK3
+	#define MSG_E "e" //MK3
+  #define MSG_WATCH "Info screen" //MK3
+  #define MSG_STATS "Filament Statistics" //MK3
+	#define MSG_PREPARE "Prepare" //MK3
+	#define MSG_TUNE "Tune" //MK3
+  #define MSG_ESTEPS "Esteps/rev/100" //MK3
+	#define MSG_PSTEPS "Psteps/mm" //MK3
+  #define MSG_A_RETRACT "Motor Acc" //MK3
+  #define MSG_STORE_EPROM "Store memory" //MK3
+	#define MSG_LOAD_EPROM "Load memory" //MK3
+	#define MSG_RESTORE_FAILSAFE "Restore failsafe" //MK3
+  #define MSG_TEMPERATURE "Temperature" //MK3
+	#define MSG_MOTION "Motion" //MK3
+  #define MSG_FILAMENT_PID "Puller PID" //MK3
+  #define MSG_PAUSE_EXTRUDER "STOP Extruder" //MK3
+	#define MSG_RESUME_EXTRUDER "START Extruder" //MK3
+  #define MSG_AUTO_EXTRUDER "Automatic pulling" //MK3
+  #define MSG_MAN_EXTRUDER "Manually pulling" //MK3
+	#define MSG_CLEAR_STATS "Clear Statistics" //MK3
+	#define MSG_ENABLE_STATS "Enable Statistics" //MK3
+	#define MSG_DISABLE_STATS "Pause Statistics" //MK3
+  #define MSG_VMAX "Vmax " //MK3
+  // LCD Menu Messages ferz
+  #define MSG_SD_INSERTED "Card inserted"           
+	#define MSG_SD_REMOVED "Card removed"
+	#define MSG_AUTOSTART "Autostart"
+	#define MSG_DISABLE_STEPPERS "Disable steppers"
+	#define MSG_AUTO_HOME "Auto home"
+	#define MSG_SET_ORIGIN "Set origin"
+	#define MSG_PREHEAT_PLA "Preheat PLA"
+	#define MSG_PREHEAT_PLA0 "Preheat PLA 1"
+	#define MSG_PREHEAT_PLA1 "Preheat PLA 2"
+	#define MSG_PREHEAT_PLA2 "Preheat PLA 3"
+	#define MSG_PREHEAT_PLA012 "Preheat PLA All"
+	#define MSG_PREHEAT_PLA_BEDONLY "Preheat PLA Bed"
+	#define MSG_PREHEAT_PLA_SETTINGS "Preheat PLA conf"
+	#define MSG_PREHEAT_ABS0 "Preheat ABS 1"
+	#define MSG_PREHEAT_ABS1 "Preheat ABS 2"
+	#define MSG_PREHEAT_ABS2 "Preheat ABS 3"
+	#define MSG_PREHEAT_ABS012 "Preheat ABS All"
+	#define MSG_PREHEAT_ABS_BEDONLY "Preheat ABS Bed"
+	#define MSG_SWITCH_PS_ON "Switch power on"
+	#define MSG_SWITCH_PS_OFF "Switch power off"
+	#define MSG_EXTRUDE "Extrude"
+	#define MSG_RETRACT "Retract"
+	#define MSG_MOVE_AXIS "Move axis"
+	#define MSG_MOVE_X "Move X"
+	#define MSG_MOVE_Y "Move Y"
+	#define MSG_MOVE_Z "Move Z"
+	#define MSG_MOVE_01MM "Move 0.1mm"
+	#define MSG_MOVE_1MM "Move 1mm"
+	#define MSG_MOVE_10MM "Move 10mm"
+	#define MSG_SPEED   "Puller mm/s"
+	#define MSG_NOZZLE1 "Nozzle2"
+	#define MSG_NOZZLE2 "Nozzle3"
+	#define MSG_BED "Bed"
+	#define MSG_FLOW "Flow"
+	#define MSG_FLOW0 "Flow 0"
+	#define MSG_FLOW1 "Flow 1"
+	#define MSG_FLOW2 "Flow 2"
+	#define MSG_MIN " \002 Min"
+	#define MSG_MAX " \002 Max"
+	#define MSG_FACTOR " \002 Fact"
+	#define MSG_AUTOTEMP "Autotemp"
+	#define MSG_ON "On "
+	#define MSG_OFF "Off"
+	#define MSG_ACC  "Accel"
+	#define MSG_VXY_JERK "Vxy-jerk" 
+	#define MSG_VZ_JERK "Vz-jerk" 
+	#define MSG_X "x"
+	#define MSG_Y "y"
+	#define MSG_Z "z"
+	#define MSG_VMIN "Vmin"
+	#define MSG_VTRAV_MIN "VTrav min"
+	#define MSG_AMAX "Amax "
+	#define MSG_XSTEPS "Xsteps/mm"
+	#define MSG_YSTEPS "Ysteps/mm"
+	#define MSG_ZSTEPS "Zsteps/mm"
+	#define MSG_RECTRACT "Rectract"
+	#define MSG_CONTRAST "LCD contrast"
+	#define MSG_REFRESH "Refresh"
+	#define MSG_PAUSE_PRINT "Pause print"
+	#define MSG_RESUME_PRINT "Resume print"
+	#define MSG_STOP_PRINT "Stop print"
+	#define MSG_CARD_MENU "Print from SD"
+	#define MSG_NO_CARD "No SD card"
+	#define MSG_DWELL "Sleep..."
+	#define MSG_USERWAIT "Wait for user..."
+	#define MSG_RESUMING "Resuming print"
+	#define MSG_NO_MOVE "No move."
+	#define MSG_KILLED "KILLED. "
+	#define MSG_STOPPED "STOPPED. "
+	#define MSG_CONTROL_RETRACT  "Retract mm"
+	#define MSG_CONTROL_RETRACTF "Retract  F"
+	#define MSG_CONTROL_RETRACT_ZLIFT "Hop mm"
+	#define MSG_CONTROL_RETRACT_RECOVER "UnRet +mm"
+	#define MSG_CONTROL_RETRACT_RECOVERF "UnRet  F"
+	#define MSG_AUTORETRACT "AutoRetr."
+	#define MSG_FILAMENTCHANGE "Change filament"
+	#define MSG_INIT_SDCARD "Init. SD card"
+	#define MSG_CNG_SDCARD "Change SD card"
+	#define MSG_ZPROBE_OUT "Z probe out. bed"
+	#define MSG_POSITION_UNKNOWN "Home X/Y before Z"
+	#define MSG_ZPROBE_ZOFFSET "Z Offset"
+	#define MSG_BABYSTEP_X "Babystep X"
+	#define MSG_BABYSTEP_Y "Babystep Y"
+	#define MSG_BABYSTEP_Z "Babystep Z"
+	#define MSG_ENDSTOP_ABORT "Endstop abort"
 
+// Serial Console Messages
+
+	#define MSG_Enqueing "enqueing \""
+	#define MSG_POWERUP "PowerUp"
+	#define MSG_EXTERNAL_RESET " External Reset"
+	#define MSG_BROWNOUT_RESET " Brown out Reset"
+	#define MSG_WATCHDOG_RESET " Watchdog Reset"
+	#define MSG_SOFTWARE_RESET " Software Reset"
+	#define MSG_AUTHOR " | Author: "
+	#define MSG_CONFIGURATION_VER " Last Updated: "
+	#define MSG_FREE_MEMORY " Free Memory: "
+	#define MSG_PLANNER_BUFFER_BYTES "  PlannerBufferBytes: "
+	#define MSG_OK "ok"
+	#define MSG_FILE_SAVED "Done saving file."
+	#define MSG_ERR_LINE_NO "Line Number is not Last Line Number+1, Last Line: "
+	#define MSG_ERR_CHECKSUM_MISMATCH "checksum mismatch, Last Line: "
+	#define MSG_ERR_NO_CHECKSUM "No Checksum with line number, Last Line: "
+	#define MSG_ERR_NO_LINENUMBER_WITH_CHECKSUM "No Line Number with checksum, Last Line: "
+	#define MSG_FILE_PRINTED "Done printing file"
+	#define MSG_BEGIN_FILE_LIST "Begin file list"
+	#define MSG_END_FILE_LIST "End file list"
+	#define MSG_M104_INVALID_EXTRUDER "M104 Invalid extruder "
+	#define MSG_M105_INVALID_EXTRUDER "M105 Invalid extruder "
+	#define MSG_M200_INVALID_EXTRUDER "M200 Invalid extruder "
+	#define MSG_M218_INVALID_EXTRUDER "M218 Invalid extruder "
+	#define MSG_M221_INVALID_EXTRUDER "M221 Invalid extruder "
+	#define MSG_ERR_NO_THERMISTORS "No thermistors - no temperature"
+	#define MSG_M109_INVALID_EXTRUDER "M109 Invalid extruder "
+	#define MSG_HEATING "Heating..."
+	#define MSG_HEATING_COMPLETE "Heating done.       "
+  #define MSG_EXTRUDER_RUNNING "Extruder running"
+  #define MSG_EXTRUDER_STOPPED "Extruder stopped"
+  #define MSG_EXTRUDE_COMPLETE "Extrude Run Complete"
+	#define MSG_BED_HEATING "Bed Heating."
+	#define MSG_BED_DONE "Bed done."
+	#define MSG_M115_REPORT "FIRMWARE_NAME:Mackerel V1; Marlin mashup for Filament Extruders FIRMWARE_URL:" FIRMWARE_URL " PROTOCOL_VERSION:" PROTOCOL_VERSION " MACHINE_TYPE:" MACHINE_NAME " EXTRUDER_COUNT:" STRINGIFY(EXTRUDERS) " UUID:" MACHINE_UUID "\n"
+	#define MSG_COUNT_X " Count X: "
+	#define MSG_ERR_KILLED "Printer halted. kill() called!"
+	#define MSG_ERR_STOPPED "Printer stopped due to errors. Fix the error and use M999 to restart. (Temperature is reset. Set it after restarting)"
+	#define MSG_RESEND "Resend: "
+	#define MSG_UNKNOWN_COMMAND "Unknown command: \""
+	#define MSG_ACTIVE_EXTRUDER "Active Extruder: "
+	#define MSG_INVALID_EXTRUDER "Invalid extruder"
+	#define MSG_X_MIN "x_min: "
+	#define MSG_X_MAX "x_max: "
+	#define MSG_Y_MIN "y_min: "
+	#define MSG_Y_MAX "y_max: "
+	#define MSG_Z_MIN "z_min: "
+	#define MSG_Z_MAX "z_max: "
+	#define MSG_M119_REPORT "Reporting endstop status"
+	#define MSG_ENDSTOP_HIT "TRIGGERED"
+	#define MSG_ENDSTOP_OPEN "open"
+	#define MSG_HOTEND_OFFSET "Hotend offsets:"
+	#define MSG_SD_CANT_OPEN_SUBDIR "Cannot open subdir"
+	#define MSG_SD_INIT_FAIL "SD init fail"
+	#define MSG_SD_VOL_INIT_FAIL "volume.init failed"
+	#define MSG_SD_OPENROOT_FAIL "openRoot failed"
+	#define MSG_SD_CARD_OK "SD card ok"
+	#define MSG_SD_WORKDIR_FAIL "workDir open failed"
+	#define MSG_SD_OPEN_FILE_FAIL "open failed, File: "
+	#define MSG_SD_FILE_OPENED "File opened: "
+	#define MSG_SD_SIZE " Size: "
+	#define MSG_SD_FILE_SELECTED "File selected"
+	#define MSG_SD_WRITE_TO_FILE "Writing to file: "
+	#define MSG_SD_PRINTING_BYTE "SD printing byte "
+	#define MSG_SD_NOT_PRINTING "Not SD printing"
+	#define MSG_SD_ERR_WRITE_TO_FILE "error writing to file"
+	#define MSG_SD_CANT_ENTER_SUBDIR "Cannot enter subdir: "
+	#define MSG_STEPPER_TOO_HIGH "Steprate too high: "
+	#define MSG_ENDSTOPS_HIT "endstops hit: "
+	#define MSG_ERR_COLD_EXTRUDE_STOP " cold extrusion prevented"
+	#define MSG_ERR_LONG_EXTRUDE_STOP " too long extrusion prevented"
+	#define MSG_BABYSTEPPING_X "Babystepping X"
+	#define MSG_BABYSTEPPING_Y "Babystepping Y"
+	#define MSG_BABYSTEPPING_Z "Babystepping Z"
+	#define MSG_SERIAL_ERROR_MENU_STRUCTURE "Error in menu structure"
+/* alt
 	#define WELCOME_MSG MACHINE_NAME " parada."
 	#define MSG_SD_INSERTED "Tarcheta colocada"
 	#define MSG_SD_REMOVED "Tarcheta retirada"
@@ -2102,14 +4195,246 @@
 	#define MSG_BABYSTEPPING_Y "Babystepping Y"
 	#define MSG_BABYSTEPPING_Z "Babystepping Z"
 	#define MSG_SERIAL_ERROR_MENU_STRUCTURE "Error in menu structure"
-
+*/
 #endif
 
 #if LANGUAGE_CHOICE == 11 //Dutch
 
 // LCD Menu Messages
 // Please note these are limited to 17 characters!
+  #define MSG_DISPLAY_SensROmax "Sens RO Max" //MK3
+  #define MSG_DISPLAY_SensROmin "Sens RO Min" //MK3
+  #define MSG_DISPLAY_Pcirc "P circ" //MK3
+  #define MSG_DISPLAY_Factor2 "Factor 2" //MK3
+  #define MSG_DISPLAY_Factor1 "Factor 1" //MK3
+  #define MSG_DISPLAY_Meter "m" //MK3
+  #define MSG_DISPLAY_Length " L:" //MK3
+  #define MSG_DISPLAY_S "S:" //MK3
+  #define MSG_DISPLAY_AV " Av" //MK3
+  #define MSG_DISPLAY_MinWidth " Mn" //MK3
+  #define MSG_DISPLAY_MaxWidth " Mx" //MK3
+  #define MSG_DISPLAY_rpm2 "rpm " //MK3
+  #define MSG_DISPLAY_COLD "COLD" //MK3
+  #define MSG_DISPLAY_OFF "OFF " //MK3
+  #define MSG_DISPLAY_E "E:" //MK3
+  #define MSG_DISPLAY_rpm "rpm     " //MK3
+  #define MSG_DISPLAY_Puller "Puller:" //MK3
+  #define MSG_SAFETY_COOLDOWN "SAFETY COOLDOWN" //MK3
+  #define MSG_EX_WARM_UP "Extruder Warming Up" //MK3
+  #define MSG_EX_COOL "Extruder Cooling" //MK3
+  #define MSG_AUTOT_SEQU "Autotune Sequence" //MK3
+  #define MSG_AUTOT_COMPL "Autotune Complete" //MK3
+  #define MSG_MIN_TEMP "Err: MINTEMP" //MK3
+  #define MSG_MAX_TEMP "Err: MAXTEMP" //MK3
+  #define MSG_thermal_runaway "THERMAL RUNAWAY" //MK3
+  #define MSG_sensor_runout "SENSOR RUNOUT" //MK3
+	#define WELCOME_MSG MACHINE_NAME " OK" //MK3
+	#define MSG_MAIN "Main" //MK3
+  #define MSG_PREHEAT_ABS "Preheat"  //MK3
+  #define MSG_PREHEAT_ABS_SETTINGS "Preheat config" //MK3
+	#define MSG_COOLDOWN "Cooldown" //MK3
+  #define MSG_MOVE_E "Extruder" //MK3
+	#define MSG_MOVE_P "Puller" //MK3
+  #define MSG_EXT_RPM "Extruder RPM" //MK3
+	#define MSG_NOZZLE "Nozzle" //MK3
+	#define MSG_HEATER "Extruder Temp" //MK3
+  #define MSG_LENGTH_CUTOFF "L cutoff" //MK3
+  #define MSG_FILAMENT "Sensor Pos." //MK3
+  #define MSG_WINDER_SPEED "Fan Speed" //MK3
+  #define MSG_WINDER_RPM_FACTOR "Winder RPM Factor" //MK3
+  #define MSG_PID_P "PID-P" //MK3
+	#define MSG_PID_I "PID-I" //MK3
+	#define MSG_PID_D "PID-D" //MK3
+	#define MSG_PID_C "PID-C" //MK3
+  #define MSG_AUTOTUNE "PID Autotune" //MK3
+  #define MSG_CONTROL "Control" //MK3
+  #define MSG_VE_JERK "Ve-jerk" //MK3
+	#define MSG_E "e" //MK3
+  #define MSG_WATCH "Info screen" //MK3
+  #define MSG_STATS "Filament Statistics" //MK3
+	#define MSG_PREPARE "Prepare" //MK3
+	#define MSG_TUNE "Tune" //MK3
+  #define MSG_ESTEPS "Esteps/rev/100" //MK3
+	#define MSG_PSTEPS "Psteps/mm" //MK3
+  #define MSG_A_RETRACT "Motor Acc" //MK3
+  #define MSG_STORE_EPROM "Store memory" //MK3
+	#define MSG_LOAD_EPROM "Load memory" //MK3
+	#define MSG_RESTORE_FAILSAFE "Restore failsafe" //MK3
+  #define MSG_TEMPERATURE "Temperature" //MK3
+	#define MSG_MOTION "Motion" //MK3
+  #define MSG_FILAMENT_PID "Puller PID" //MK3
+  #define MSG_PAUSE_EXTRUDER "STOP Extruder" //MK3
+	#define MSG_RESUME_EXTRUDER "START Extruder" //MK3
+  #define MSG_AUTO_EXTRUDER "Automatic pulling" //MK3
+  #define MSG_MAN_EXTRUDER "Manually pulling" //MK3
+	#define MSG_CLEAR_STATS "Clear Statistics" //MK3
+	#define MSG_ENABLE_STATS "Enable Statistics" //MK3
+	#define MSG_DISABLE_STATS "Pause Statistics" //MK3
+  #define MSG_VMAX "Vmax " //MK3
+  // LCD Menu Messages ferz
+  #define MSG_SD_INSERTED "Card inserted"           
+	#define MSG_SD_REMOVED "Card removed"
+	#define MSG_AUTOSTART "Autostart"
+	#define MSG_DISABLE_STEPPERS "Disable steppers"
+	#define MSG_AUTO_HOME "Auto home"
+	#define MSG_SET_ORIGIN "Set origin"
+	#define MSG_PREHEAT_PLA "Preheat PLA"
+	#define MSG_PREHEAT_PLA0 "Preheat PLA 1"
+	#define MSG_PREHEAT_PLA1 "Preheat PLA 2"
+	#define MSG_PREHEAT_PLA2 "Preheat PLA 3"
+	#define MSG_PREHEAT_PLA012 "Preheat PLA All"
+	#define MSG_PREHEAT_PLA_BEDONLY "Preheat PLA Bed"
+	#define MSG_PREHEAT_PLA_SETTINGS "Preheat PLA conf"
+	#define MSG_PREHEAT_ABS0 "Preheat ABS 1"
+	#define MSG_PREHEAT_ABS1 "Preheat ABS 2"
+	#define MSG_PREHEAT_ABS2 "Preheat ABS 3"
+	#define MSG_PREHEAT_ABS012 "Preheat ABS All"
+	#define MSG_PREHEAT_ABS_BEDONLY "Preheat ABS Bed"
+	#define MSG_SWITCH_PS_ON "Switch power on"
+	#define MSG_SWITCH_PS_OFF "Switch power off"
+	#define MSG_EXTRUDE "Extrude"
+	#define MSG_RETRACT "Retract"
+	#define MSG_MOVE_AXIS "Move axis"
+	#define MSG_MOVE_X "Move X"
+	#define MSG_MOVE_Y "Move Y"
+	#define MSG_MOVE_Z "Move Z"
+	#define MSG_MOVE_01MM "Move 0.1mm"
+	#define MSG_MOVE_1MM "Move 1mm"
+	#define MSG_MOVE_10MM "Move 10mm"
+	#define MSG_SPEED   "Puller mm/s"
+	#define MSG_NOZZLE1 "Nozzle2"
+	#define MSG_NOZZLE2 "Nozzle3"
+	#define MSG_BED "Bed"
+	#define MSG_FLOW "Flow"
+	#define MSG_FLOW0 "Flow 0"
+	#define MSG_FLOW1 "Flow 1"
+	#define MSG_FLOW2 "Flow 2"
+	#define MSG_MIN " \002 Min"
+	#define MSG_MAX " \002 Max"
+	#define MSG_FACTOR " \002 Fact"
+	#define MSG_AUTOTEMP "Autotemp"
+	#define MSG_ON "On "
+	#define MSG_OFF "Off"
+	#define MSG_ACC  "Accel"
+	#define MSG_VXY_JERK "Vxy-jerk" 
+	#define MSG_VZ_JERK "Vz-jerk" 
+	#define MSG_X "x"
+	#define MSG_Y "y"
+	#define MSG_Z "z"
+	#define MSG_VMIN "Vmin"
+	#define MSG_VTRAV_MIN "VTrav min"
+	#define MSG_AMAX "Amax "
+	#define MSG_XSTEPS "Xsteps/mm"
+	#define MSG_YSTEPS "Ysteps/mm"
+	#define MSG_ZSTEPS "Zsteps/mm"
+	#define MSG_RECTRACT "Rectract"
+	#define MSG_CONTRAST "LCD contrast"
+	#define MSG_REFRESH "Refresh"
+	#define MSG_PAUSE_PRINT "Pause print"
+	#define MSG_RESUME_PRINT "Resume print"
+	#define MSG_STOP_PRINT "Stop print"
+	#define MSG_CARD_MENU "Print from SD"
+	#define MSG_NO_CARD "No SD card"
+	#define MSG_DWELL "Sleep..."
+	#define MSG_USERWAIT "Wait for user..."
+	#define MSG_RESUMING "Resuming print"
+	#define MSG_NO_MOVE "No move."
+	#define MSG_KILLED "KILLED. "
+	#define MSG_STOPPED "STOPPED. "
+	#define MSG_CONTROL_RETRACT  "Retract mm"
+	#define MSG_CONTROL_RETRACTF "Retract  F"
+	#define MSG_CONTROL_RETRACT_ZLIFT "Hop mm"
+	#define MSG_CONTROL_RETRACT_RECOVER "UnRet +mm"
+	#define MSG_CONTROL_RETRACT_RECOVERF "UnRet  F"
+	#define MSG_AUTORETRACT "AutoRetr."
+	#define MSG_FILAMENTCHANGE "Change filament"
+	#define MSG_INIT_SDCARD "Init. SD card"
+	#define MSG_CNG_SDCARD "Change SD card"
+	#define MSG_ZPROBE_OUT "Z probe out. bed"
+	#define MSG_POSITION_UNKNOWN "Home X/Y before Z"
+	#define MSG_ZPROBE_ZOFFSET "Z Offset"
+	#define MSG_BABYSTEP_X "Babystep X"
+	#define MSG_BABYSTEP_Y "Babystep Y"
+	#define MSG_BABYSTEP_Z "Babystep Z"
+	#define MSG_ENDSTOP_ABORT "Endstop abort"
 
+// Serial Console Messages
+
+	#define MSG_Enqueing "enqueing \""
+	#define MSG_POWERUP "PowerUp"
+	#define MSG_EXTERNAL_RESET " External Reset"
+	#define MSG_BROWNOUT_RESET " Brown out Reset"
+	#define MSG_WATCHDOG_RESET " Watchdog Reset"
+	#define MSG_SOFTWARE_RESET " Software Reset"
+	#define MSG_AUTHOR " | Author: "
+	#define MSG_CONFIGURATION_VER " Last Updated: "
+	#define MSG_FREE_MEMORY " Free Memory: "
+	#define MSG_PLANNER_BUFFER_BYTES "  PlannerBufferBytes: "
+	#define MSG_OK "ok"
+	#define MSG_FILE_SAVED "Done saving file."
+	#define MSG_ERR_LINE_NO "Line Number is not Last Line Number+1, Last Line: "
+	#define MSG_ERR_CHECKSUM_MISMATCH "checksum mismatch, Last Line: "
+	#define MSG_ERR_NO_CHECKSUM "No Checksum with line number, Last Line: "
+	#define MSG_ERR_NO_LINENUMBER_WITH_CHECKSUM "No Line Number with checksum, Last Line: "
+	#define MSG_FILE_PRINTED "Done printing file"
+	#define MSG_BEGIN_FILE_LIST "Begin file list"
+	#define MSG_END_FILE_LIST "End file list"
+	#define MSG_M104_INVALID_EXTRUDER "M104 Invalid extruder "
+	#define MSG_M105_INVALID_EXTRUDER "M105 Invalid extruder "
+	#define MSG_M200_INVALID_EXTRUDER "M200 Invalid extruder "
+	#define MSG_M218_INVALID_EXTRUDER "M218 Invalid extruder "
+	#define MSG_M221_INVALID_EXTRUDER "M221 Invalid extruder "
+	#define MSG_ERR_NO_THERMISTORS "No thermistors - no temperature"
+	#define MSG_M109_INVALID_EXTRUDER "M109 Invalid extruder "
+	#define MSG_HEATING "Heating..."
+	#define MSG_HEATING_COMPLETE "Heating done.       "
+  #define MSG_EXTRUDER_RUNNING "Extruder running"
+  #define MSG_EXTRUDER_STOPPED "Extruder stopped"
+  #define MSG_EXTRUDE_COMPLETE "Extrude Run Complete"
+	#define MSG_BED_HEATING "Bed Heating."
+	#define MSG_BED_DONE "Bed done."
+	#define MSG_M115_REPORT "FIRMWARE_NAME:Mackerel V1; Marlin mashup for Filament Extruders FIRMWARE_URL:" FIRMWARE_URL " PROTOCOL_VERSION:" PROTOCOL_VERSION " MACHINE_TYPE:" MACHINE_NAME " EXTRUDER_COUNT:" STRINGIFY(EXTRUDERS) " UUID:" MACHINE_UUID "\n"
+	#define MSG_COUNT_X " Count X: "
+	#define MSG_ERR_KILLED "Printer halted. kill() called!"
+	#define MSG_ERR_STOPPED "Printer stopped due to errors. Fix the error and use M999 to restart. (Temperature is reset. Set it after restarting)"
+	#define MSG_RESEND "Resend: "
+	#define MSG_UNKNOWN_COMMAND "Unknown command: \""
+	#define MSG_ACTIVE_EXTRUDER "Active Extruder: "
+	#define MSG_INVALID_EXTRUDER "Invalid extruder"
+	#define MSG_X_MIN "x_min: "
+	#define MSG_X_MAX "x_max: "
+	#define MSG_Y_MIN "y_min: "
+	#define MSG_Y_MAX "y_max: "
+	#define MSG_Z_MIN "z_min: "
+	#define MSG_Z_MAX "z_max: "
+	#define MSG_M119_REPORT "Reporting endstop status"
+	#define MSG_ENDSTOP_HIT "TRIGGERED"
+	#define MSG_ENDSTOP_OPEN "open"
+	#define MSG_HOTEND_OFFSET "Hotend offsets:"
+	#define MSG_SD_CANT_OPEN_SUBDIR "Cannot open subdir"
+	#define MSG_SD_INIT_FAIL "SD init fail"
+	#define MSG_SD_VOL_INIT_FAIL "volume.init failed"
+	#define MSG_SD_OPENROOT_FAIL "openRoot failed"
+	#define MSG_SD_CARD_OK "SD card ok"
+	#define MSG_SD_WORKDIR_FAIL "workDir open failed"
+	#define MSG_SD_OPEN_FILE_FAIL "open failed, File: "
+	#define MSG_SD_FILE_OPENED "File opened: "
+	#define MSG_SD_SIZE " Size: "
+	#define MSG_SD_FILE_SELECTED "File selected"
+	#define MSG_SD_WRITE_TO_FILE "Writing to file: "
+	#define MSG_SD_PRINTING_BYTE "SD printing byte "
+	#define MSG_SD_NOT_PRINTING "Not SD printing"
+	#define MSG_SD_ERR_WRITE_TO_FILE "error writing to file"
+	#define MSG_SD_CANT_ENTER_SUBDIR "Cannot enter subdir: "
+	#define MSG_STEPPER_TOO_HIGH "Steprate too high: "
+	#define MSG_ENDSTOPS_HIT "endstops hit: "
+	#define MSG_ERR_COLD_EXTRUDE_STOP " cold extrusion prevented"
+	#define MSG_ERR_LONG_EXTRUDE_STOP " too long extrusion prevented"
+	#define MSG_BABYSTEPPING_X "Babystepping X"
+	#define MSG_BABYSTEPPING_Y "Babystepping Y"
+	#define MSG_BABYSTEPPING_Z "Babystepping Z"
+	#define MSG_SERIAL_ERROR_MENU_STRUCTURE "Error in menu structure"
+/* alt
 	#define WELCOME_MSG MACHINE_NAME " gereed."
 	#define MSG_SD_INSERTED "Kaart ingestoken"
 	#define MSG_SD_REMOVED "Kaart verwijderd"
@@ -2297,7 +4622,7 @@
 	#define MSG_BABYSTEPPING_Y "Babystepping Y"
 	#define MSG_BABYSTEPPING_Z "Babystepping Z"
 	#define MSG_SERIAL_ERROR_MENU_STRUCTURE "Fout in menustructuur"
-
+*/
 #endif
 
 #endif // ifndef LANGUAGE_H
