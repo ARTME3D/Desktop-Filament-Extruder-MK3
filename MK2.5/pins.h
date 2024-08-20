@@ -493,7 +493,7 @@
 	#if MOTHERBOARD == 34  //FMM added for Filament Extruder
 	  //define analog pin for the filament width sensor input
 	  //Use the RAMPS 1.4 Analog input 5 on the AUX2 connector
-      #define FILWIDTH_PIN        5
+      #define FILWIDTH_PIN        4
 	  //Use the RAMPS 1.4 Digital input D3 (usually XMIN endstop pin)
 	  #define EXTRUDER_MOTOR_ON_OFF_PIN		3
       #define X_MAX_PIN -1 //FMM remove definition for limit pins to speed the stepper interrupt.
@@ -509,7 +509,7 @@
   #if MOTHERBOARD == 33 || MOTHERBOARD == 35 || MOTHERBOARD == 67 || MOTHERBOARD == 68
     #define FAN_PIN            -1 // (Sprinter config)
   #else
-    #define WINDER_PIN            7 // FMM used for the winder motor
+    #define WINDER_PIN            9 // FMM used for the winder motor
   #endif
 
   #if MOTHERBOARD == 77

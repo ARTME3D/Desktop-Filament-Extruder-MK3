@@ -322,7 +322,7 @@ debug notes:
 
 #define DEFAULT_LENGTH_CUTOFF 250000  //length in mm where extruder will shut down
 
-#define DEFAULT_EXTRUDE_MINTEMP 90  //min temp that extruder motor will run
+#define DEFAULT_EXTRUDE_MINTEMP 160  //min temp that extruder motor will run
 //this prevents dangerous Extruder moves, i.e. if the temperature is under the limit
 //can be software-disabled for whatever purposes by
 #define PREVENT_DANGEROUS_EXTRUDE

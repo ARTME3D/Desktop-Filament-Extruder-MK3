@@ -3074,7 +3074,7 @@ void process_commands()
 	#endif
     case 303: // M303 PID autotune
     {
-      float temp = 150.0;
+      float temp = 190.0;
       int e=0;
       int c=5;
       if (code_seen('E')) e=code_value();

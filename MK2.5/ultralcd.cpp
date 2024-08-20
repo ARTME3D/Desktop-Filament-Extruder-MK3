@@ -310,6 +310,7 @@ static void lcd_extruder_pause()
 
     
     digitalWrite(CONTROLLERFAN_PIN, 0); //stop fan
+    digitalWrite(CONTROLLERFAN2_PIN, 0); //stop fan
     lcd_disable_statistics();
 
     LCD_MESSAGEPGM(MSG_EXTRUDER_STOPPED);
@@ -321,6 +322,7 @@ static void lcd_extruder_resume()
 	extrude_status=extrude_status|ES_ENABLE_SET;
 	winderSpeed = default_winder_speed*255/winder_rpm_factor;  //start winder
 	digitalWrite(CONTROLLERFAN_PIN, 1);  //start Fan
+  digitalWrite(CONTROLLERFAN2_PIN, 1);  //start Fan
     starttime=millis();
     lcd_enable_statistics();
 
@@ -525,7 +527,7 @@ static void lcd_tune_menu()
 #if TEMP_SENSOR_1 != 0
     MENU_ITEM_EDIT(int3, MSG_NOZZLE1, &target_temperature[1], 0, HEATER_1_MAXTEMP - 15);
 #endif
-    MENU_ITEM_EDIT(int3, MSG_WINDER_SPEED, &default_winder_speed, 0, 45); //Fan Speed limited to 45 in the MK2 because of using 12V fan in a 24V system. Same in prepare_menu
+    MENU_ITEM_EDIT(int3, MSG_WINDER_SPEED, &default_winder_speed, 0, 100); //Fan Speed limited to 45 in the MK2 because of using 12V fan in a 24V system. Same in prepare_menu
 #if TEMP_SENSOR_2 != 0
     MENU_ITEM_EDIT(int3, MSG_NOZZLE2, &target_temperature[2], 0, HEATER_2_MAXTEMP - 15);
 #endif
@@ -714,7 +716,7 @@ static void lcd_prepare_menu()
     MENU_ITEM(back, MSG_MAIN, lcd_main_menu);
     MENU_ITEM_EDIT(float22, MSG_EXT_RPM, &extruder_rpm_set,EXTRUDER_RPM_MIN,EXTRUDER_RPM_MAX);
     MENU_ITEM_EDIT(int3, MSG_HEATER, &target_temperature[0], 0, HEATER_0_MAXTEMP - 15); 
-    MENU_ITEM_EDIT(int3, MSG_WINDER_SPEED, &default_winder_speed, 0, 45); //Fan Speed limited to 45 in the MK2 because of using 12V fan in a 24V system. Same in tune_menu
+    MENU_ITEM_EDIT(int3, MSG_WINDER_SPEED, &default_winder_speed, 0, 100); //Fan Speed limited to 45 in the MK2 because of using 12V fan in a 24V system. Same in tune_menu
    // MENU_ITEM_EDIT(float22, MSG_SPEED, &puller_feedrate_default, PULLER_FEEDRATE_MIN, PULLER_FEEDRATE_MAX);
     MENU_ITEM_EDIT(float6,MSG_LENGTH_CUTOFF, &fil_length_cutoff,1000,999000);
 #ifdef SDSUPPORT
