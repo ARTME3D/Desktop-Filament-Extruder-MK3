@@ -508,9 +508,7 @@ static void lcd_implementation_status_screen()
       lcd_printPGM(PSTR(""));   
    #endif   
      
-  lcd_printPGM(PSTR(MSG_DISPLAY_Length));
- lcd.print(ftostr3(extrude_length/1000)); // divided by 1000 to get value in meters
- lcd_printPGM(PSTR(MSG_DISPLAY_Meter));
+  
    
    
 
@@ -532,6 +530,9 @@ static void lcd_implementation_status_screen()
     lcd.print(ftostr22(puller_feedrate*(60.0/pcirc)));
     lcd_printPGM(PSTR(MSG_DISPLAY_rpm));
 
+    lcd_printPGM(PSTR(MSG_DISPLAY_Length));
+ lcd.print(ftostr3(extrude_length/1000)); // divided by 1000 to get value in meters
+ lcd_printPGM(PSTR(MSG_DISPLAY_Meter));
     /*
 #if (FILWIDTH_PIN > -1)
     lcd_printPGM(PSTR("Av"));

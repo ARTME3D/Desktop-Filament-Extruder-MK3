@@ -962,10 +962,11 @@ static void lcd_control_menu()
     START_MENU();
     MENU_ITEM(back, MSG_MAIN, lcd_main_menu);
     MENU_ITEM(submenu, MSG_TEMPERATURE, lcd_control_temperature_menu);
-    MENU_ITEM(submenu, MSG_MOTION, lcd_control_motion_menu);
+    
 #ifdef FILAMENT_SENSOR
     MENU_ITEM(submenu,MSG_FILAMENT_PID, lcd_control_Filament_PID_menu);
 #endif
+    MENU_ITEM(submenu, MSG_MOTION, lcd_control_motion_menu);
 #ifdef DOGLCD
 //    MENU_ITEM_EDIT(int3, MSG_CONTRAST, &lcd_contrast, 0, 63);
     MENU_ITEM(submenu, MSG_CONTRAST, lcd_set_contrast);
@@ -987,15 +988,15 @@ static void lcd_control_Filament_PID_menu()
 	START_MENU();
 	MENU_ITEM(back, MSG_CONTROL, lcd_control_menu);
 	MENU_ITEM_EDIT(float32,MSG_FILAMENT, &filament_width_desired,1.0,9.0);
+  MENU_ITEM_EDIT(float32, MSG_DISPLAY_SensROmin, &sensorRunoutMin, 0, 8);
+  MENU_ITEM_EDIT(float32, MSG_DISPLAY_SensROmax, &sensorRunoutMax, 1, 15);
+  MENU_ITEM_EDIT(float32, MSG_DISPLAY_Pcirc, &pcirc, 1, 300);
 	MENU_ITEM_EDIT(float6,MSG_LENGTH_CUTOFF, &fil_length_cutoff,1000,999000);
 	MENU_ITEM_EDIT(float53, MSG_PID_P, &fwidthKp, 0.0, 99.999);
 	MENU_ITEM_EDIT(float53, MSG_PID_I, &fwidthKi, 0.0, 99.999);
 	MENU_ITEM_EDIT(float53, MSG_PID_D, &fwidthKd, 0.0, 99.999);
     MENU_ITEM_EDIT(float5, MSG_DISPLAY_Factor1, &fFactor1, 1000, 50000);
     MENU_ITEM_EDIT(float32, MSG_DISPLAY_Factor2, &fFactor2, 1, 20);
-    MENU_ITEM_EDIT(float32, MSG_DISPLAY_Pcirc, &pcirc, 1, 300);
-    MENU_ITEM_EDIT(float32, MSG_DISPLAY_SensROmin, &sensorRunoutMin, 0, 8);
-    MENU_ITEM_EDIT(float32, MSG_DISPLAY_SensROmax, &sensorRunoutMax, 1, 15);
     END_MENU();
 	}
 

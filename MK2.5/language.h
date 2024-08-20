@@ -20,7 +20,7 @@
 // 11 Dutch
 
 #ifndef LANGUAGE_CHOICE
-	#define LANGUAGE_CHOICE 2  // Pick your language from the list above
+	#define LANGUAGE_CHOICE 1  // Pick your language from the list above
 #endif
 
 #define PROTOCOL_VERSION "1.0"
@@ -38,7 +38,7 @@
 	#ifdef CUSTOM_MENDEL_NAME
 		#define MACHINE_NAME CUSTOM_MENDEL_NAME
 	#else
-		#define MACHINE_NAME "ARTME 3D MK2.5 is"
+		#define MACHINE_NAME "ARTME 3D MK2.5   "
 	#endif
 
 // Default firmware set to Mendel
@@ -70,75 +70,78 @@
 
 // LCD Menu Messages MK3 English
 // Please note these are limited to 17 characters!
-  #define MSG_DISPLAY_SensROmax "Sens RO Max" //MK3
-  #define MSG_DISPLAY_SensROmin "Sens RO Min" //MK3
-  #define MSG_DISPLAY_Pcirc "P circ" //MK3
-  #define MSG_DISPLAY_Factor2 "Factor 2" //MK3
-  #define MSG_DISPLAY_Factor1 "Factor 1" //MK3
-  #define MSG_DISPLAY_Meter "m" //MK3
-  #define MSG_DISPLAY_Length " L:" //MK3
-  #define MSG_DISPLAY_S "S:" //MK3
-  #define MSG_DISPLAY_AV " Av" //MK3
-  #define MSG_DISPLAY_MinWidth " Mn" //MK3
-  #define MSG_DISPLAY_MaxWidth " Mx" //MK3
-  #define MSG_DISPLAY_rpm2 "rpm " //MK3
-  #define MSG_DISPLAY_COLD "COLD" //MK3
-  #define MSG_DISPLAY_OFF "OFF " //MK3
-  #define MSG_DISPLAY_E "E:" //MK3
-  #define MSG_DISPLAY_rpm "rpm     " //MK3
-  #define MSG_DISPLAY_Puller "Puller:" //MK3
-  #define MSG_SAFETY_COOLDOWN "SAFETY COOLDOWN" //MK3
-  #define MSG_EX_WARM_UP "Extruder Warming Up" //MK3
-  #define MSG_EX_COOL "Extruder Cooling" //MK3
-  #define MSG_AUTOT_SEQU "Autotune Sequence" //MK3
-  #define MSG_AUTOT_COMPL "Autotune Complete" //MK3
-  #define MSG_MIN_TEMP "Err: MINTEMP" //MK3
-  #define MSG_MAX_TEMP "Err: MAXTEMP" //MK3
-  #define MSG_thermal_runaway "THERMAL RUNAWAY" //MK3
-  #define MSG_sensor_runout "SENSOR RUNOUT" //MK3
-	#define WELCOME_MSG MACHINE_NAME " OK" //MK3
-	#define MSG_MAIN "Main" //MK3
-  #define MSG_PREHEAT_ABS "Preheat"  //MK3
-  #define MSG_PREHEAT_ABS_SETTINGS "Preheat config" //MK3
-	#define MSG_COOLDOWN "Cooldown" //MK3
-  #define MSG_MOVE_E "Extruder" //MK3
-	#define MSG_MOVE_P "Puller" //MK3
-  #define MSG_EXT_RPM "Extruder RPM" //MK3
-	#define MSG_NOZZLE "Nozzle" //MK3
-	#define MSG_HEATER "Extruder Temp" //MK3
-  #define MSG_LENGTH_CUTOFF "L cutoff" //MK3
-  #define MSG_FILAMENT "Sensor Pos." //MK3
-  #define MSG_WINDER_SPEED "Fan Speed" //MK3
-  #define MSG_WINDER_RPM_FACTOR "Winder RPM Factor" //MK3
-  #define MSG_PID_P "PID-P" //MK3
-	#define MSG_PID_I "PID-I" //MK3
-	#define MSG_PID_D "PID-D" //MK3
-	#define MSG_PID_C "PID-C" //MK3
-  #define MSG_AUTOTUNE "PID Autotune" //MK3
-  #define MSG_CONTROL "Control" //MK3
-  #define MSG_VE_JERK "Ve-jerk" //MK3
-	#define MSG_E "e" //MK3
-  #define MSG_WATCH "Info screen" //MK3
-  #define MSG_STATS "Filament Statistics" //MK3
-	#define MSG_PREPARE "Prepare" //MK3
-	#define MSG_TUNE "Tune" //MK3
-  #define MSG_ESTEPS "Esteps/rev/100" //MK3
-	#define MSG_PSTEPS "Psteps/mm" //MK3
-  #define MSG_A_RETRACT "Motor Acc" //MK3
-  #define MSG_STORE_EPROM "Store memory" //MK3
-	#define MSG_LOAD_EPROM "Load memory" //MK3
-	#define MSG_RESTORE_FAILSAFE "Restore failsafe" //MK3
-  #define MSG_TEMPERATURE "Temperature" //MK3
-	#define MSG_MOTION "Motion" //MK3
-  #define MSG_FILAMENT_PID "Puller PID" //MK3
-  #define MSG_PAUSE_EXTRUDER "STOP Extruder" //MK3
-	#define MSG_RESUME_EXTRUDER "START Extruder" //MK3
-  #define MSG_AUTO_EXTRUDER "Automatic pulling" //MK3
-  #define MSG_MAN_EXTRUDER "Manually pulling" //MK3
-	#define MSG_CLEAR_STATS "Clear Statistics" //MK3
-	#define MSG_ENABLE_STATS "Enable Statistics" //MK3
-	#define MSG_DISABLE_STATS "Pause Statistics" //MK3
-  #define MSG_VMAX "Vmax " //MK3
+  #define MSG_DISPLAY_SensROmax "Sensor Max" //MK3
+#define MSG_DISPLAY_SensROmin "Sensor Min" //MK3
+#define MSG_DISPLAY_Pcirc "Wheel circum" //MK3
+#define MSG_DISPLAY_Factor2 "Factor 2" //MK3
+#define MSG_DISPLAY_Factor1 "Factor 1" //MK3
+#define MSG_DISPLAY_Meter "m" //MK3
+#define MSG_DISPLAY_Length " L:" //MK3
+#define MSG_DISPLAY_S "S:" //MK3
+#define MSG_DISPLAY_AV "  Avg:" //MK3
+#define MSG_DISPLAY_MinWidth "  Min:" //MK3
+#define MSG_DISPLAY_MaxWidth "  Max:" //MK3
+#define MSG_DISPLAY_rpm2 " rpm " //MK3
+#define MSG_DISPLAY_COLD "Cold" //MK3
+#define MSG_DISPLAY_OFF "Off " //MK3
+#define MSG_DISPLAY_E "E:" //MK3
+#define MSG_DISPLAY_rpm "rpm " //MK3
+#define MSG_DISPLAY_Puller "P:" //MK3
+#define MSG_SAFETY_COOLDOWN "Safety Cooldown" //MK3
+#define MSG_EX_WARM_UP "Extruder Warming Up" //MK3
+#define MSG_EX_COOL "Extruder Cooling" //MK3
+#define MSG_AUTOT_SEQU "Autotune Sequence" //MK3
+#define MSG_AUTOT_COMPL "Autotune Complete" //MK3
+#define MSG_MIN_TEMP "MINTEMP" //MK3
+#define MSG_MAX_TEMP "MAXTEMP" //MK3
+#define MSG_thermal_runaway "Heating Error" //MK3
+#define MSG_sensor_runout "Sensor Error" //MK3
+#define WELCOME_MSG MACHINE_NAME "  " //MK3
+#define MSG_MAIN "Main menu" //MK3
+#define MSG_PREHEAT_ABS "Preheat" //MK3
+#define MSG_PREHEAT_ABS_SETTINGS "Preheat Setting" //MK3
+#define MSG_COOLDOWN "Cooldown" //MK3
+#define MSG_MOVE_E "Extruder" //MK3
+#define MSG_MOVE_P "P" //MK3
+#define MSG_EXT_RPM "Extruder Speed" //MK3
+#define MSG_NOZZLE "Nozzle" //MK3
+#define MSG_HEATER "Temperature" //MK3
+#define MSG_LENGTH_CUTOFF "Length Cutoff" //MK3
+#define MSG_FILAMENT "Sensor Pos" //MK3
+#define MSG_WINDER_SPEED "Fan Speed" //MK3
+#define MSG_WINDER_RPM_FACTOR "Winder RPM Factor" //MK3
+#define MSG_PID_P "PID-P" //MK3
+#define MSG_PID_I "PID-I" //MK3
+#define MSG_PID_D "PID-D" //MK3
+#define MSG_PID_C "PID-C" //MK3
+#define MSG_AUTOTUNE "PID Autotune" //MK3
+#define MSG_CONTROL "Control" //MK3
+#define MSG_VE_JERK "Ve-jerk" //MK3
+#define MSG_E "e" //MK3
+#define MSG_WATCH "Start Screen" //MK3
+#define MSG_STATS "Filament Statistics" //MK3
+#define MSG_PREPARE "Settings" //MK3
+#define MSG_TUNE "Settings" //MK3
+#define MSG_ESTEPS "Esteps/rev/100" //MK3
+#define MSG_PSTEPS "Psteps/mm" //MK3
+#define MSG_A_RETRACT "Motor Acc" //MK3
+#define MSG_STORE_EPROM "Save Settings" //MK3
+#define MSG_LOAD_EPROM "Load Settings" //MK3
+#define MSG_RESTORE_FAILSAFE "Reset Settings" //MK3
+#define MSG_TEMPERATURE "Temperature" //MK3
+#define MSG_MOTION "Motion" //MK3
+#define MSG_FILAMENT_PID "Pulling Unit" //MK3
+#define MSG_PAUSE_EXTRUDER "STOP Extruder" //MK3
+#define MSG_RESUME_EXTRUDER "START Extruder" //MK3
+#define MSG_AUTO_EXTRUDER "Automatic Pulling" //MK3
+#define MSG_MAN_EXTRUDER "Manually Pulling" //MK3
+#define MSG_CLEAR_STATS "Clear Statistics" //MK3
+#define MSG_ENABLE_STATS "Enable Statistics" //MK3
+#define MSG_DISABLE_STATS "Pause Statistics" //MK3
+#define MSG_VMAX "Vmax " //MK3
+#define MSG_EXTRUDER_RUNNING "Extruder running" //MK3
+#define MSG_EXTRUDER_STOPPED "Extruder stopped" //MK3
+#define MSG_EXTRUDE_COMPLETE "Extrusion complete" //MK3
   // LCD Menu Messages ferz
   #define MSG_SD_INSERTED "Card inserted"           
 	#define MSG_SD_REMOVED "Card removed"
@@ -256,9 +259,6 @@
 	#define MSG_M109_INVALID_EXTRUDER "M109 Invalid extruder "
 	#define MSG_HEATING "Heating..."
 	#define MSG_HEATING_COMPLETE "Heating done.       "
-  #define MSG_EXTRUDER_RUNNING "Extruder running"
-  #define MSG_EXTRUDER_STOPPED "Extruder stopped"
-  #define MSG_EXTRUDE_COMPLETE "Extrude Run Complete"
 	#define MSG_BED_HEATING "Bed Heating."
 	#define MSG_BED_DONE "Bed done."
 	#define MSG_M115_REPORT "FIRMWARE_NAME:Mackerel V1; Marlin mashup for Filament Extruders FIRMWARE_URL:" FIRMWARE_URL " PROTOCOL_VERSION:" PROTOCOL_VERSION " MACHINE_TYPE:" MACHINE_NAME " EXTRUDER_COUNT:" STRINGIFY(EXTRUDERS) " UUID:" MACHINE_UUID "\n"
@@ -310,75 +310,78 @@
 
 // LCD Menu Messages MK3 German
 // Please note these are limited to 17 characters!
-  #define MSG_DISPLAY_SensROmax "Sens RO Max" //MK3
-  #define MSG_DISPLAY_SensROmin "Sens RO Min" //MK3
-  #define MSG_DISPLAY_Pcirc "P circ" //MK3
-  #define MSG_DISPLAY_Factor2 "Faktor 2" //MK3
-  #define MSG_DISPLAY_Factor1 "Faktor 1" //MK3
-  #define MSG_DISPLAY_Meter "m" //MK3
-  #define MSG_DISPLAY_Length " L:" //MK3
-  #define MSG_DISPLAY_S "S:" //MK3
-  #define MSG_DISPLAY_AV "  D" //MK3
-  #define MSG_DISPLAY_MinWidth " Mn" //MK3
-  #define MSG_DISPLAY_MaxWidth " Mx" //MK3
-  #define MSG_DISPLAY_rpm2 "rpm " //MK3
-  #define MSG_DISPLAY_COLD "KALT" //MK3
-  #define MSG_DISPLAY_OFF "AUS " //MK3
-  #define MSG_DISPLAY_E "E:" //MK3
-  #define MSG_DISPLAY_rpm "rpm     " //MK3
-  #define MSG_DISPLAY_Puller "Puller:" //MK3
-  #define MSG_SAFETY_COOLDOWN "SAFETY COOLDOWN" //MK3
-  #define MSG_EX_WARM_UP "Extruder Aufwaermen" //MK3
-  #define MSG_EX_COOL "Extruder Kuehlen" //MK3
-  #define MSG_AUTOT_SEQU "Autotune Sequenz" //MK3
-  #define MSG_AUTOT_COMPL "Autotune Feritg" //MK3
-  #define MSG_MIN_TEMP "Err: MINTEMP" //MK3
-  #define MSG_MAX_TEMP "Err: MAXTEMP" //MK3
-  #define MSG_thermal_runaway "THERMAL RUNAWAY" //MK3
-  #define MSG_sensor_runout "SENSOR RUNOUT" //MK3
-	#define WELCOME_MSG MACHINE_NAME " OK" //MK3
-	#define MSG_MAIN "Hauptmenue" //MK3
-  #define MSG_PREHEAT_ABS "Vorheizen"  //MK3
-  #define MSG_PREHEAT_ABS_SETTINGS "Vorheizen config" //MK3
-	#define MSG_COOLDOWN "Abkuehlen" //MK3
-  #define MSG_MOVE_E "Extruder" //MK3
-	#define MSG_MOVE_P "Puller" //MK3
-  #define MSG_EXT_RPM "Extruder RPM" //MK3
-	#define MSG_NOZZLE "Nozzle" //MK3
-	#define MSG_HEATER "Extruder Temp" //MK3
-  #define MSG_LENGTH_CUTOFF "L cutoff" //MK3
-  #define MSG_FILAMENT "Sensor Pos." //MK3
-  #define MSG_WINDER_SPEED "Fan Speed" //MK3
-  #define MSG_WINDER_RPM_FACTOR "Winder RPM Factor" //MK3
-  #define MSG_PID_P "PID-P" //MK3
-	#define MSG_PID_I "PID-I" //MK3
-	#define MSG_PID_D "PID-D" //MK3
-	#define MSG_PID_C "PID-C" //MK3
-  #define MSG_AUTOTUNE "PID Autotune" //MK3
-  #define MSG_CONTROL "Control" //MK3
-  #define MSG_VE_JERK "Ve-jerk" //MK3
-	#define MSG_E "e" //MK3
-  #define MSG_WATCH "Information" //MK3
-  #define MSG_STATS "Filament Statistik" //MK3
-	#define MSG_PREPARE "Vorbereiten" //MK3
-	#define MSG_TUNE "Tune" //MK3
-  #define MSG_ESTEPS "Esteps/rev/100" //MK3
-	#define MSG_PSTEPS "Psteps/mm" //MK3
-  #define MSG_A_RETRACT "Motor Acc" //MK3
-  #define MSG_STORE_EPROM "Speichern" //MK3
-	#define MSG_LOAD_EPROM "Lade Speicher" //MK3
-	#define MSG_RESTORE_FAILSAFE "Restore failsafe" //MK3
-  #define MSG_TEMPERATURE "Temperature" //MK3
-	#define MSG_MOTION "Bewegung" //MK3
-  #define MSG_FILAMENT_PID "Puller PID" //MK3
-  #define MSG_PAUSE_EXTRUDER "STOP Extruder" //MK3
-	#define MSG_RESUME_EXTRUDER "START Extruder" //MK3
-  #define MSG_AUTO_EXTRUDER "Automatik pulling" //MK3
-  #define MSG_MAN_EXTRUDER "Manuell pulling" //MK3
-	#define MSG_CLEAR_STATS "Statistik loeschen" //MK3
-	#define MSG_ENABLE_STATS "Statistik an" //MK3
-	#define MSG_DISABLE_STATS "Statistik pause" //MK3
-  #define MSG_VMAX "Vmax " //MK3
+  #define MSG_DISPLAY_SensROmax "Sensor Max" //MK3
+#define MSG_DISPLAY_SensROmin "Sensor Min" //MK3
+#define MSG_DISPLAY_Pcirc "Radumfang" //MK3
+#define MSG_DISPLAY_Factor2 "Faktor 2" //MK3
+#define MSG_DISPLAY_Factor1 "Faktor 1" //MK3
+#define MSG_DISPLAY_Meter "m" //MK3
+#define MSG_DISPLAY_Length " L:" //MK3
+#define MSG_DISPLAY_S "S:" //MK3
+#define MSG_DISPLAY_AV "  Dut:" //MK3
+#define MSG_DISPLAY_MinWidth "  Min:" //MK3
+#define MSG_DISPLAY_MaxWidth "  Max:" //MK3
+#define MSG_DISPLAY_rpm2 " Upm " //MK3
+#define MSG_DISPLAY_COLD "Kalt" //MK3
+#define MSG_DISPLAY_OFF "Aus " //MK3
+#define MSG_DISPLAY_E "E:" //MK3
+#define MSG_DISPLAY_rpm "Upm " //MK3
+#define MSG_DISPLAY_Puller "Z:" //MK3
+#define MSG_SAFETY_COOLDOWN "Sicherheitsabkuehlung" //MK3
+#define MSG_EX_WARM_UP "Extruder aufheizen" //MK3
+#define MSG_EX_COOL "Extruder abkuehlen" //MK3
+#define MSG_AUTOT_SEQU "Autotune Sequenz" //MK3
+#define MSG_AUTOT_COMPL "Autotune Ende" //MK3
+#define MSG_MIN_TEMP "MINTEMP" //MK3
+#define MSG_MAX_TEMP "MAXTEMP" //MK3
+#define MSG_thermal_runaway "Heizung Fehler" //MK3
+#define MSG_sensor_runout "Sensor Fehler" //MK3
+#define WELCOME_MSG MACHINE_NAME "   " //MK3
+#define MSG_MAIN "Hauptmenue" //MK3
+#define MSG_PREHEAT_ABS "Vorheizen" //MK3
+#define MSG_PREHEAT_ABS_SETTINGS "Vorheizen Einst." //MK3
+#define MSG_COOLDOWN "Abkuehlen" //MK3
+#define MSG_MOVE_E "Extruder" //MK3
+#define MSG_MOVE_P "Z" //MK3
+#define MSG_EXT_RPM "Extruder Geschw." //MK3
+#define MSG_NOZZLE "Nozzle" //MK3
+#define MSG_HEATER "Temperatur" //MK3
+#define MSG_LENGTH_CUTOFF "Soll Laenge" //MK3
+#define MSG_FILAMENT "Sensor Pos" //MK3
+#define MSG_WINDER_SPEED "Luefter Geschw." //MK3
+#define MSG_WINDER_RPM_FACTOR "Winder RPM Factor" //MK3
+#define MSG_PID_P "PID-P" //MK3
+#define MSG_PID_I "PID-I" //MK3
+#define MSG_PID_D "PID-D" //MK3
+#define MSG_PID_C "PID-C" //MK3
+#define MSG_AUTOTUNE "PID Autotune" //MK3
+#define MSG_CONTROL "Steuerung" //MK3
+#define MSG_VE_JERK "Ve-jerk" //MK3
+#define MSG_E "e" //MK3
+#define MSG_WATCH "Startbild" //MK3
+#define MSG_STATS "Filament Statistics" //MK3
+#define MSG_PREPARE "Einstellung" //MK3
+#define MSG_TUNE "Einstellung" //MK3
+#define MSG_ESTEPS "Esteps/rev/100" //MK3
+#define MSG_PSTEPS "Psteps/mm" //MK3
+#define MSG_A_RETRACT "Motor Acc" //MK3
+#define MSG_STORE_EPROM "Speichern" //MK3
+#define MSG_LOAD_EPROM "Laden" //MK3
+#define MSG_RESTORE_FAILSAFE "Werkseinstellung" //MK3
+#define MSG_TEMPERATURE "Temperatur" //MK3
+#define MSG_MOTION "Bewegung" //MK3
+#define MSG_FILAMENT_PID "Zieheinheit" //MK3
+#define MSG_PAUSE_EXTRUDER "STOP Extruder" //MK3
+#define MSG_RESUME_EXTRUDER "START Extruder" //MK3
+#define MSG_AUTO_EXTRUDER "Autom. ziehen" //MK3
+#define MSG_MAN_EXTRUDER "Manuell ziehen" //MK3
+#define MSG_CLEAR_STATS "Statistik auf 0." //MK3
+#define MSG_ENABLE_STATS "Statistik starten" //MK3
+#define MSG_DISABLE_STATS "Statistik stoppen" //MK3
+#define MSG_VMAX "Vmax " //MK3
+#define MSG_EXTRUDER_RUNNING "Extruder aktiv" //MK3
+#define MSG_EXTRUDER_STOPPED "Extruder gestoppt" //MK3
+#define MSG_EXTRUDE_COMPLETE "Extrusion fertig"
   // LCD Menu Messages ferz
   #define MSG_SD_INSERTED "Card inserted"           
 	#define MSG_SD_REMOVED "Card removed"
@@ -496,9 +499,6 @@
 	#define MSG_M109_INVALID_EXTRUDER "M109 Invalid extruder "
 	#define MSG_HEATING "Heating..."
 	#define MSG_HEATING_COMPLETE "Heating done.       "
-  #define MSG_EXTRUDER_RUNNING "Extruder running"
-  #define MSG_EXTRUDER_STOPPED "Extruder stopped"
-  #define MSG_EXTRUDE_COMPLETE "Extrude Run Complete"
 	#define MSG_BED_HEATING "Bed Heating."
 	#define MSG_BED_DONE "Bed done."
 	#define MSG_M115_REPORT "FIRMWARE_NAME:Mackerel V1; Marlin mashup for Filament Extruders FIRMWARE_URL:" FIRMWARE_URL " PROTOCOL_VERSION:" PROTOCOL_VERSION " MACHINE_TYPE:" MACHINE_NAME " EXTRUDER_COUNT:" STRINGIFY(EXTRUDERS) " UUID:" MACHINE_UUID "\n"
@@ -929,9 +929,6 @@
 	#define MSG_M109_INVALID_EXTRUDER "M109 Invalid extruder "
 	#define MSG_HEATING "Heating..."
 	#define MSG_HEATING_COMPLETE "Heating done.       "
-  #define MSG_EXTRUDER_RUNNING "Extruder running"
-  #define MSG_EXTRUDER_STOPPED "Extruder stopped"
-  #define MSG_EXTRUDE_COMPLETE "Extrude Run Complete"
 	#define MSG_BED_HEATING "Bed Heating."
 	#define MSG_BED_DONE "Bed done."
 	#define MSG_M115_REPORT "FIRMWARE_NAME:Mackerel V1; Marlin mashup for Filament Extruders FIRMWARE_URL:" FIRMWARE_URL " PROTOCOL_VERSION:" PROTOCOL_VERSION " MACHINE_TYPE:" MACHINE_NAME " EXTRUDER_COUNT:" STRINGIFY(EXTRUDERS) " UUID:" MACHINE_UUID "\n"
@@ -1361,9 +1358,6 @@
 	#define MSG_M109_INVALID_EXTRUDER "M109 Invalid extruder "
 	#define MSG_HEATING "Heating..."
 	#define MSG_HEATING_COMPLETE "Heating done.       "
-  #define MSG_EXTRUDER_RUNNING "Extruder running"
-  #define MSG_EXTRUDER_STOPPED "Extruder stopped"
-  #define MSG_EXTRUDE_COMPLETE "Extrude Run Complete"
 	#define MSG_BED_HEATING "Bed Heating."
 	#define MSG_BED_DONE "Bed done."
 	#define MSG_M115_REPORT "FIRMWARE_NAME:Mackerel V1; Marlin mashup for Filament Extruders FIRMWARE_URL:" FIRMWARE_URL " PROTOCOL_VERSION:" PROTOCOL_VERSION " MACHINE_TYPE:" MACHINE_NAME " EXTRUDER_COUNT:" STRINGIFY(EXTRUDERS) " UUID:" MACHINE_UUID "\n"
@@ -1794,9 +1788,6 @@
 	#define MSG_M109_INVALID_EXTRUDER "M109 Invalid extruder "
 	#define MSG_HEATING "Heating..."
 	#define MSG_HEATING_COMPLETE "Heating done.       "
-  #define MSG_EXTRUDER_RUNNING "Extruder running"
-  #define MSG_EXTRUDER_STOPPED "Extruder stopped"
-  #define MSG_EXTRUDE_COMPLETE "Extrude Run Complete"
 	#define MSG_BED_HEATING "Bed Heating."
 	#define MSG_BED_DONE "Bed done."
 	#define MSG_M115_REPORT "FIRMWARE_NAME:Mackerel V1; Marlin mashup for Filament Extruders FIRMWARE_URL:" FIRMWARE_URL " PROTOCOL_VERSION:" PROTOCOL_VERSION " MACHINE_TYPE:" MACHINE_NAME " EXTRUDER_COUNT:" STRINGIFY(EXTRUDERS) " UUID:" MACHINE_UUID "\n"
@@ -2231,9 +2222,6 @@
 	#define MSG_M109_INVALID_EXTRUDER "M109 Invalid extruder "
 	#define MSG_HEATING "Heating..."
 	#define MSG_HEATING_COMPLETE "Heating done.       "
-  #define MSG_EXTRUDER_RUNNING "Extruder running"
-  #define MSG_EXTRUDER_STOPPED "Extruder stopped"
-  #define MSG_EXTRUDE_COMPLETE "Extrude Run Complete"
 	#define MSG_BED_HEATING "Bed Heating."
 	#define MSG_BED_DONE "Bed done."
 	#define MSG_M115_REPORT "FIRMWARE_NAME:Mackerel V1; Marlin mashup for Filament Extruders FIRMWARE_URL:" FIRMWARE_URL " PROTOCOL_VERSION:" PROTOCOL_VERSION " MACHINE_TYPE:" MACHINE_NAME " EXTRUDER_COUNT:" STRINGIFY(EXTRUDERS) " UUID:" MACHINE_UUID "\n"
@@ -2659,9 +2647,6 @@
 	#define MSG_M109_INVALID_EXTRUDER "M109 Invalid extruder "
 	#define MSG_HEATING "Heating..."
 	#define MSG_HEATING_COMPLETE "Heating done.       "
-  #define MSG_EXTRUDER_RUNNING "Extruder running"
-  #define MSG_EXTRUDER_STOPPED "Extruder stopped"
-  #define MSG_EXTRUDE_COMPLETE "Extrude Run Complete"
 	#define MSG_BED_HEATING "Bed Heating."
 	#define MSG_BED_DONE "Bed done."
 	#define MSG_M115_REPORT "FIRMWARE_NAME:Mackerel V1; Marlin mashup for Filament Extruders FIRMWARE_URL:" FIRMWARE_URL " PROTOCOL_VERSION:" PROTOCOL_VERSION " MACHINE_TYPE:" MACHINE_NAME " EXTRUDER_COUNT:" STRINGIFY(EXTRUDERS) " UUID:" MACHINE_UUID "\n"
@@ -3088,9 +3073,6 @@
 	#define MSG_M109_INVALID_EXTRUDER "M109 Invalid extruder "
 	#define MSG_HEATING "Heating..."
 	#define MSG_HEATING_COMPLETE "Heating done.       "
-  #define MSG_EXTRUDER_RUNNING "Extruder running"
-  #define MSG_EXTRUDER_STOPPED "Extruder stopped"
-  #define MSG_EXTRUDE_COMPLETE "Extrude Run Complete"
 	#define MSG_BED_HEATING "Bed Heating."
 	#define MSG_BED_DONE "Bed done."
 	#define MSG_M115_REPORT "FIRMWARE_NAME:Mackerel V1; Marlin mashup for Filament Extruders FIRMWARE_URL:" FIRMWARE_URL " PROTOCOL_VERSION:" PROTOCOL_VERSION " MACHINE_TYPE:" MACHINE_NAME " EXTRUDER_COUNT:" STRINGIFY(EXTRUDERS) " UUID:" MACHINE_UUID "\n"
@@ -3524,9 +3506,6 @@
 	#define MSG_M109_INVALID_EXTRUDER "M109 Invalid extruder "
 	#define MSG_HEATING "Heating..."
 	#define MSG_HEATING_COMPLETE "Heating done.       "
-  #define MSG_EXTRUDER_RUNNING "Extruder running"
-  #define MSG_EXTRUDER_STOPPED "Extruder stopped"
-  #define MSG_EXTRUDE_COMPLETE "Extrude Run Complete"
 	#define MSG_BED_HEATING "Bed Heating."
 	#define MSG_BED_DONE "Bed done."
 	#define MSG_M115_REPORT "FIRMWARE_NAME:Mackerel V1; Marlin mashup for Filament Extruders FIRMWARE_URL:" FIRMWARE_URL " PROTOCOL_VERSION:" PROTOCOL_VERSION " MACHINE_TYPE:" MACHINE_NAME " EXTRUDER_COUNT:" STRINGIFY(EXTRUDERS) " UUID:" MACHINE_UUID "\n"
@@ -3953,9 +3932,6 @@
 	#define MSG_M109_INVALID_EXTRUDER "M109 Invalid extruder "
 	#define MSG_HEATING "Heating..."
 	#define MSG_HEATING_COMPLETE "Heating done.       "
-  #define MSG_EXTRUDER_RUNNING "Extruder running"
-  #define MSG_EXTRUDER_STOPPED "Extruder stopped"
-  #define MSG_EXTRUDE_COMPLETE "Extrude Run Complete"
 	#define MSG_BED_HEATING "Bed Heating."
 	#define MSG_BED_DONE "Bed done."
 	#define MSG_M115_REPORT "FIRMWARE_NAME:Mackerel V1; Marlin mashup for Filament Extruders FIRMWARE_URL:" FIRMWARE_URL " PROTOCOL_VERSION:" PROTOCOL_VERSION " MACHINE_TYPE:" MACHINE_NAME " EXTRUDER_COUNT:" STRINGIFY(EXTRUDERS) " UUID:" MACHINE_UUID "\n"
@@ -4388,9 +4364,6 @@
 	#define MSG_M109_INVALID_EXTRUDER "M109 Invalid extruder "
 	#define MSG_HEATING "Heating..."
 	#define MSG_HEATING_COMPLETE "Heating done.       "
-  #define MSG_EXTRUDER_RUNNING "Extruder running"
-  #define MSG_EXTRUDER_STOPPED "Extruder stopped"
-  #define MSG_EXTRUDE_COMPLETE "Extrude Run Complete"
 	#define MSG_BED_HEATING "Bed Heating."
 	#define MSG_BED_DONE "Bed done."
 	#define MSG_M115_REPORT "FIRMWARE_NAME:Mackerel V1; Marlin mashup for Filament Extruders FIRMWARE_URL:" FIRMWARE_URL " PROTOCOL_VERSION:" PROTOCOL_VERSION " MACHINE_TYPE:" MACHINE_NAME " EXTRUDER_COUNT:" STRINGIFY(EXTRUDERS) " UUID:" MACHINE_UUID "\n"
