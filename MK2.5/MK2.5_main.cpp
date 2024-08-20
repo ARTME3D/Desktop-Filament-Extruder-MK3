@@ -796,7 +796,7 @@ void loop()
   else
 	  extrude_status= extrude_status | ES_SWITCH_SET;
   
-  if(degHotend(active_extruder)>EXTRUDE_MINTEMP)  //check if extruder at min heated temp
+  if(degHotend(active_extruder)>extrude_temp)  //check if extruder at min heated temp
 	  extrude_status=extrude_status | ES_HOT_SET;
   else
 	  {

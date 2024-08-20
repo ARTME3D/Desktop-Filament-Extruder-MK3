@@ -53,7 +53,7 @@ extern float current_filwidth;
 #endif
 //#ifdef PIDTEMPBED
   extern float fwidthKp,fwidthKi,fwidthKd;
-  extern float fFactor1, fFactor2, pcirc, sensorRunoutMin, sensorRunoutMax;
+  extern float fFactor1, fFactor2, pcirc, sensorRunoutMin, sensorRunoutMax, extrude_temp;
 //#endif
   
   

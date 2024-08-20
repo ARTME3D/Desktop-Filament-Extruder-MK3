@@ -108,7 +108,7 @@ void Config_StoreSettings()
   EEPROM_WRITE_VAR(i,pcirc);
   EEPROM_WRITE_VAR(i,sensorRunoutMin);
   EEPROM_WRITE_VAR(i,sensorRunoutMax);
-  
+  EEPROM_WRITE_VAR(i,extrude_temp);
   
   char ver2[4]=EEPROM_VERSION;
   i=EEPROM_OFFSET;
@@ -272,6 +272,7 @@ void Config_RetrieveSettings()
         EEPROM_READ_VAR(i,pcirc);
         EEPROM_READ_VAR(i,sensorRunoutMin);
         EEPROM_READ_VAR(i,sensorRunoutMax);
+        EEPROM_READ_VAR(i,extrude_temp);
         
 		// Call updatePID (similar to when we have processed M301)
 		updatePID();

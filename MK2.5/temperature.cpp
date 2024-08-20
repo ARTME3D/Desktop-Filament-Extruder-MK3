@@ -46,6 +46,7 @@ float current_temperature_bed = 0.0;
   float pcirc = DEFAULT_PULLER_WHEEL_CIRC;
   float sensorRunoutMin = DEFAULT_SENSOR_RUNOUT_MIN;
   float sensorRunoutMax = DEFAULT_SENSOR_RUNOUT_MAX;
+  float extrude_temp = DEFAULT_EXTRUDE_MINTEMP;
 //#endif //PIDTEMPBED
   
 #ifdef FAN_SOFT_PWM

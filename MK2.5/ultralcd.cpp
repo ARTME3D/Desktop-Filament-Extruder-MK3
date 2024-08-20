@@ -1095,6 +1095,7 @@ static void lcd_control_motion_menu()
    // MENU_ITEM_EDIT(int3, MSG_WINDER_RPM_FACTOR, &winder_rpm_factor, 0, 200);  //ausgeklammert, da nicht benötigt
     MENU_ITEM_EDIT(float51, MSG_ESTEPS, &axis_steps_per_unit[E_AXIS], 5, 9999);
     MENU_ITEM_EDIT(float51, MSG_PSTEPS, &axis_steps_per_unit[P_AXIS], 5, 9999);
+    MENU_ITEM_EDIT(float3, MSG_EXTRUDE_MINTEMP, &extrude_temp, 0,200);
     MENU_ITEM_EDIT(float5, MSG_A_RETRACT, &retract_acceleration, 100, 99000);
     //MENU_ITEM_EDIT(float5, MSG_ACC, &acceleration, 500, 99000);
     //MENU_ITEM_EDIT(float3, MSG_VXY_JERK, &max_xy_jerk, 1, 990);

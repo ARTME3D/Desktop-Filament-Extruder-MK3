@@ -142,6 +142,7 @@
 #define MSG_EXTRUDER_RUNNING "Extruder running" //MK3
 #define MSG_EXTRUDER_STOPPED "Extruder stopped" //MK3
 #define MSG_EXTRUDE_COMPLETE "Extrusion complete" //MK3
+#define MSG_EXTRUDE_MINTEMP "E-Mintemp" //MK3
   // LCD Menu Messages ferz
   #define MSG_SD_INSERTED "Card inserted"           
 	#define MSG_SD_REMOVED "Card removed"
