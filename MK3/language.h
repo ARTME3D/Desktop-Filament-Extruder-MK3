@@ -63,7 +63,7 @@
 
 #define SPLASH1 "      ARTME 3D      "
 #define SPLASH2 "  Desktop Filament  "
-#define SPLASH3 "    ExtruderMK3  "
+#define SPLASH3 "    Extruder MK3  "
 
 
 #if LANGUAGE_CHOICE == 1
