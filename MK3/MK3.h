@@ -214,6 +214,7 @@ extern unsigned char extrude_status;
 #define ES_TEMP_SET 16
 #define ES_STATS_SET 128
 #define ES_ENABLE_CLEAR 254
+#define ES_ENABLE_CLEAR_NO_AUTO 250
 #define ES_SWITCH_CLEAR 253
 #define ES_AUTO_CLEAR 251
 #define ES_HOT_CLEAR 247

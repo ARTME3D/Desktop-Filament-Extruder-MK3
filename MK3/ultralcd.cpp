@@ -305,7 +305,7 @@ static void lcd_disable_statistics()
 
 static void lcd_extruder_pause()
 {
-    extrude_status=extrude_status & ES_ENABLE_CLEAR;
+    extrude_status=extrude_status & ES_ENABLE_CLEAR_NO_AUTO;
     puller_feedrate_default = puller_feedrate;   //save default feed rate
 
     
