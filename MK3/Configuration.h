@@ -289,7 +289,7 @@ debug notes:
 
 
 #define DEFAULT_EXTRUDER_RPM 7 //define default extruder RPM
-#define EXTRUDER_RPM_MAX 25 
+#define EXTRUDER_RPM_MAX 30 
 #define EXTRUDER_RPM_MIN 0.5
 #define DEFAULT_PULLER_FEEDRATE 12.0 //default puller feedrate when turned on
 #define PULLER_RPM_MIN 2.0 // min feedrate in manual control, 1 mm/sec min feed - limited by max pulse rate of 50,000

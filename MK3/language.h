@@ -40,7 +40,7 @@
 	#ifdef CUSTOM_MENDEL_NAME
 		#define MACHINE_NAME CUSTOM_MENDEL_NAME
 	#else
-		#define MACHINE_NAME "ARTME 3D MK3   "
+		#define MACHINE_NAME "ARTME 3D MK3S  "
 	#endif
 
 // Default firmware set to Mendel
@@ -65,7 +65,7 @@
 
 #define SPLASH1 "      ARTME 3D      "
 #define SPLASH2 "  Desktop Filament  "
-#define SPLASH3 "    Extruder MK3  "
+#define SPLASH3 "    Extruder MK3S  "
 
 
 #if LANGUAGE_CHOICE == 1
