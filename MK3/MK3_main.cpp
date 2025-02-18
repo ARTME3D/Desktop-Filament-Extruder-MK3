@@ -933,15 +933,10 @@ void loop()
 				  #define K2 (1.0-K1)
 				  dTerm_fwidth= (fwidthKd/puller_increment * (pid_input - dia_dState_fwidth))*K2 + (K1 * dTerm_fwidth);  //use spatial dT=puller_increment
 				  
-		
-				  filament_control = constrain(pTerm_fwidth - iTerm_fwidth + dTerm_fwidth, PULLER_PID_MIN_LIMIT, PULLER_PID_MAX_LIMIT);
+				  filament_control = constrain(pTerm_fwidth - iTerm_fwidth + dTerm_fwidth, PULLER_RPM_MIN / (60.0/pcirc), PULLER_RPM_MAX / (60.0/pcirc));
 				  
 				  dia_dState_fwidth = pid_input;
-				  
-		  
-		  
-		  
-		  
+			
 				  
 	  		  puller_feedrate=filament_control;
 	  		  

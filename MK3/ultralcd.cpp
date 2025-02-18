@@ -244,10 +244,13 @@ static void lcd_status_screen()
         feedmultiply = FEEDMULTIPLY_MAX;
         
     */
-    if (puller_feedrate < PULLER_FEEDRATE_MIN)
-    	puller_feedrate = PULLER_FEEDRATE_MIN;
-    if (puller_feedrate > PULLER_FEEDRATE_MAX)
-    	puller_feedrate = PULLER_FEEDRATE_MAX;
+
+    float rpm = puller_feedrate*(60.0/pcirc);
+    
+    if (rpm < PULLER_RPM_MIN)
+        puller_feedrate = PULLER_RPM_MIN / (60.0/pcirc);
+    if (rpm > PULLER_RPM_MAX)
+        puller_feedrate = PULLER_RPM_MAX / (60.0/pcirc);
         
         
 #endif//ULTIPANEL

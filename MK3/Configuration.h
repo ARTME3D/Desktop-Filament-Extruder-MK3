@@ -292,8 +292,8 @@ debug notes:
 #define EXTRUDER_RPM_MAX 25 
 #define EXTRUDER_RPM_MIN 0.5
 #define DEFAULT_PULLER_FEEDRATE 12.0 //default puller feedrate when turned on
-#define PULLER_FEEDRATE_MIN 2.0 // min feedrate in manual control, 1 mm/sec min feed - limited by max pulse rate of 50,000
-#define PULLER_FEEDRATE_MAX 70.0  // max feedrate in manual control 15mm/sec max feed - limited by max pulse rate of 50,000
+#define PULLER_RPM_MIN 2.0 // min feedrate in manual control, 1 mm/sec min feed - limited by max pulse rate of 50,000
+#define PULLER_RPM_MAX 80.0  // max feedrate in manual control 15mm/sec max feed - limited by max pulse rate of 50,000
 //#define PULLER_WHEEL_CIRC 34.56 //circumference of urethane puller wheel in mm. 
 #define DEFAULT_PULLER_WHEEL_CIRC 37.70 // default circumference of puller wheel in mm. 
 
@@ -313,9 +313,6 @@ debug notes:
 #define  DEFAULT_fFact1 16300
 #define  DEFAULT_fFact2 9.5
 
-
-#define PULLER_PID_MIN_LIMIT 2.0 //min output limit of filament dia control in mm/sec
-#define PULLER_PID_MAX_LIMIT 80.0 //max output limit of filament dia control in mm/sec
 #define PULLER_PID_INTEGRATOR_WIND_LIMIT 1000000 //absolute value of integrator windup max value
 
 
