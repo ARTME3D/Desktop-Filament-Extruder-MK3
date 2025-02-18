@@ -921,8 +921,11 @@ void loop()
 					  }
 				  
 				  */
+
+         float min_feedrate = PULLER_RPM_MIN / (60.0/pcirc);
+         float max_feedrate = PULLER_RPM_MAX / (60.0/pcirc);
 				  
-				  if((filament_control<PULLER_PID_MAX_LIMIT && pid_error_fwidth<0) || (filament_control>PULLER_PID_MIN_LIMIT && pid_error_fwidth>0))
+				  if((filament_control<max_feedrate && pid_error_fwidth<0) || (filament_control>min_feedrate && pid_error_fwidth>0))
 					  {
 					  dia_iState_fwidth += pid_error_fwidth* puller_increment; //use spatial dT=puller_increment
 					  dia_iState_fwidth = constrain(dia_iState_fwidth, -PULLER_PID_INTEGRATOR_WIND_LIMIT, PULLER_PID_INTEGRATOR_WIND_LIMIT);
@@ -933,7 +936,7 @@ void loop()
 				  #define K2 (1.0-K1)
 				  dTerm_fwidth= (fwidthKd/puller_increment * (pid_input - dia_dState_fwidth))*K2 + (K1 * dTerm_fwidth);  //use spatial dT=puller_increment
 				  
-				  filament_control = constrain(pTerm_fwidth - iTerm_fwidth + dTerm_fwidth, PULLER_RPM_MIN / (60.0/pcirc), PULLER_RPM_MAX / (60.0/pcirc));
+				  filament_control = constrain(pTerm_fwidth - iTerm_fwidth + dTerm_fwidth, min_feedrate, max_feedrate);
 				  
 				  dia_dState_fwidth = pid_input;
 			
