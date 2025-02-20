@@ -313,7 +313,6 @@ static void lcd_extruder_pause()
 
     
     digitalWrite(CONTROLLERFAN_PIN, 0); //stop fan
-    digitalWrite(CONTROLLERFAN2_PIN, 0); //stop fan
     lcd_disable_statistics();
 
     LCD_MESSAGEPGM(MSG_EXTRUDER_STOPPED);
@@ -325,7 +324,7 @@ static void lcd_extruder_resume()
 	extrude_status=extrude_status|ES_ENABLE_SET;
 	winderSpeed = default_winder_speed*255/winder_rpm_factor;  //start winder
 	digitalWrite(CONTROLLERFAN_PIN, 1);  //start Fan
-  digitalWrite(CONTROLLERFAN2_PIN, 1);  //start Fan
+    digitalWrite(CONTROLLERFAN2_PIN, 1);  //start Fan
     starttime=millis();
     lcd_enable_statistics();
 

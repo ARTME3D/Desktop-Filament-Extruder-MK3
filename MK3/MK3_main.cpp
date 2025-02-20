@@ -786,7 +786,7 @@ void loop()
     // MYSERIAL.println("not watching filwidth");
   }
 
-
+  float extruderTemp = degHotend(active_extruder);
 
   
   //FMM generate extruder motion based on LCD inputs
@@ -796,7 +796,7 @@ void loop()
   else
 	  extrude_status= extrude_status | ES_SWITCH_SET;
   
-  if(degHotend(active_extruder)>EXTRUDE_MINTEMP)  //check if extruder at min heated temp
+  if(extruderTemp > EXTRUDE_MINTEMP)  //check if extruder at min heated temp
 	  extrude_status=extrude_status | ES_HOT_SET;
   else
 	  {
@@ -805,9 +805,15 @@ void loop()
 	  }
  
   
-  
+ 
+  if (extruderTemp > FAN_ACTIVE_TEMP) {
+    digitalWrite(CONTROLLERFAN2_PIN, 1);  //start Fan
+  } else if (extruderTemp < FAN_INACTIVE_TEMP) {
+    digitalWrite(CONTROLLERFAN2_PIN, 0);  //stop Fan
+  }
+
 		  
-  if(((degHotend(active_extruder) >= (degTargetHotend(active_extruder)-TEMP_WINDOW)) && (degHotend(active_extruder) <= (degTargetHotend(active_extruder)+TEMP_WINDOW)))  && ((extrude_status & ES_TEMP_SET)==0))  //check if extruder at or near setpoint
+  if(((extruderTemp >= (degTargetHotend(active_extruder)-TEMP_WINDOW)) && (extruderTemp <= (degTargetHotend(active_extruder)+TEMP_WINDOW)))  && ((extrude_status & ES_TEMP_SET)==0))  //check if extruder at or near setpoint
   	  {
 	  extrude_status=extrude_status | ES_TEMP_SET;
     WRITE(BEEPER,HIGH);

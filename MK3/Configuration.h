@@ -315,6 +315,8 @@ debug notes:
 
 #define PULLER_PID_INTEGRATOR_WIND_LIMIT 1000000 //absolute value of integrator windup max value
 
+#define FAN_ACTIVE_TEMP 135;
+#define FAN_INACTIVE_TEMP 125;
 
 
 #define DEFAULT_LENGTH_CUTOFF 250000  //length in mm where extruder will shut down
