@@ -214,58 +214,12 @@ float min_measured_filament_width=0; // min measured filament width
 float extrude_length=0; //length extruded
 float fil_length_cutoff= DEFAULT_LENGTH_CUTOFF; //length of filament at which extruder shuts down
 int default_winder_speed = DEFAULT_WINDER_SPEED;
-int injectionTimeSeconds = DEFAULT_INJECTION_TIME;
 int winder_rpm_factor = DEFAULT_WINDER_RPM_FACTOR;
 unsigned long starttime=0;
 unsigned long stoptime=0;
 
 unsigned long duration=0;
 unsigned long timeremaining=DEFAULT_LENGTH_CUTOFF/DEFAULT_PULLER_FEEDRATE*1000;  //used to hold a calculated time remaining in ms to hit fil length cutoff
-
-int maxBeepSequenceLength = 20;
-int beepSequence[20];
-int currentBeepSequenceIndex = -1;
-int currentBeepSequenceLength;
-unsigned long currentBeepMillis;
-
-void setBeepSequence(int bs[], int length)
-{
-  if (length > maxBeepSequenceLength)
-    length = maxBeepSequenceLength;
-  for (int i = 0; i < length; i++)
-    beepSequence[i] = bs[i];
-
-  currentBeepSequenceLength = length;
-  currentBeepSequenceIndex = 0;
-  currentBeepMillis = millis();
-
-  WRITE(BEEPER,HIGH);
-
-}
-
-void beepSequenceLoop() {
-
-  if (currentBeepSequenceIndex >= 0 && currentBeepSequenceIndex < currentBeepSequenceLength) {
-
-    unsigned long elapsedMillis = millis() - currentBeepMillis;
-
-    if (elapsedMillis > beepSequence[currentBeepSequenceIndex]) {
-      currentBeepSequenceIndex++;
-      currentBeepMillis = millis();
-      if (currentBeepSequenceIndex % 2 == 0) {
-        WRITE(BEEPER,HIGH);
-      } else {
-        WRITE(BEEPER,LOW);
-      }
-      if (currentBeepSequenceIndex >= currentBeepSequenceLength) {
-        currentBeepSequenceIndex = -1;
-        WRITE(BEEPER,LOW);
-      }
-    }
-  }
-
-
-}
 
 
 float model_out;  //Smith predictor model out
@@ -648,41 +602,9 @@ void setup()
   #endif
 }
 
-static unsigned long encoderDownTime = -1;
-static unsigned long injectionModeStartMillis = -1;
-
-bool encoderClicked = false;
-bool encoderLongPressed = false;
 
 void loop()
 {
-
-  encoderClicked = false;
-  encoderLongPressed = false;
-
-  unsigned long encoderMillis = millis();
-
-  if (lcd_clicked()) {
-    if (encoderDownTime == -1) {
-      encoderDownTime = encoderMillis;
-    }
-
-    if (encoderMillis - encoderDownTime > 2000) {
-      encoderLongPressed = true;
-    }
-
-  } else {
-    if (encoderDownTime != -1) {
-      if (millis() - encoderDownTime < 1000) {
-        encoderClicked = true;
-      } 
-      encoderDownTime = -1;
-    }
-  }
-
-
-  beepSequenceLoop();  
-
   if(buflen < (BUFSIZE-1))
     get_command();
   #ifdef SDSUPPORT
@@ -725,7 +647,7 @@ void loop()
   manage_heater();
   manage_inactivity();
   checkHitEndstops();
-  lcd_update(encoderClicked, encoderLongPressed);
+  lcd_update();
   
   //FMM calculate max, min, and average filament width
 
@@ -762,8 +684,13 @@ void loop()
 		  extrude_status= extrude_status & ES_STATS_CLEAR;  //shut down statistics
 		  timeremaining=0;
 		  LCD_MESSAGEPGM(MSG_EXTRUDE_COMPLETE);
-      int beepSequence[5] = {1000, 500, 1000, 500, 1000};
-      setBeepSequence(beepSequence, 5);
+
+      for (int t = 0; t < 3; t++) {
+        WRITE(BEEPER,HIGH);
+	      delay(200); //Änderunge 31.05.2020 5.Eichbaum
+        WRITE(BEEPER,LOW);
+        delay(500);
+      }
 
 	  } else {
 		  
@@ -802,9 +729,11 @@ void loop()
           disable_e0();
           
           manage_heater();
-          lcd_update(encoderClicked, encoderLongPressed);
-          int beepSequence[5] = {1000, 500, 1000, 500, 1000};
-          setBeepSequence(beepSequence, 5);
+          lcd_update();
+          WRITE(BEEPER,HIGH);
+	        delay(1000); //Änderunge 31.05.2020 5.Eichbaum
+          WRITE(BEEPER,LOW);
+          delay(500);
         }
       }
     }
@@ -842,10 +771,12 @@ void loop()
           disable_e0();
           
           manage_heater();
-          lcd_update(encoderClicked, encoderLongPressed);
+          lcd_update();
 
-          int beepSequence[5] = {1000, 500, 1000, 500, 1000};
-          setBeepSequence(beepSequence, 5);
+          WRITE(BEEPER,HIGH);
+	        delay(1000); //Änderunge 31.05.2020 5.Eichbaum
+          WRITE(BEEPER,LOW);
+          delay(500);
 
         }
       }
@@ -855,7 +786,7 @@ void loop()
     // MYSERIAL.println("not watching filwidth");
   }
 
-  float extruderTemp = degHotend(active_extruder);
+
 
   
   //FMM generate extruder motion based on LCD inputs
@@ -865,7 +796,7 @@ void loop()
   else
 	  extrude_status= extrude_status | ES_SWITCH_SET;
   
-  if(extruderTemp > EXTRUDE_MINTEMP)  //check if extruder at min heated temp
+  if(degHotend(active_extruder)>EXTRUDE_MINTEMP)  //check if extruder at min heated temp
 	  extrude_status=extrude_status | ES_HOT_SET;
   else
 	  {
@@ -874,43 +805,22 @@ void loop()
 	  }
  
   
- 
-  if (extruderTemp > FAN_ACTIVE_TEMP) {
-    digitalWrite(CONTROLLERFAN2_PIN, 1);  //start Fan
-  } else if (extruderTemp < FAN_INACTIVE_TEMP) {
-    digitalWrite(CONTROLLERFAN2_PIN, 0);  //stop Fan
-  }
-
+  
 		  
-  if(((extruderTemp >= (degTargetHotend(active_extruder)-TEMP_WINDOW)) && (extruderTemp <= (degTargetHotend(active_extruder)+TEMP_WINDOW)))  && ((extrude_status & ES_TEMP_SET)==0))  //check if extruder at or near setpoint
+  if(((degHotend(active_extruder) >= (degTargetHotend(active_extruder)-TEMP_WINDOW)) && (degHotend(active_extruder) <= (degTargetHotend(active_extruder)+TEMP_WINDOW)))  && ((extrude_status & ES_TEMP_SET)==0))  //check if extruder at or near setpoint
   	  {
 	  extrude_status=extrude_status | ES_TEMP_SET;
-    int beepSequence[5] = {1000, 500, 1000, 500, 1000};
-    setBeepSequence(beepSequence, 5);
+    WRITE(BEEPER,HIGH);
+	  delay(1000); //Änderunge 31.05.2020 5.Eichbaum
+    WRITE(BEEPER,LOW);
+    delay(500);
+    WRITE(BEEPER,HIGH);
+    delay(1000); //Änderunge 31.05.2020
+    WRITE(BEEPER,LOW);
 	  LCD_MESSAGEPGM(MSG_HEATING_COMPLETE);
   	  }
   	
-  if (extrude_status && ES_TEMP_SET > 0 && extrude_status && ES_ENABLE_CLEAR_NO_AUTO > 0 && encoderLongPressed && injectionModeStartMillis == -1) {
-    injectionModeStartMillis = millis();
-    puller_feedrate = 0;
-	  extrude_status=extrude_status|ES_ENABLE_SET; 
-    LCD_MESSAGEPGM(MSG_INJECTION_MODE);
-  }
-
-  if (injectionModeStartMillis != -1) {
-
-    if (extrude_status & ES_ENABLE_CLEAR_NO_AUTO > 0) {
-      injectionModeStartMillis = -1;
-    }
-
-    unsigned long elapsedTimeMS = millis() - injectionModeStartMillis;
-    unsigned long injectionTimeMillis = (unsigned long) injectionTimeSeconds * 1000;
-    if (elapsedTimeMS > injectionTimeMillis) {
-      injectionModeStartMillis = -1;
-      extrude_status=extrude_status & ES_ENABLE_CLEAR_NO_AUTO;
-      LCD_MESSAGEPGM(MSG_HEATING_COMPLETE);
-    }
-  }
+  
   
   if((extrude_status & ES_ENABLE_SET) >0){
 	  
@@ -1692,7 +1602,7 @@ void process_commands()
       while(millis()  < codenum ){
         manage_heater();
         manage_inactivity();
-        lcd_update(encoderClicked, encoderLongPressed);
+        lcd_update();
       }
       break;
       #ifdef FWRETRACT
@@ -2133,13 +2043,13 @@ void process_commands()
         while(millis()  < codenum && !lcd_clicked()){
           manage_heater();
           manage_inactivity();
-          lcd_update(encoderClicked, encoderLongPressed);
+          lcd_update();
         }
       }else{
         while(!lcd_clicked()){
           manage_heater();
           manage_inactivity();
-          lcd_update(encoderClicked, encoderLongPressed);
+          lcd_update();
         }
       }
       LCD_MESSAGEPGM(MSG_RESUMING);
@@ -2458,7 +2368,7 @@ void process_commands()
           }
           manage_heater();
           manage_inactivity();
-          lcd_update(encoderClicked, encoderLongPressed);
+          lcd_update();
         #ifdef TEMP_RESIDENCY_TIME
             /* start/restart the TEMP_RESIDENCY_TIME timer whenever we reach target temp for the first time
               or when current temp falls outside the hysteresis after target temp was reached */
@@ -2505,7 +2415,7 @@ void process_commands()
           }
           manage_heater();
           manage_inactivity();
-          lcd_update(encoderClicked, encoderLongPressed);
+          lcd_update();
         }
         LCD_MESSAGEPGM(MSG_BED_DONE);
         previous_millis_cmd = millis();
@@ -2573,7 +2483,7 @@ void process_commands()
         #ifdef ULTIPANEL
           powersupply = true;
           LCD_MESSAGEPGM(WELCOME_MSG);
-          lcd_update(encoderClicked, encoderLongPressed);
+          lcd_update();
         #endif
         break;
       #endif
@@ -2597,7 +2507,7 @@ void process_commands()
       #ifdef ULTIPANEL
         powersupply = false;
         LCD_MESSAGEPGM(MACHINE_NAME" "MSG_OFF".");
-        lcd_update(encoderClicked, encoderLongPressed);
+        lcd_update();
       #endif
 	  break;
 
@@ -2990,7 +2900,7 @@ void process_commands()
             while(digitalRead(pin_number) != target){
               manage_heater();
               manage_inactivity();
-              lcd_update(encoderClicked, encoderLongPressed);
+              lcd_update();
             }
           }
         }
@@ -3309,7 +3219,7 @@ void process_commands()
           cnt++;
           manage_heater();
           manage_inactivity();
-          lcd_update(encoderClicked, encoderLongPressed);
+          lcd_update();
           if(cnt==0)
           {
           #if BEEPER > 0

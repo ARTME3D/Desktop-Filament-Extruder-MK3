@@ -289,7 +289,7 @@ debug notes:
 
 
 #define DEFAULT_EXTRUDER_RPM 7 //define default extruder RPM
-#define EXTRUDER_RPM_MAX 30 
+#define EXTRUDER_RPM_MAX 25 
 #define EXTRUDER_RPM_MIN 0.5
 #define DEFAULT_PULLER_FEEDRATE 12.0 //default puller feedrate when turned on
 #define PULLER_RPM_MIN 2.0 // min feedrate in manual control, 1 mm/sec min feed - limited by max pulse rate of 50,000
@@ -302,7 +302,7 @@ debug notes:
 
 #define DEFAULT_WINDER_RPM_FACTOR 100  //factor for converting winder PW to rpm - reflects rpm of motor at 12v
 #define DEFAULT_WINDER_SPEED 0  //default winder speed (0-DEFAULT_WINDER_RPM_FACTOR)
-#define DEFAULT_INJECTION_TIME 5 //default injection time in seconds
+
 
 #define DESIRED_FILAMENT_DIA 4.0 //define the default desired Filament diameter
 #define PREHEAT_EXTRUDER_TEMP 180  //Set to 185 deg C based on Hugh's suggestion
@@ -315,8 +315,6 @@ debug notes:
 
 #define PULLER_PID_INTEGRATOR_WIND_LIMIT 1000000 //absolute value of integrator windup max value
 
-#define FAN_ACTIVE_TEMP 135
-#define FAN_INACTIVE_TEMP 125
 
 
 #define DEFAULT_LENGTH_CUTOFF 250000  //length in mm where extruder will shut down

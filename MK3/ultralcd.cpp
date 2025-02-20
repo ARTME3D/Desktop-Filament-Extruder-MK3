@@ -115,15 +115,13 @@ static void menu_action_setting_edit_callback_long5(const char* pstr, unsigned l
   #endif
 #endif
 
-bool ENCODER_CLICKED = false;
-bool ENCODER_LONGPRESSED = false;
 
 /* Helper macros for menus */
 #define START_MENU() do { \
     if (encoderPosition > 0x8000) encoderPosition = 0; \
     if (encoderPosition / ENCODER_STEPS_PER_MENU_ITEM < currentMenuViewOffset) currentMenuViewOffset = encoderPosition / ENCODER_STEPS_PER_MENU_ITEM;\
     uint8_t _lineNr = currentMenuViewOffset, _menuItemNr; \
-    bool wasClicked = ENCODER_CLICKED;\
+    bool wasClicked = LCD_CLICKED;\
     for(uint8_t _drawLineNr = 0; _drawLineNr < LCD_HEIGHT; _drawLineNr++, _lineNr++) { \
         _menuItemNr = 0;
 #define MENU_ITEM(type, label, args...) do { \
@@ -136,7 +134,7 @@ bool ENCODER_LONGPRESSED = false;
                 lcd_implementation_drawmenu_ ## type (_drawLineNr, _label_pstr , ## args ); \
             }\
         }\
-        if (ENCODER_CLICKED && (encoderPosition / ENCODER_STEPS_PER_MENU_ITEM) == _menuItemNr) {\
+        if (wasClicked && (encoderPosition / ENCODER_STEPS_PER_MENU_ITEM) == _menuItemNr) {\
             lcd_quick_feedback(); \
             menu_action_ ## type ( args ); \
             return;\
@@ -200,7 +198,7 @@ static void lcd_status_screen()
         lcd_status_update_delay = 10;   /* redraw the main screen every second. This is easier then trying keep track of all things that change on the screen */
     }
 #ifdef ULTIPANEL
-    if (ENCODER_CLICKED)
+    if (LCD_CLICKED)
     {
     	lcd_implementation_init();  //FMM debug - re-initialize LCD -see if it helps for when screen goes wacky   
     	currentMenu = lcd_main_menu;
@@ -315,6 +313,7 @@ static void lcd_extruder_pause()
 
     
     digitalWrite(CONTROLLERFAN_PIN, 0); //stop fan
+    digitalWrite(CONTROLLERFAN2_PIN, 0); //stop fan
     lcd_disable_statistics();
 
     LCD_MESSAGEPGM(MSG_EXTRUDER_STOPPED);
@@ -326,7 +325,7 @@ static void lcd_extruder_resume()
 	extrude_status=extrude_status|ES_ENABLE_SET;
 	winderSpeed = default_winder_speed*255/winder_rpm_factor;  //start winder
 	digitalWrite(CONTROLLERFAN_PIN, 1);  //start Fan
-    digitalWrite(CONTROLLERFAN2_PIN, 1);  //start Fan
+  digitalWrite(CONTROLLERFAN2_PIN, 1);  //start Fan
     starttime=millis();
     lcd_enable_statistics();
 
@@ -468,7 +467,7 @@ static void lcd_babystep_x()
     {
         lcd_implementation_drawedit(PSTR(MSG_BABYSTEPPING_X),"");
     }
-    if (ENCODER_CLICKED)
+    if (LCD_CLICKED)
     {
         lcd_quick_feedback();
         currentMenu = lcd_tune_menu;
@@ -488,7 +487,7 @@ static void lcd_babystep_y()
     {
         lcd_implementation_drawedit(PSTR(MSG_BABYSTEPPING_Y),"");
     }
-    if (ENCODER_CLICKED)
+    if (LCD_CLICKED)
     {
         lcd_quick_feedback();
         currentMenu = lcd_tune_menu;
@@ -508,7 +507,7 @@ static void lcd_babystep_z()
     {
         lcd_implementation_drawedit(PSTR(MSG_BABYSTEPPING_Z),"");
     }
-    if (ENCODER_CLICKED)
+    if (LCD_CLICKED)
     {
         lcd_quick_feedback();
         currentMenu = lcd_tune_menu;
@@ -540,7 +539,6 @@ static void lcd_tune_menu()
 #endif
     MENU_ITEM_EDIT(float6,MSG_LENGTH_CUTOFF, &fil_length_cutoff,1000,999000);
 
-    MENU_ITEM_EDIT(int3, MSG_INJECTION_TIME, &injectionTimeSeconds, 1, 3 * 60); // 3 minutes max
 //30.05.2020 auskommentiert
 //#ifdef FILAMENT_SENSOR
 //    MENU_ITEM_EDIT(float22,MSG_FILAMENT, &filament_width_desired,1.0,3.0);
@@ -724,7 +722,6 @@ static void lcd_prepare_menu()
     MENU_ITEM_EDIT(int3, MSG_WINDER_SPEED, &default_winder_speed, 0, 100); //Fan Speed limited to 45 in the MK2 because of using 12V fan in a 24V system. Same in tune_menu
    // MENU_ITEM_EDIT(float22, MSG_SPEED, &puller_feedrate_default, PULLER_FEEDRATE_MIN, PULLER_FEEDRATE_MAX);
     MENU_ITEM_EDIT(float6,MSG_LENGTH_CUTOFF, &fil_length_cutoff,1000,999000);
-    MENU_ITEM_EDIT(int3, MSG_INJECTION_TIME, &injectionTimeSeconds, 1, 3 * 60); // 3 minutes max
 #ifdef SDSUPPORT
     #ifdef MENU_ADDAUTOSTART
       MENU_ITEM(function, MSG_AUTOSTART, lcd_autostart_sd);
@@ -788,7 +785,7 @@ static void lcd_move_x()
     {
         lcd_implementation_drawedit(PSTR("X"), ftostr31(current_position[X_AXIS]));
     }
-    if (ENCODER_CLICKED)
+    if (LCD_CLICKED)
     {
         lcd_quick_feedback();
         currentMenu = lcd_move_menu_axis;
@@ -818,7 +815,7 @@ static void lcd_move_y()
     {
         lcd_implementation_drawedit(PSTR("Y"), ftostr31(current_position[Y_AXIS]));
     }
-    if (ENCODER_CLICKED)
+    if (LCD_CLICKED)
     {
         lcd_quick_feedback();
         currentMenu = lcd_move_menu_axis;
@@ -848,7 +845,7 @@ static void lcd_move_z()
     {
         lcd_implementation_drawedit(PSTR("Z"), ftostr31(current_position[Z_AXIS]));
     }
-    if (ENCODER_CLICKED)
+    if (LCD_CLICKED)
     {
         lcd_quick_feedback();
         currentMenu = lcd_move_menu_axis;
@@ -886,7 +883,7 @@ static void lcd_move_e()
     	//new code for testing
     	//lcd_implementation_drawedit(PSTR("Extruder V"), itostr4(e_velocity));
     }
-    if (ENCODER_CLICKED)
+    if (LCD_CLICKED)
     {
         lcd_quick_feedback();
         currentMenu = lcd_move_menu_axis;
@@ -913,7 +910,7 @@ static void lcd_move_p()
     {
         lcd_implementation_drawedit(PSTR("Puller"), ftostr31(current_position[P_AXIS]));
     }
-    if (ENCODER_CLICKED)
+    if (LCD_CLICKED)
     {
         lcd_quick_feedback();
         currentMenu = lcd_move_menu_axis;
@@ -1145,7 +1142,7 @@ static void lcd_set_contrast()
     {
         lcd_implementation_drawedit(PSTR(MSG_CONTRAST), itostr2(lcd_contrast));
     }
-    if (ENCODER_CLICKED)
+    if (LCD_CLICKED)
     {
         lcd_quick_feedback();
         currentMenu = lcd_control_menu;
@@ -1184,7 +1181,7 @@ static void lcd_sd_updir()
 
 void lcd_sdcard_menu()
 {
-    if (lcdDrawUpdate == 0 && ENCODER_CLICKED == 0)
+    if (lcdDrawUpdate == 0 && LCD_CLICKED == 0)
         return;	// nothing to do (so don't thrash the SD card)
     uint16_t fileCnt = card.getnrfilenames();
     START_MENU();
@@ -1230,7 +1227,7 @@ void lcd_sdcard_menu()
             encoderPosition = maxEditValue; \
         if (lcdDrawUpdate) \
             lcd_implementation_drawedit(editLabel, _strFunc(((_type)encoderPosition) / scale)); \
-        if (ENCODER_CLICKED) \
+        if (LCD_CLICKED) \
         { \
             *((_type*)editValue) = ((_type)encoderPosition) / scale; \
             lcd_quick_feedback(); \
@@ -1246,7 +1243,7 @@ void lcd_sdcard_menu()
             encoderPosition = maxEditValue; \
         if (lcdDrawUpdate) \
             lcd_implementation_drawedit(editLabel, _strFunc(((_type)encoderPosition) / scale)); \
-        if (ENCODER_CLICKED) \
+        if (LCD_CLICKED) \
         { \
             *((_type*)editValue) = ((_type)encoderPosition) / scale; \
             lcd_quick_feedback(); \
@@ -1442,22 +1439,8 @@ void lcd_init()
 #endif
 }
 
-static unsigned long encoderClickTime = -1;
-
-void lcd_update(bool encoderClicked, bool encoderLongPressed)
+void lcd_update()
 {
-    unsigned long ms = millis();
-    if (encoderClicked && encoderClickTime == -1)
-    {
-        encoderClickTime = ms;
-        ENCODER_CLICKED = true;
-    }
-    if (encoderClickTime != -1 && ms - encoderClickTime > 105)
-    {
-        encoderClickTime = -1;
-        ENCODER_CLICKED = false;
-    }
-    
     static unsigned long timeoutToStatus = 0;
 
     #ifdef LCD_HAS_SLOW_BUTTONS
@@ -1519,7 +1502,7 @@ void lcd_update(bool encoderClicked, bool encoderLongPressed)
             encoderDiff = 0;
             timeoutToStatus = millis() + LCD_TIMEOUT_TO_STATUS;
         }
-        if (ENCODER_CLICKED)
+        if (LCD_CLICKED)
             timeoutToStatus = millis() + LCD_TIMEOUT_TO_STATUS;
 #endif//ULTIPANEL
 

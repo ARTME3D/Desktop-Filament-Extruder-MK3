@@ -237,7 +237,6 @@ extern int feedmultiply;
 extern unsigned long duration;
 extern unsigned long timeremaining;
 extern int default_winder_speed;
-extern int injectionTimeSeconds;
 extern int winder_rpm_factor;
 
 extern int extrudemultiply; // Sets extrude multiply factor (in percent) for all extruders

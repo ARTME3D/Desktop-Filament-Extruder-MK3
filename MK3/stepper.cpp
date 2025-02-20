@@ -1044,7 +1044,7 @@ void st_synchronize()
     while( blocks_queued()) {
     manage_heater();
     manage_inactivity();
-    lcd_update(false, false);
+    lcd_update();
   }
 }
 

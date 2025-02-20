@@ -40,7 +40,7 @@
 	#ifdef CUSTOM_MENDEL_NAME
 		#define MACHINE_NAME CUSTOM_MENDEL_NAME
 	#else
-		#define MACHINE_NAME "ARTME 3D MK3S  "
+		#define MACHINE_NAME "ARTME 3D MK3   "
 	#endif
 
 // Default firmware set to Mendel
@@ -65,7 +65,7 @@
 
 #define SPLASH1 "      ARTME 3D      "
 #define SPLASH2 "  Desktop Filament  "
-#define SPLASH3 "   Extruder  MK3S   "
+#define SPLASH3 "    Extruder MK3  "
 
 
 #if LANGUAGE_CHOICE == 1
@@ -124,8 +124,6 @@
 #define MSG_STATS "Filament Statistics" //MK3
 #define MSG_PREPARE "Settings" //MK3
 #define MSG_TUNE "Settings" //MK3
-#define MSG_INJECTION_TIME "Injection Time" //MK3
-#define MSG_INJECTION_MODE "Injection Mode..." //MK3
 #define MSG_ESTEPS "Esteps/rev/100" //MK3
 #define MSG_PSTEPS "Psteps/mm" //MK3
 #define MSG_A_RETRACT "Motor Acc" //MK3
@@ -366,8 +364,6 @@
 #define MSG_STATS "Filament Statistics" //MK3
 #define MSG_PREPARE "Einstellung" //MK3
 #define MSG_TUNE "Einstellung" //MK3
-#define MSG_INJECTION_TIME "Injection Time" //MK3
-#define MSG_INJECTION_MODE "Injection Mode..." //MK3
 #define MSG_ESTEPS "Esteps/rev/100" //MK3
 #define MSG_PSTEPS "Psteps/mm" //MK3
 #define MSG_A_RETRACT "Motor Acc" //MK3
@@ -609,8 +605,6 @@
 #define MSG_STATS "Statisti. filaments" //MK3
 #define MSG_PREPARE "Reglages" //MK3
 #define MSG_TUNE "Reglages" //MK3
-#define MSG_INJECTION_TIME "Injection Time" //MK3
-#define MSG_INJECTION_MODE "Injection Mode..." //MK3
 #define MSG_ESTEPS "Esteps/rev/100" //MK3
 #define MSG_PSTEPS "Psteps/mm" //MK3
 #define MSG_A_RETRACT "Motor Acc" //MK3
@@ -851,8 +845,6 @@
 #define MSG_STATS "Statyst. filamentow" //MK3
 #define MSG_PREPARE "Ustawienia" //MK3
 #define MSG_TUNE "Ustawienia" //MK3
-#define MSG_INJECTION_TIME "Injection Time" //MK3
-#define MSG_INJECTION_MODE "Injection Mode..." //MK3
 #define MSG_ESTEPS "Ekroki/rev/100" //MK3
 #define MSG_PSTEPS "Pkroki/mm" //MK3
 #define MSG_A_RETRACT "Przysp. silnika" //MK3
@@ -1094,8 +1086,6 @@
 #define MSG_STATS "Estadisticas hilo" //MK3
 #define MSG_PREPARE "Ajustes" //MK3
 #define MSG_TUNE "Ajustes" //MK3
-#define MSG_INJECTION_TIME "Injection Time" //MK3
-#define MSG_INJECTION_MODE "Injection Mode..." //MK3
 #define MSG_ESTEPS "Esteps/rev/100" //MK3
 #define MSG_PSTEPS "Psteps/mm" //MK3
 #define MSG_A_RETRACT "Acc motor" //MK3
@@ -1338,8 +1328,6 @@
 #define MSG_STATS "Stat. Filamento" //MK3
 #define MSG_PREPARE "impostazioni" //MK3
 #define MSG_TUNE "impostazioni" //MK3
-#define MSG_INJECTION_TIME "Injection Time" //MK3
-#define MSG_INJECTION_MODE "Injection Mode..." //MK3
 #define MSG_ESTEPS "Esteps/rev/100" //MK3
 #define MSG_PSTEPS "Psteps/mm" //MK3
 #define MSG_A_RETRACT "Motor Acc" //MK3
@@ -1580,8 +1568,6 @@
 #define MSG_STATS "Estatist. Filamento" //MK3
 #define MSG_PREPARE "Definicoes" //MK3
 #define MSG_TUNE "Definicoes" //MK3
-#define MSG_INJECTION_TIME "Injection Time" //MK3
-#define MSG_INJECTION_MODE "Injection Mode..." //MK3
 #define MSG_ESTEPS "Esteps/rev/100" //MK3
 #define MSG_PSTEPS "Psteps/mm" //MK3
 #define MSG_A_RETRACT "Motor Acc" //MK3
@@ -1823,8 +1809,6 @@
 #define MSG_STATS "Statistiky vlaken" //MK3
 #define MSG_PREPARE "Nastav." //MK3
 #define MSG_TUNE "Nastav." //MK3
-#define MSG_INJECTION_TIME "Injection Time" //MK3
-#define MSG_INJECTION_MODE "Injection Mode..." //MK3
 #define MSG_ESTEPS "Ekroky/rev/100" //MK3
 #define MSG_PSTEPS "Pkroky/mm" //MK3
 #define MSG_A_RETRACT "Akc. motoru" //MK3
@@ -2064,8 +2048,6 @@
 #define MSG_STATS "Statistica filament" //MK3
 #define MSG_PREPARE "Setari" //MK3
 #define MSG_TUNE "Setari" //MK3
-#define MSG_INJECTION_TIME "Injection Time" //MK3
-#define MSG_INJECTION_MODE "Injection Mode..." //MK3
 #define MSG_ESTEPS "Esteps/rev/100" //MK3
 #define MSG_PSTEPS "Psteps/mm" //MK3
 #define MSG_A_RETRACT "Acc Motor" //MK3
@@ -2305,8 +2287,6 @@
 #define MSG_STATS "Filament Stats" //MK3
 #define MSG_PREPARE "Instel." //MK3
 #define MSG_TUNE "Instel." //MK3
-#define MSG_INJECTION_TIME "Injection Time" //MK3
-#define MSG_INJECTION_MODE "Injection Mode..." //MK3
 #define MSG_ESTEPS "Esteps/rev/100" //MK3
 #define MSG_PSTEPS "Psteps/mm" //MK3
 #define MSG_A_RETRACT "Motor Acc" //MK3
@@ -2546,8 +2526,6 @@
 #define MSG_STATS "Szalstatisztika" //MK3
 #define MSG_PREPARE "Beallitasok" //MK3
 #define MSG_TUNE "Beallitasok" //MK3
-#define MSG_INJECTION_TIME "Injection Time" //MK3
-#define MSG_INJECTION_MODE "Injection Mode..." //MK3
 #define MSG_ESTEPS "Esteps/rev/100" //MK3
 #define MSG_PSTEPS "Psteps/mm" //MK3
 #define MSG_A_RETRACT "Motor Acc" //MK3
@@ -2788,8 +2766,6 @@
 #define MSG_STATS "Statistik Filamen" //MK3
 #define MSG_PREPARE "Setelan" //MK3
 #define MSG_TUNE "Setelan" //MK3
-#define MSG_INJECTION_TIME "Injection Time" //MK3
-#define MSG_INJECTION_MODE "Injection Mode..." //MK3
 #define MSG_ESTEPS "Esteps/rev/100" //MK3
 #define MSG_PSTEPS "Psteps/mm" //MK3
 #define MSG_A_RETRACT "Motor Acc" //MK3
@@ -3029,8 +3005,6 @@
 #define MSG_STATS "Filament Istatistk" //MK3
 #define MSG_PREPARE "Ayarlar" //MK3
 #define MSG_TUNE "Ayarlar" //MK3
-#define MSG_INJECTION_TIME "Injection Time" //MK3
-#define MSG_INJECTION_MODE "Injection Mode..." //MK3
 #define MSG_ESTEPS "Esteps/rev/100" //MK3
 #define MSG_PSTEPS "Psteps/mm" //MK3
 #define MSG_A_RETRACT "Motor Acc" //MK3
