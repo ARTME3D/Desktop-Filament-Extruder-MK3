@@ -899,7 +899,8 @@ void loop()
 
   if (injectionModeStartMillis != -1) {
     unsigned long elapsedTimeMS = millis() - injectionModeStartMillis;
-    if (elapsedTimeMS > injectionTimeSeconds * 1000) {
+    unsigned long injectionTimeMillis = (unsigned long) injectionTimeSeconds * 1000;
+    if (elapsedTimeMS > injectionTimeMillis) {
       injectionModeStartMillis = -1;
       extrude_status=extrude_status & ES_ENABLE_CLEAR_NO_AUTO;
       LCD_MESSAGEPGM(MSG_HEATING_COMPLETE);

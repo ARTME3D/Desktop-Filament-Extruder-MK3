@@ -1458,11 +1458,6 @@ void lcd_update(bool encoderClicked, bool encoderLongPressed)
         ENCODER_CLICKED = false;
     }
     
-
-    if (ENCODER_CLICKED) {
-        MYSERIAL.println("encoder clicked");
-    }
-    
     static unsigned long timeoutToStatus = 0;
 
     #ifdef LCD_HAS_SLOW_BUTTONS
