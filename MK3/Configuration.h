@@ -302,7 +302,7 @@ debug notes:
 
 #define DEFAULT_WINDER_RPM_FACTOR 100  //factor for converting winder PW to rpm - reflects rpm of motor at 12v
 #define DEFAULT_WINDER_SPEED 0  //default winder speed (0-DEFAULT_WINDER_RPM_FACTOR)
-
+#define DEFAULT_INJECTION_TIME 5 //default injection time in seconds
 
 #define DESIRED_FILAMENT_DIA 4.0 //define the default desired Filament diameter
 #define PREHEAT_EXTRUDER_TEMP 180  //Set to 185 deg C based on Hugh's suggestion

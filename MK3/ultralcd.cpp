@@ -540,6 +540,7 @@ static void lcd_tune_menu()
 #endif
     MENU_ITEM_EDIT(float6,MSG_LENGTH_CUTOFF, &fil_length_cutoff,1000,999000);
 
+    MENU_ITEM_EDIT(int3, MSG_INJECTION_TIME, &injectionTimeSeconds, 1, 3 * 60); // 3 minutes max
 //30.05.2020 auskommentiert
 //#ifdef FILAMENT_SENSOR
 //    MENU_ITEM_EDIT(float22,MSG_FILAMENT, &filament_width_desired,1.0,3.0);
@@ -723,6 +724,7 @@ static void lcd_prepare_menu()
     MENU_ITEM_EDIT(int3, MSG_WINDER_SPEED, &default_winder_speed, 0, 100); //Fan Speed limited to 45 in the MK2 because of using 12V fan in a 24V system. Same in tune_menu
    // MENU_ITEM_EDIT(float22, MSG_SPEED, &puller_feedrate_default, PULLER_FEEDRATE_MIN, PULLER_FEEDRATE_MAX);
     MENU_ITEM_EDIT(float6,MSG_LENGTH_CUTOFF, &fil_length_cutoff,1000,999000);
+    MENU_ITEM_EDIT(int3, MSG_INJECTION_TIME, &injectionTimeSeconds, 1, 3 * 60); // 3 minutes max
 #ifdef SDSUPPORT
     #ifdef MENU_ADDAUTOSTART
       MENU_ITEM(function, MSG_AUTOSTART, lcd_autostart_sd);

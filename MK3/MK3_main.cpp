@@ -214,6 +214,7 @@ float min_measured_filament_width=0; // min measured filament width
 float extrude_length=0; //length extruded
 float fil_length_cutoff= DEFAULT_LENGTH_CUTOFF; //length of filament at which extruder shuts down
 int default_winder_speed = DEFAULT_WINDER_SPEED;
+int injectionTimeSeconds = DEFAULT_INJECTION_TIME;
 int winder_rpm_factor = DEFAULT_WINDER_RPM_FACTOR;
 unsigned long starttime=0;
 unsigned long stoptime=0;
@@ -603,6 +604,7 @@ void setup()
 }
 
 static unsigned long encoderDownTime = -1;
+static unsigned long injectionModeStartMillis = -1;
 
 bool encoderClicked = false;
 bool encoderLongPressed = false;
@@ -613,17 +615,22 @@ void loop()
   encoderClicked = false;
   encoderLongPressed = false;
 
+  unsigned long encoderMillis = millis();
+
   if (lcd_clicked()) {
     if (encoderDownTime == -1) {
-      encoderDownTime = millis();
+      encoderDownTime = encoderMillis;
     }
+
+    if (encoderMillis - encoderDownTime > 2000) {
+      encoderLongPressed = true;
+    }
+
   } else {
     if (encoderDownTime != -1) {
-      if (millis() - encoderDownTime < 3000) {
+      if (millis() - encoderDownTime < 1000) {
         encoderClicked = true;
-      } else {
-        encoderLongPressed = true;
-      }
+      } 
       encoderDownTime = -1;
     }
   }
@@ -851,7 +858,19 @@ void loop()
 	  LCD_MESSAGEPGM(MSG_HEATING_COMPLETE);
   	  }
   	
-  
+  if (extrude_status && ES_TEMP_SET > 0 && extrude_status && ES_ENABLE_CLEAR_NO_AUTO > 0 && encoderLongPressed && injectionModeStartMillis == -1) {
+    injectionModeStartMillis = millis();
+    //feedmultiply=DEFAULT_FEEDMULTIPLY;
+	  extrude_status=extrude_status|ES_ENABLE_SET; 
+  }
+
+  if (injectionModeStartMillis != -1) {
+    unsigned long elapsedTimeMS = millis() - injectionModeStartMillis;
+    if (elapsedTimeMS > injectionTimeSeconds * 1000) {
+      injectionModeStartMillis = -1;
+      extrude_status=extrude_status & ES_ENABLE_CLEAR_NO_AUTO;
+    }
+  }
   
   if((extrude_status & ES_ENABLE_SET) >0){
 	  
