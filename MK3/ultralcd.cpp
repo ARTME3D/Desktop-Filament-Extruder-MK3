@@ -1446,13 +1446,13 @@ static unsigned long encoderClickTime = -1;
 
 void lcd_update(bool encoderClicked, bool encoderLongPressed)
 {
-    
+    unsigned long ms = millis();
     if (encoderClicked && encoderClickTime == -1)
     {
-        encoderClickTime = millis();
+        encoderClickTime = ms;
         ENCODER_CLICKED = true;
     }
-    if (encoderClickTime != -1 && millis() - encoderClickTime > 100)
+    if (encoderClickTime != -1 && ms - encoderClickTime > 120)
     {
         encoderClickTime = -1;
         ENCODER_CLICKED = false;
