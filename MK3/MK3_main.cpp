@@ -215,6 +215,7 @@ float extrude_length=0; //length extruded
 float fil_length_cutoff= DEFAULT_LENGTH_CUTOFF; //length of filament at which extruder shuts down
 int default_winder_speed = DEFAULT_WINDER_SPEED;
 int injectionTimeSeconds = DEFAULT_INJECTION_TIME;
+unsigned long injectionModeStartMillis = -1;
 int winder_rpm_factor = DEFAULT_WINDER_RPM_FACTOR;
 unsigned long starttime=0;
 unsigned long stoptime=0;
@@ -649,7 +650,6 @@ void setup()
 }
 
 static unsigned long encoderDownTime = -1;
-static unsigned long injectionModeStartMillis = -1;
 
 bool encoderClicked = false;
 bool encoderLongPressed = false;
@@ -898,10 +898,6 @@ void loop()
   }
 
   if (injectionModeStartMillis != -1) {
-
-    if (extrude_status & ES_ENABLE_CLEAR_NO_AUTO > 0) {
-      injectionModeStartMillis = -1;
-    }
 
     unsigned long elapsedTimeMS = millis() - injectionModeStartMillis;
     unsigned long injectionTimeMillis = (unsigned long) injectionTimeSeconds * 1000;
