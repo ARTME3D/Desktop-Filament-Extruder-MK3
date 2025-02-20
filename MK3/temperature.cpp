@@ -310,7 +310,7 @@ void PID_autotune(float temp, int extruder, int ncycles)
           
       return;
     }
-    lcd_update();
+    lcd_update(false, false);
   }
 }
 
@@ -1034,7 +1034,7 @@ void thermal_runaway_protection(int *state, unsigned long *timer, float temperat
           disable_e0();
           
           manage_heater();
-          lcd_update();
+          lcd_update(false, false);
 
           WRITE(BEEPER,HIGH);
 	        delay(1000); //Änderunge 31.05.2020 5.Eichbaum

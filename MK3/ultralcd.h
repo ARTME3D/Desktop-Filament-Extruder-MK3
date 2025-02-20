@@ -5,7 +5,7 @@
 
 #ifdef ULTRA_LCD
 
-  void lcd_update();
+  void lcd_update(bool encoderClicked, bool encoderLongPressed);
   void lcd_init();
   void lcd_setstatus(const char* message);
   void lcd_setstatuspgm(const char* message);

@@ -602,9 +602,34 @@ void setup()
   #endif
 }
 
+static unsigned long encoderDownTime = -1;
+
+bool encoderClicked = false;
+bool encoderLongPressed = false;
 
 void loop()
 {
+
+  encoderClicked = false;
+  encoderLongPressed = false;
+
+  if (lcd_clicked()) {
+    if (encoderDownTime == -1) {
+      encoderDownTime = millis();
+    }
+  } else {
+    if (encoderDownTime != -1) {
+      if (millis() - encoderDownTime < 3000) {
+        encoderClicked = true;
+      } else {
+        encoderLongPressed = true;
+      }
+      encoderDownTime = -1;
+    }
+  }
+
+  
+
   if(buflen < (BUFSIZE-1))
     get_command();
   #ifdef SDSUPPORT
@@ -647,7 +672,7 @@ void loop()
   manage_heater();
   manage_inactivity();
   checkHitEndstops();
-  lcd_update();
+  lcd_update(encoderClicked, encoderLongPressed);
   
   //FMM calculate max, min, and average filament width
 
@@ -729,7 +754,7 @@ void loop()
           disable_e0();
           
           manage_heater();
-          lcd_update();
+          lcd_update(encoderClicked, encoderLongPressed);
           WRITE(BEEPER,HIGH);
 	        delay(1000); //Änderunge 31.05.2020 5.Eichbaum
           WRITE(BEEPER,LOW);
@@ -771,7 +796,7 @@ void loop()
           disable_e0();
           
           manage_heater();
-          lcd_update();
+          lcd_update(encoderClicked, encoderLongPressed);
 
           WRITE(BEEPER,HIGH);
 	        delay(1000); //Änderunge 31.05.2020 5.Eichbaum
@@ -1608,7 +1633,7 @@ void process_commands()
       while(millis()  < codenum ){
         manage_heater();
         manage_inactivity();
-        lcd_update();
+        lcd_update(encoderClicked, encoderLongPressed);
       }
       break;
       #ifdef FWRETRACT
@@ -2049,13 +2074,13 @@ void process_commands()
         while(millis()  < codenum && !lcd_clicked()){
           manage_heater();
           manage_inactivity();
-          lcd_update();
+          lcd_update(encoderClicked, encoderLongPressed);
         }
       }else{
         while(!lcd_clicked()){
           manage_heater();
           manage_inactivity();
-          lcd_update();
+          lcd_update(encoderClicked, encoderLongPressed);
         }
       }
       LCD_MESSAGEPGM(MSG_RESUMING);
@@ -2374,7 +2399,7 @@ void process_commands()
           }
           manage_heater();
           manage_inactivity();
-          lcd_update();
+          lcd_update(encoderClicked, encoderLongPressed);
         #ifdef TEMP_RESIDENCY_TIME
             /* start/restart the TEMP_RESIDENCY_TIME timer whenever we reach target temp for the first time
               or when current temp falls outside the hysteresis after target temp was reached */
@@ -2421,7 +2446,7 @@ void process_commands()
           }
           manage_heater();
           manage_inactivity();
-          lcd_update();
+          lcd_update(encoderClicked, encoderLongPressed);
         }
         LCD_MESSAGEPGM(MSG_BED_DONE);
         previous_millis_cmd = millis();
@@ -2489,7 +2514,7 @@ void process_commands()
         #ifdef ULTIPANEL
           powersupply = true;
           LCD_MESSAGEPGM(WELCOME_MSG);
-          lcd_update();
+          lcd_update(encoderClicked, encoderLongPressed);
         #endif
         break;
       #endif
@@ -2513,7 +2538,7 @@ void process_commands()
       #ifdef ULTIPANEL
         powersupply = false;
         LCD_MESSAGEPGM(MACHINE_NAME" "MSG_OFF".");
-        lcd_update();
+        lcd_update(encoderClicked, encoderLongPressed);
       #endif
 	  break;
 
@@ -2906,7 +2931,7 @@ void process_commands()
             while(digitalRead(pin_number) != target){
               manage_heater();
               manage_inactivity();
-              lcd_update();
+              lcd_update(encoderClicked, encoderLongPressed);
             }
           }
         }
@@ -3225,7 +3250,7 @@ void process_commands()
           cnt++;
           manage_heater();
           manage_inactivity();
-          lcd_update();
+          lcd_update(encoderClicked, encoderLongPressed);
           if(cnt==0)
           {
           #if BEEPER > 0

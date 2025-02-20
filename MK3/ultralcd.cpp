@@ -115,13 +115,15 @@ static void menu_action_setting_edit_callback_long5(const char* pstr, unsigned l
   #endif
 #endif
 
+bool ENCODER_CLICKED = false;
+bool ENCODER_LONGPRESSED = false;
 
 /* Helper macros for menus */
 #define START_MENU() do { \
     if (encoderPosition > 0x8000) encoderPosition = 0; \
     if (encoderPosition / ENCODER_STEPS_PER_MENU_ITEM < currentMenuViewOffset) currentMenuViewOffset = encoderPosition / ENCODER_STEPS_PER_MENU_ITEM;\
     uint8_t _lineNr = currentMenuViewOffset, _menuItemNr; \
-    bool wasClicked = LCD_CLICKED;\
+    bool wasClicked = ENCODER_CLICKED;\
     for(uint8_t _drawLineNr = 0; _drawLineNr < LCD_HEIGHT; _drawLineNr++, _lineNr++) { \
         _menuItemNr = 0;
 #define MENU_ITEM(type, label, args...) do { \
@@ -134,7 +136,7 @@ static void menu_action_setting_edit_callback_long5(const char* pstr, unsigned l
                 lcd_implementation_drawmenu_ ## type (_drawLineNr, _label_pstr , ## args ); \
             }\
         }\
-        if (wasClicked && (encoderPosition / ENCODER_STEPS_PER_MENU_ITEM) == _menuItemNr) {\
+        if (ENCODER_CLICKED && (encoderPosition / ENCODER_STEPS_PER_MENU_ITEM) == _menuItemNr) {\
             lcd_quick_feedback(); \
             menu_action_ ## type ( args ); \
             return;\
@@ -198,7 +200,7 @@ static void lcd_status_screen()
         lcd_status_update_delay = 10;   /* redraw the main screen every second. This is easier then trying keep track of all things that change on the screen */
     }
 #ifdef ULTIPANEL
-    if (LCD_CLICKED)
+    if (ENCODER_CLICKED)
     {
     	lcd_implementation_init();  //FMM debug - re-initialize LCD -see if it helps for when screen goes wacky   
     	currentMenu = lcd_main_menu;
@@ -466,7 +468,7 @@ static void lcd_babystep_x()
     {
         lcd_implementation_drawedit(PSTR(MSG_BABYSTEPPING_X),"");
     }
-    if (LCD_CLICKED)
+    if (ENCODER_CLICKED)
     {
         lcd_quick_feedback();
         currentMenu = lcd_tune_menu;
@@ -486,7 +488,7 @@ static void lcd_babystep_y()
     {
         lcd_implementation_drawedit(PSTR(MSG_BABYSTEPPING_Y),"");
     }
-    if (LCD_CLICKED)
+    if (ENCODER_CLICKED)
     {
         lcd_quick_feedback();
         currentMenu = lcd_tune_menu;
@@ -506,7 +508,7 @@ static void lcd_babystep_z()
     {
         lcd_implementation_drawedit(PSTR(MSG_BABYSTEPPING_Z),"");
     }
-    if (LCD_CLICKED)
+    if (ENCODER_CLICKED)
     {
         lcd_quick_feedback();
         currentMenu = lcd_tune_menu;
@@ -784,7 +786,7 @@ static void lcd_move_x()
     {
         lcd_implementation_drawedit(PSTR("X"), ftostr31(current_position[X_AXIS]));
     }
-    if (LCD_CLICKED)
+    if (ENCODER_CLICKED)
     {
         lcd_quick_feedback();
         currentMenu = lcd_move_menu_axis;
@@ -814,7 +816,7 @@ static void lcd_move_y()
     {
         lcd_implementation_drawedit(PSTR("Y"), ftostr31(current_position[Y_AXIS]));
     }
-    if (LCD_CLICKED)
+    if (ENCODER_CLICKED)
     {
         lcd_quick_feedback();
         currentMenu = lcd_move_menu_axis;
@@ -844,7 +846,7 @@ static void lcd_move_z()
     {
         lcd_implementation_drawedit(PSTR("Z"), ftostr31(current_position[Z_AXIS]));
     }
-    if (LCD_CLICKED)
+    if (ENCODER_CLICKED)
     {
         lcd_quick_feedback();
         currentMenu = lcd_move_menu_axis;
@@ -882,7 +884,7 @@ static void lcd_move_e()
     	//new code for testing
     	//lcd_implementation_drawedit(PSTR("Extruder V"), itostr4(e_velocity));
     }
-    if (LCD_CLICKED)
+    if (ENCODER_CLICKED)
     {
         lcd_quick_feedback();
         currentMenu = lcd_move_menu_axis;
@@ -909,7 +911,7 @@ static void lcd_move_p()
     {
         lcd_implementation_drawedit(PSTR("Puller"), ftostr31(current_position[P_AXIS]));
     }
-    if (LCD_CLICKED)
+    if (ENCODER_CLICKED)
     {
         lcd_quick_feedback();
         currentMenu = lcd_move_menu_axis;
@@ -1141,7 +1143,7 @@ static void lcd_set_contrast()
     {
         lcd_implementation_drawedit(PSTR(MSG_CONTRAST), itostr2(lcd_contrast));
     }
-    if (LCD_CLICKED)
+    if (ENCODER_CLICKED)
     {
         lcd_quick_feedback();
         currentMenu = lcd_control_menu;
@@ -1180,7 +1182,7 @@ static void lcd_sd_updir()
 
 void lcd_sdcard_menu()
 {
-    if (lcdDrawUpdate == 0 && LCD_CLICKED == 0)
+    if (lcdDrawUpdate == 0 && ENCODER_CLICKED == 0)
         return;	// nothing to do (so don't thrash the SD card)
     uint16_t fileCnt = card.getnrfilenames();
     START_MENU();
@@ -1226,7 +1228,7 @@ void lcd_sdcard_menu()
             encoderPosition = maxEditValue; \
         if (lcdDrawUpdate) \
             lcd_implementation_drawedit(editLabel, _strFunc(((_type)encoderPosition) / scale)); \
-        if (LCD_CLICKED) \
+        if (ENCODER_CLICKED) \
         { \
             *((_type*)editValue) = ((_type)encoderPosition) / scale; \
             lcd_quick_feedback(); \
@@ -1242,7 +1244,7 @@ void lcd_sdcard_menu()
             encoderPosition = maxEditValue; \
         if (lcdDrawUpdate) \
             lcd_implementation_drawedit(editLabel, _strFunc(((_type)encoderPosition) / scale)); \
-        if (LCD_CLICKED) \
+        if (ENCODER_CLICKED) \
         { \
             *((_type*)editValue) = ((_type)encoderPosition) / scale; \
             lcd_quick_feedback(); \
@@ -1438,8 +1440,27 @@ void lcd_init()
 #endif
 }
 
-void lcd_update()
+static unsigned long encoderClickTime = -1;
+
+void lcd_update(bool encoderClicked, bool encoderLongPressed)
 {
+    
+    if (encoderClicked && encoderClickTime == -1)
+    {
+        encoderClickTime = millis();
+        ENCODER_CLICKED = true;
+    }
+    if (encoderClickTime != -1 && millis() - encoderClickTime > 100)
+    {
+        encoderClickTime = -1;
+        ENCODER_CLICKED = false;
+    }
+    
+
+    if (ENCODER_CLICKED) {
+        MYSERIAL.println("encoder clicked");
+    }
+    
     static unsigned long timeoutToStatus = 0;
 
     #ifdef LCD_HAS_SLOW_BUTTONS
@@ -1501,7 +1522,7 @@ void lcd_update()
             encoderDiff = 0;
             timeoutToStatus = millis() + LCD_TIMEOUT_TO_STATUS;
         }
-        if (LCD_CLICKED)
+        if (ENCODER_CLICKED)
             timeoutToStatus = millis() + LCD_TIMEOUT_TO_STATUS;
 #endif//ULTIPANEL
 
