@@ -892,12 +892,17 @@ void loop()
   	
   if (extrude_status && ES_TEMP_SET > 0 && extrude_status && ES_ENABLE_CLEAR_NO_AUTO > 0 && encoderLongPressed && injectionModeStartMillis == -1) {
     injectionModeStartMillis = millis();
-    //feedmultiply=DEFAULT_FEEDMULTIPLY;
+    puller_feedrate = 0;
 	  extrude_status=extrude_status|ES_ENABLE_SET; 
     LCD_MESSAGEPGM(MSG_INJECTION_MODE);
   }
 
   if (injectionModeStartMillis != -1) {
+
+    if (extrude_status & ES_ENABLE_CLEAR_NO_AUTO > 0) {
+      injectionModeStartMillis = -1;
+    }
+
     unsigned long elapsedTimeMS = millis() - injectionModeStartMillis;
     unsigned long injectionTimeMillis = (unsigned long) injectionTimeSeconds * 1000;
     if (elapsedTimeMS > injectionTimeMillis) {
