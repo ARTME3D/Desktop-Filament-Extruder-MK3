@@ -1452,7 +1452,7 @@ void lcd_update(bool encoderClicked, bool encoderLongPressed)
         encoderClickTime = ms;
         ENCODER_CLICKED = true;
     }
-    if (encoderClickTime != -1 && ms - encoderClickTime > 120)
+    if (encoderClickTime != -1 && ms - encoderClickTime > 105)
     {
         encoderClickTime = -1;
         ENCODER_CLICKED = false;
