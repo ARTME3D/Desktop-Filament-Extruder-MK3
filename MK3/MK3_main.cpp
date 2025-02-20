@@ -222,6 +222,51 @@ unsigned long stoptime=0;
 unsigned long duration=0;
 unsigned long timeremaining=DEFAULT_LENGTH_CUTOFF/DEFAULT_PULLER_FEEDRATE*1000;  //used to hold a calculated time remaining in ms to hit fil length cutoff
 
+int maxBeepSequenceLength = 20;
+int beepSequence[20];
+int currentBeepSequenceIndex = -1;
+int currentBeepSequenceLength;
+unsigned long currentBeepMillis;
+
+void setBeepSequence(int bs[], int length)
+{
+  if (length > maxBeepSequenceLength)
+    length = maxBeepSequenceLength;
+  for (int i = 0; i < length; i++)
+    beepSequence[i] = bs[i];
+
+  currentBeepSequenceLength = length;
+  currentBeepSequenceIndex = 0;
+  currentBeepMillis = millis();
+
+  WRITE(BEEPER,HIGH);
+
+}
+
+void beepSequenceLoop() {
+
+  if (currentBeepSequenceIndex >= 0 && currentBeepSequenceIndex < currentBeepSequenceLength) {
+
+    unsigned long elapsedMillis = millis() - currentBeepMillis;
+
+    if (elapsedMillis > beepSequence[currentBeepSequenceIndex]) {
+      currentBeepSequenceIndex++;
+      currentBeepMillis = millis();
+      if (currentBeepSequenceIndex % 2 == 0) {
+        WRITE(BEEPER,HIGH);
+      } else {
+        WRITE(BEEPER,LOW);
+      }
+      if (currentBeepSequenceIndex >= currentBeepSequenceLength) {
+        currentBeepSequenceIndex = -1;
+        WRITE(BEEPER,LOW);
+      }
+    }
+  }
+
+
+}
+
 
 float model_out;  //Smith predictor model out
 float model_gain; //Smith predictor model gain
@@ -635,7 +680,8 @@ void loop()
     }
   }
 
-  
+
+  beepSequenceLoop();  
 
   if(buflen < (BUFSIZE-1))
     get_command();
@@ -716,13 +762,8 @@ void loop()
 		  extrude_status= extrude_status & ES_STATS_CLEAR;  //shut down statistics
 		  timeremaining=0;
 		  LCD_MESSAGEPGM(MSG_EXTRUDE_COMPLETE);
-
-      for (int t = 0; t < 3; t++) {
-        WRITE(BEEPER,HIGH);
-	      delay(200); //Änderunge 31.05.2020 5.Eichbaum
-        WRITE(BEEPER,LOW);
-        delay(500);
-      }
+      int beepSequence[5] = {1000, 500, 1000, 500, 1000};
+      setBeepSequence(beepSequence, 5);
 
 	  } else {
 		  
@@ -762,10 +803,8 @@ void loop()
           
           manage_heater();
           lcd_update(encoderClicked, encoderLongPressed);
-          WRITE(BEEPER,HIGH);
-	        delay(1000); //Änderunge 31.05.2020 5.Eichbaum
-          WRITE(BEEPER,LOW);
-          delay(500);
+          int beepSequence[5] = {1000, 500, 1000, 500, 1000};
+          setBeepSequence(beepSequence, 5);
         }
       }
     }
@@ -805,10 +844,8 @@ void loop()
           manage_heater();
           lcd_update(encoderClicked, encoderLongPressed);
 
-          WRITE(BEEPER,HIGH);
-	        delay(1000); //Änderunge 31.05.2020 5.Eichbaum
-          WRITE(BEEPER,LOW);
-          delay(500);
+          int beepSequence[5] = {1000, 500, 1000, 500, 1000};
+          setBeepSequence(beepSequence, 5);
 
         }
       }
@@ -848,13 +885,8 @@ void loop()
   if(((extruderTemp >= (degTargetHotend(active_extruder)-TEMP_WINDOW)) && (extruderTemp <= (degTargetHotend(active_extruder)+TEMP_WINDOW)))  && ((extrude_status & ES_TEMP_SET)==0))  //check if extruder at or near setpoint
   	  {
 	  extrude_status=extrude_status | ES_TEMP_SET;
-    WRITE(BEEPER,HIGH);
-	  delay(1000); //Änderunge 31.05.2020 5.Eichbaum
-    WRITE(BEEPER,LOW);
-    delay(500);
-    WRITE(BEEPER,HIGH);
-    delay(1000); //Änderunge 31.05.2020
-    WRITE(BEEPER,LOW);
+    int beepSequence[5] = {1000, 500, 1000, 500, 1000};
+    setBeepSequence(beepSequence, 5);
 	  LCD_MESSAGEPGM(MSG_HEATING_COMPLETE);
   	  }
   	
