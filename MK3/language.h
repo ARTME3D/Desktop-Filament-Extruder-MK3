@@ -125,6 +125,7 @@
 #define MSG_PREPARE "Settings" //MK3
 #define MSG_TUNE "Settings" //MK3
 #define MSG_INJECTION_TIME "Injection Time" //MK3
+#define MSG_INJECTION_MODE "Injection Mode..." //MK3
 #define MSG_ESTEPS "Esteps/rev/100" //MK3
 #define MSG_PSTEPS "Psteps/mm" //MK3
 #define MSG_A_RETRACT "Motor Acc" //MK3

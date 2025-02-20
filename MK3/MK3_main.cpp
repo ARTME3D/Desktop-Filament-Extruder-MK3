@@ -862,6 +862,7 @@ void loop()
     injectionModeStartMillis = millis();
     //feedmultiply=DEFAULT_FEEDMULTIPLY;
 	  extrude_status=extrude_status|ES_ENABLE_SET; 
+    LCD_MESSAGEPGM(MSG_INJECTION_MODE);
   }
 
   if (injectionModeStartMillis != -1) {
@@ -869,6 +870,7 @@ void loop()
     if (elapsedTimeMS > injectionTimeSeconds * 1000) {
       injectionModeStartMillis = -1;
       extrude_status=extrude_status & ES_ENABLE_CLEAR_NO_AUTO;
+      LCD_MESSAGEPGM(MSG_HEATING_COMPLETE);
     }
   }
   
