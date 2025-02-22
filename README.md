@@ -20,7 +20,7 @@ If you do not make any changes to the firmware, it will be displayed in English.
 5 Spanish
 6 Italian
 7 Portuguese
-8 Czech (not availible yet)
+8 Czech
 9 Romanian
 10 Dutch
 11 Hungarian
