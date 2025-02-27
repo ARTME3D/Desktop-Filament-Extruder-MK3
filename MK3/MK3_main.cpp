@@ -793,6 +793,8 @@ void loop()
       // MYSERIAL.println(elapsedTimeMS, DEC);
       if (elapsedTimeMS > 30000) {
         LCD_ALERTMESSAGEPGM(MSG_sensor_runout);
+        int beepSequence[5] = {1000, 500, 1000, 500, 1000};
+        setBeepSequence(beepSequence, 5);
         while(1)
         {
           disable_heater();
@@ -803,8 +805,7 @@ void loop()
           
           manage_heater();
           lcd_update(encoderClicked, encoderLongPressed);
-          int beepSequence[5] = {1000, 500, 1000, 500, 1000};
-          setBeepSequence(beepSequence, 5);
+          beepSequenceLoop();
         }
       }
     }
@@ -833,6 +834,8 @@ void loop()
       // MYSERIAL.println(elapsedTimeMS, DEC);
       if (elapsedTimeMS > 3000000) {
         LCD_ALERTMESSAGEPGM(MSG_SAFETY_COOLDOWN);
+        int beepSequence[5] = {1000, 500, 1000, 500, 1000};
+        setBeepSequence(beepSequence, 5);
         while(1)
         {
           disable_heater();
@@ -843,10 +846,7 @@ void loop()
           
           manage_heater();
           lcd_update(encoderClicked, encoderLongPressed);
-
-          int beepSequence[5] = {1000, 500, 1000, 500, 1000};
-          setBeepSequence(beepSequence, 5);
-
+          beepSequenceLoop();
         }
       }
     }
