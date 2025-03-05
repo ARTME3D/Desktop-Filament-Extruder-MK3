@@ -83,8 +83,9 @@ M Codes
 
 *  M303 - PID relay autotune S<temperature> sets the target temperature. (default target temperature = 190C)
 
-
-
+Acknowledgment
+=========
+A big thank you goes to Filip Mulier. He wrote the “Marlin-Mackerel” firmware and published it as open source. This is what made this project possible. His original data can be found at https://github.com/filipmu/Marlin-Mackerel
 
 
 
