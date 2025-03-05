@@ -12,11 +12,13 @@ This firmware was updated to control a "Desktop Filament Extruder MK3 and MK3S b
 
 How to install the firmware:
 =========
-Choose the main branch for the MK3 Firmware and choose the MK3S branch for the MK3S Firmware.
-Download the firmware by clicking on “Code” and then on “download ZIP” on the Github page. You will then find the file in your download folder.
-To unzip the file, right-click on the file and select “Unzip” or “Extract all”.
-Download the Arduino IDE software from https://www.arduino.cc/en/software.
-Install Arduino IDE on your PC.
+1. Choose the main branch for the MK3 Firmware and choose the MK3S branch for the MK3S Firmware.
+
+2. Download the firmware by clicking on “Code” and then on “download ZIP” on the Github page. You will then find the file in your download folder.
+
+3. To unzip the file, right-click on the file and select “Unzip” or “Extract all”.
+4. Download the Arduino IDE software from https://www.arduino.cc/en/software.
+5. Install Arduino IDE on your PC.
 Open the firmware file. Then open the MK3 folder and double-click on the “MK3.ino” file.
 Arduino IDE should then open. If not, right-click on the file and select “open with”. Then select Arduino IDE.
 Connect the extruder's MKS Gen L board to the PC. Use a USB cable (USB-A to USB-B) to do this. You usually have such a cable left over from a scanner or inkjet printer. Make sure that the USB plugs are aligned correctly.
