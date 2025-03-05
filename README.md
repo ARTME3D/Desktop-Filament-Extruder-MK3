@@ -19,32 +19,33 @@ How to install the firmware:
 3. To unzip the file, right-click on the file and select “Unzip” or “Extract all”.
 4. Download the Arduino IDE software from https://www.arduino.cc/en/software.
 5. Install Arduino IDE on your PC.
-Open the firmware file. Then open the MK3 folder and double-click on the “MK3.ino” file.
-Arduino IDE should then open. If not, right-click on the file and select “open with”. Then select Arduino IDE.
-Connect the extruder's MKS Gen L board to the PC. Use a USB cable (USB-A to USB-B) to do this. You usually have such a cable left over from a scanner or inkjet printer. Make sure that the USB plugs are aligned correctly.
-Close all other programs on your PC. Only the Arduino IDE should be open.
-It may take a moment for the PC to recognize the board. If not, restart the PC or use a different USB port on the PC.
-The extruder's power supply should be turned off. The extruder's display will start because it is powered via the USB cable.
-Click on the “Tools” button in the top menu in the Arduino IDE and set the following parameters:
+6. Open the firmware file. Then open the MK3 folder and double-click on the “MK3.ino” file.
+7. Arduino IDE should then open. If not, right-click on the file and select “open with”. Then select Arduino IDE.
+8. Connect the extruder's MKS Gen L board to the PC. Use a USB cable (USB-A to USB-B) to do this. You usually have such a cable left over from a scanner or inkjet printer. Make sure that the USB plugs are aligned correctly.
+9. Close all other programs on your PC. Only the Arduino IDE should be open.
+10. It may take a moment for the PC to recognize the board. If not, restart the PC or use a different USB port on the PC.
+11. The extruder's power supply should be turned off. The extruder's display will start because it is powered via the USB cable.
+12. Click on the “Tools” button in the top menu in the Arduino IDE and set the following parameters:
 – Select “Select Board” at the top
 – Enter “Arduino Mega or Mega 2560” in the search field and select it
 – Select the board's USB port under “PORTS”
 – Click “OK” to confirm
-Now the upload can start. To do this, click on the arrow symbol (right arrow) under the top menu bar.
-At some point, “upload complete” will appear as a message.
-If an error message appears, it is usually a problem with the connection. Make sure that Windows has recognized the Arduino on the USB port. Possible solutions can be: - Check that the above settings are selected correctly.
-Close all unnecessary programs.
-Disconnect all USB devices from the PC and restart the PC, then connect only the Arduino.
-Use a different USB port on the PC.
-Use a different USB cable.
-Use a different PC.
-In rare cases, the board may also be defective (cheap clone).
-If the upload is successful, disconnect the MKS board from the PC.
-Restart the extruder using the power supply.
-Overwrite the stored settings by clicking on Main Menu – Control – Restore failsafe.
-Store the new settings: Main Menu – Control – Store memory.
-Restart the extruder.
-Done.
+13. Now the upload can start. To do this, click on the arrow symbol (right arrow) under the top menu bar.
+14. At some point, “upload complete” will appear as a message.
+15. If an error message appears, it is usually a problem with the connection. Make sure that Windows has recognized the Arduino on the USB port. Possible solutions can be:
+- Check that the above settings are selected correctly.
+- Close all unnecessary programs.
+- Disconnect all USB devices from the PC and restart the PC, then connect only the Arduino.
+- Use a different USB port on the PC.
+- Use a different USB cable.
+- Use a different PC.
+- In rare cases, the board may also be defective (cheap clone).
+16. If the upload is successful, disconnect the MKS board from the PC.
+17. Restart the extruder using the power supply.
+18. Overwrite the stored settings by clicking on Main Menu – Control – Restore failsafe.
+19. Store the new settings: Main Menu – Control – Store memory.
+20. Restart the extruder.
+21. Done.
 
 How to change the languages:
 ===================
