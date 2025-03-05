@@ -13,9 +13,7 @@ This firmware was updated to control a "Desktop Filament Extruder MK3 and MK3S b
 How to install the firmware:
 =========
 1. Choose the main branch for the MK3 Firmware and choose the MK3S branch for the MK3S Firmware.
-
 2. Download the firmware by clicking on “Code” and then on “download ZIP” on the Github page. You will then find the file in your download folder.
-
 3. To unzip the file, right-click on the file and select “Unzip” or “Extract all”.
 4. Download the Arduino IDE software from https://www.arduino.cc/en/software.
 5. Install Arduino IDE on your PC.
