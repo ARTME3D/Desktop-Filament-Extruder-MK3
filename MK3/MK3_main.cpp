@@ -818,7 +818,7 @@ void loop()
   }
     
   
-  // puller stop when filament width stable for more than 5 minutes
+  // puller stop when filament width stable for more than 30 seconds
   if ((extrude_status & ES_AUTO_SET) > 0) {
     float delta_filwidth = fabsf(current_filwidth - last_filwidth);
     MYSERIAL.print("delta_filwidth: ");
@@ -829,8 +829,8 @@ void loop()
     } 
 
     unsigned long elapsedTimeMS = millis() - positionSensorStableTimerMS;
-    if (elapsedTimeMS > 300000) { // 5 minutes
-      MYSERIAL.println("filwidth stable for 5 minutes");
+    if (elapsedTimeMS > 30000) { // 30 seconds
+      MYSERIAL.println("filwidth stable for 30 seconds");
       positionSensorStableTimerMS = millis();
       LCD_ALERTMESSAGEPGM(MSG_sensor_runout);
       int beepSequence[5] = {1000, 500, 1000, 500, 1000};
