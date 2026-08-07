@@ -281,6 +281,8 @@ float last_p_position=0.0;  //keeps track of last position updated in the delay 
 float filament_control=0.0;
 unsigned long runoutStartTimeMS = 0;
 unsigned long safetycooldownStartTimeMS = 0;
+unsigned long safetycooldownWhenExtrudingStartTimeMS = 0;
+
 
 int extruder_multiply[EXTRUDERS] = {100
   #if EXTRUDERS > 1
@@ -854,6 +856,41 @@ void loop()
     safetycooldownStartTimeMS = 0;
     // MYSERIAL.println("not watching filwidth");
   }
+
+  // stop and cooldown when heated, extruder running and auto mode has not been set for more than 20 minutes-safety cooldown
+  if  ((extrude_status & ES_HOT_SET) > 0 && extruder_rpm > 1 && (extrude_status & ES_AUTO_SET) == 0)  {
+    
+    if (safetycooldownWhenExtrudingStartTimeMS == 0) {
+      // MYSERIAL.println("starting timeout");
+      safetycooldownWhenExtrudingStartTimeMS = millis();
+    } else {
+      unsigned long elapsedTimeMS = millis() - safetycooldownWhenExtrudingStartTimeMS;
+      //MYSERIAL.print("elapsed time: ");
+      //MYSERIAL.println(elapsedTimeMS, DEC);
+      if (elapsedTimeMS > 1200000) {
+        LCD_ALERTMESSAGEPGM(MSG_SAFETY_COOLDOWN);
+        int beepSequence[5] = {1000, 500, 1000, 500, 1000};
+        setBeepSequence(beepSequence, 5);
+        while(1)
+        {
+          disable_heater();
+          disable_x();
+          disable_y();
+          disable_z();
+          disable_e0();
+          
+          manage_heater();
+          lcd_update(encoderClicked, encoderLongPressed);
+          beepSequenceLoop();
+        }
+      }
+    }
+  } else {
+    safetycooldownWhenExtrudingStartTimeMS = 0;
+    // MYSERIAL.println("not watching filwidth");
+  }
+
+
 
   float extruderTemp = degHotend(active_extruder);
 
