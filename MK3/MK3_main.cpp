@@ -868,21 +868,15 @@ void loop()
       //MYSERIAL.print("elapsed time: ");
       //MYSERIAL.println(elapsedTimeMS, DEC);
       if (elapsedTimeMS > 1200000) {
-        LCD_ALERTMESSAGEPGM(MSG_SAFETY_COOLDOWN);
         int beepSequence[5] = {1000, 500, 1000, 500, 1000};
         setBeepSequence(beepSequence, 5);
-        while(1)
-        {
-          disable_heater();
-          disable_x();
-          disable_y();
-          disable_z();
-          disable_e0();
-          
-          manage_heater();
-          lcd_update(encoderClicked, encoderLongPressed);
-          beepSequenceLoop();
-        }
+        extrude_status=extrude_status & ES_ENABLE_CLEAR_NO_AUTO;
+        puller_feedrate_default = puller_feedrate;   //save default feed rate
+        injectionModeStartMillis = -1;
+        
+        extrude_status = extrude_status & ES_STATS_CLEAR;
+        
+        LCD_MESSAGEPGM(MSG_EXTRUDER_STOPPED);
       }
     }
   } else {
