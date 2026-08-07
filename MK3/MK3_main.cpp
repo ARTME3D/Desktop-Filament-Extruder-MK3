@@ -282,6 +282,7 @@ float filament_control=0.0;
 unsigned long runoutStartTimeMS = 0;
 unsigned long safetycooldownStartTimeMS = 0;
 unsigned long safetycooldownWhenExtrudingStartTimeMS = 0;
+unsigned long positionSensorStableTimerMS = 0;
 
 
 int extruder_multiply[EXTRUDERS] = {100
@@ -816,6 +817,44 @@ void loop()
     // MYSERIAL.println("not watching filwidth");
   }
     
+  
+  // puller stop when filament width stable for more than 5 minutes
+  if ((extrude_status & ES_AUTO_SET) > 0) {
+    float delta_filwidth = fabsf(current_filwidth - last_filwidth);
+    MYSERIAL.print("delta_filwidth: ");
+    MYSERIAL.println(delta_filwidth, DEC);
+
+    if (delta_filwidth > 0.001) {
+      positionSensorStableTimerMS = millis();
+    } 
+
+    unsigned long elapsedTimeMS = millis() - positionSensorStableTimerMS;
+    if (elapsedTimeMS > 300000) { // 5 minutes
+      MYSERIAL.println("filwidth stable for 5 minutes");
+      positionSensorStableTimerMS = millis();
+      LCD_ALERTMESSAGEPGM(MSG_sensor_runout);
+      int beepSequence[5] = {1000, 500, 1000, 500, 1000};
+      setBeepSequence(beepSequence, 5);
+      while(1)
+      {
+        disable_heater();
+        disable_x();
+        disable_y();
+        disable_z();
+        disable_e0();
+        
+        manage_heater();
+        lcd_update(encoderClicked, encoderLongPressed);
+        beepSequenceLoop();
+      }
+    }
+
+  } else {
+    positionSensorStableTimerMS = millis();
+  }
+  
+  last_filwidth = current_filwidth;
+
 // stop and cooldown when heated and extruder does not run for more than 20 minutes-safety cooldown
   if  ((extrude_status & ES_HOT_SET) > 0)  {
     

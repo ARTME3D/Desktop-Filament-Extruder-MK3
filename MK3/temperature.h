@@ -34,6 +34,7 @@ extern float current_temperature[EXTRUDERS];
 extern int target_temperature_bed;
 extern float current_temperature_bed;
 extern float current_filwidth;
+extern float last_filwidth;
 
 #ifdef TEMP_SENSOR_1_AS_REDUNDANT
   extern float redundant_temperature;
