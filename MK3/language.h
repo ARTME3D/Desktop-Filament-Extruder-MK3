@@ -89,15 +89,15 @@
 #define MSG_DISPLAY_E "E:" //MK3
 #define MSG_DISPLAY_rpm "rpm " //MK3
 #define MSG_DISPLAY_Puller "P:" //MK3
-#define MSG_SAFETY_COOLDOWN "Safety Cooldown" //MK3
-#define MSG_EX_WARM_UP "Extruder Warming Up" //MK3
-#define MSG_EX_COOL "Extruder Cooling" //MK3
-#define MSG_AUTOT_SEQU "Autotune Sequence" //MK3
-#define MSG_AUTOT_COMPL "Autotune Complete" //MK3
-#define MSG_MIN_TEMP "MINTEMP" //MK3
-#define MSG_MAX_TEMP "MAXTEMP" //MK3
-#define MSG_thermal_runaway "Heating Error" //MK3
-#define MSG_sensor_runout "Sensor Error" //MK3
+#define MSG_SAFETY_COOLDOWN "Safety Cooldown     " //MK3
+#define MSG_EX_WARM_UP "Extruder Warming Up " //MK3
+#define MSG_EX_COOL "Extruder Cooling    " //MK3
+#define MSG_AUTOT_SEQU "Autotune Sequence   " //MK3
+#define MSG_AUTOT_COMPL "Autotune Complete   " //MK3
+#define MSG_MIN_TEMP "MINTEMP             " //MK3
+#define MSG_MAX_TEMP "MAXTEMP             " //MK3
+#define MSG_thermal_runaway "Heating Error       " //MK3
+#define MSG_sensor_runout "Sensor Error        " //MK3
 #define WELCOME_MSG MACHINE_NAME "   " //MK3
 #define MSG_MAIN "Main menu" //MK3
 #define MSG_PREHEAT_ABS "Preheat" //MK3
@@ -125,7 +125,7 @@
 #define MSG_PREPARE "Settings" //MK3
 #define MSG_TUNE "Settings" //MK3
 #define MSG_INJECTION_TIME "Injection Time" //MK3
-#define MSG_INJECTION_MODE "Injection Mode..." //MK3
+#define MSG_INJECTION_MODE "Injection Mode...   " //MK3
 #define MSG_ESTEPS "Esteps/rev/100" //MK3
 #define MSG_PSTEPS "Psteps/mm" //MK3
 #define MSG_A_RETRACT "Motor Acc" //MK3
@@ -143,9 +143,9 @@
 #define MSG_ENABLE_STATS "Enable Statistics" //MK3
 #define MSG_DISABLE_STATS "Pause Statistics" //MK3
 #define MSG_VMAX "Vmax " //MK3
-#define MSG_EXTRUDER_RUNNING "Extruder running" //MK3
-#define MSG_EXTRUDER_STOPPED "Extruder stopped" //MK3
-#define MSG_EXTRUDE_COMPLETE "Extrusion complete" //MK3
+#define MSG_EXTRUDER_RUNNING "Extruder running    " //MK3
+#define MSG_EXTRUDER_STOPPED "Extruder stopped    " //MK3
+#define MSG_EXTRUDE_COMPLETE "Extrusion complete  " //MK3
   // LCD Menu Messages ferz
   #define MSG_SD_INSERTED "Card inserted"           
 	#define MSG_SD_REMOVED "Card removed"
@@ -332,14 +332,14 @@
 #define MSG_DISPLAY_rpm "Upm " //MK3
 #define MSG_DISPLAY_Puller "Z:" //MK3
 #define MSG_SAFETY_COOLDOWN "Sicherheitsabkuehlung" //MK3
-#define MSG_EX_WARM_UP "Extruder aufheizen" //MK3
-#define MSG_EX_COOL "Extruder abkuehlen" //MK3
-#define MSG_AUTOT_SEQU "Autotune Sequenz" //MK3
-#define MSG_AUTOT_COMPL "Autotune Ende" //MK3
-#define MSG_MIN_TEMP "MINTEMP" //MK3
-#define MSG_MAX_TEMP "MAXTEMP" //MK3
-#define MSG_thermal_runaway "Heizung Fehler" //MK3
-#define MSG_sensor_runout "Sensor Fehler" //MK3
+#define MSG_EX_WARM_UP "Extruder aufheizen  " //MK3
+#define MSG_EX_COOL "Extruder abkuehlen  " //MK3
+#define MSG_AUTOT_SEQU "Autotune Sequenz    " //MK3
+#define MSG_AUTOT_COMPL "Autotune Ende       " //MK3
+#define MSG_MIN_TEMP "MINTEMP             " //MK3
+#define MSG_MAX_TEMP "MAXTEMP             " //MK3
+#define MSG_thermal_runaway "Heizung Fehler      " //MK3
+#define MSG_sensor_runout "Sensor Fehler       " //MK3
 #define WELCOME_MSG MACHINE_NAME "   " //MK3
 #define MSG_MAIN "Hauptmenue" //MK3
 #define MSG_PREHEAT_ABS "Vorheizen" //MK3
@@ -367,7 +367,7 @@
 #define MSG_PREPARE "Einstellung" //MK3
 #define MSG_TUNE "Einstellung" //MK3
 #define MSG_INJECTION_TIME "Einspritz Zeit" //MK3
-#define MSG_INJECTION_MODE "Spritzguss..." //MK3
+#define MSG_INJECTION_MODE "Spritzguss...       " //MK3
 #define MSG_ESTEPS "Esteps/rev/100" //MK3
 #define MSG_PSTEPS "Psteps/mm" //MK3
 #define MSG_A_RETRACT "Motor Acc" //MK3
@@ -385,9 +385,9 @@
 #define MSG_ENABLE_STATS "Statistik starten" //MK3
 #define MSG_DISABLE_STATS "Statistik stoppen" //MK3
 #define MSG_VMAX "Vmax " //MK3
-#define MSG_EXTRUDER_RUNNING "Extruder aktiv" //MK3
-#define MSG_EXTRUDER_STOPPED "Extruder gestoppt" //MK3
-#define MSG_EXTRUDE_COMPLETE "Extrusion fertig"
+#define MSG_EXTRUDER_RUNNING "Extruder aktiv      " //MK3
+#define MSG_EXTRUDER_STOPPED "Extruder gestoppt   " //MK3
+#define MSG_EXTRUDE_COMPLETE "Extrusion fertig    "
   // LCD Menu Messages ferz
   #define MSG_SD_INSERTED "Card inserted"           
 	#define MSG_SD_REMOVED "Card removed"
@@ -575,14 +575,14 @@
 #define MSG_DISPLAY_rpm "t.m " //MK3
 #define MSG_DISPLAY_Puller "T:" //MK3
 #define MSG_SAFETY_COOLDOWN "Refroid. de Securite" //MK3
-#define MSG_EX_WARM_UP "echauff. Extrudeuse" //MK3
-#define MSG_EX_COOL "Refroid. Extrudeuse" //MK3
-#define MSG_AUTOT_SEQU "Seq. Autoreglage" //MK3
-#define MSG_AUTOT_COMPL "Autoreglage complet" //MK3
-#define MSG_MIN_TEMP "Tempmin" //MK3
-#define MSG_MAX_TEMP "Tempmax" //MK3
-#define MSG_thermal_runaway "Erreur de Chauffage" //MK3
-#define MSG_sensor_runout "Erreur de Capteur" //MK3
+#define MSG_EX_WARM_UP "echauff. Extrudeuse " //MK3
+#define MSG_EX_COOL "Refroid. Extrudeuse " //MK3
+#define MSG_AUTOT_SEQU "Seq. Autoreglage    " //MK3
+#define MSG_AUTOT_COMPL "Autoreglage complet " //MK3
+#define MSG_MIN_TEMP "Tempmin             " //MK3
+#define MSG_MAX_TEMP "Tempmax             " //MK3
+#define MSG_thermal_runaway "Erreur de Chauffage " //MK3
+#define MSG_sensor_runout "Erreur de Capteur   " //MK3
 #define WELCOME_MSG MACHINE_NAME "   " //MK3
 #define MSG_MAIN "Menu Princi." //MK3
 #define MSG_PREHEAT_ABS "Prechauffage" //MK3
@@ -610,7 +610,7 @@
 #define MSG_PREPARE "Reglages" //MK3
 #define MSG_TUNE "Reglages" //MK3
 #define MSG_INJECTION_TIME "Temps inject." //MK3
-#define MSG_INJECTION_MODE "Mode injection..." //MK3
+#define MSG_INJECTION_MODE "Mode injection...   " //MK3
 #define MSG_ESTEPS "Esteps/rev/100" //MK3
 #define MSG_PSTEPS "Psteps/mm" //MK3
 #define MSG_A_RETRACT "Motor Acc" //MK3
@@ -628,9 +628,9 @@
 #define MSG_ENABLE_STATS "Activer statist." //MK3
 #define MSG_DISABLE_STATS "Pauser statist." //MK3
 #define MSG_VMAX "Vmax " //MK3
-#define MSG_EXTRUDER_RUNNING "Extrudeuse activee" //MK3
-#define MSG_EXTRUDER_STOPPED "Extrudeuse arretee" //MK3
-#define MSG_EXTRUDE_COMPLETE "Extrusion terminee" //MK3
+#define MSG_EXTRUDER_RUNNING "Extrudeuse activee  " //MK3
+#define MSG_EXTRUDER_STOPPED "Extrudeuse arretee  " //MK3
+#define MSG_EXTRUDE_COMPLETE "Extrusion terminee  " //MK3
   // LCD Menu Messages ferz
   #define MSG_SD_INSERTED "Card inserted"           
 	#define MSG_SD_REMOVED "Card removed"
@@ -816,15 +816,15 @@
 #define MSG_DISPLAY_E "E:" //MK3
 #define MSG_DISPLAY_rpm "ppo " //MK3
 #define MSG_DISPLAY_Puller "P:" //MK3
-#define MSG_SAFETY_COOLDOWN "Bezpiec. Odnow.." //MK3
-#define MSG_EX_WARM_UP "Rozgrzew Exstrudera" //MK3
+#define MSG_SAFETY_COOLDOWN "Bezpiec. Odnow..    " //MK3
+#define MSG_EX_WARM_UP "Rozgrzew Exstrudera " //MK3
 #define MSG_EX_COOL "Chlodzenie Exstrud. " //MK3
-#define MSG_AUTOT_SEQU "Auto-tune Sekwencja" //MK3
+#define MSG_AUTOT_SEQU "Auto-tune Sekwencja " //MK3
 #define MSG_AUTOT_COMPL "Auto-tune Zakonczony" //MK3
-#define MSG_MIN_TEMP "Mintemp" //MK3
-#define MSG_MAX_TEMP "Maxtemp" //MK3
-#define MSG_thermal_runaway "Blad ogrzewu" //MK3
-#define MSG_sensor_runout "Blad czujnika" //MK3
+#define MSG_MIN_TEMP "Mintemp             " //MK3
+#define MSG_MAX_TEMP "Maxtemp             " //MK3
+#define MSG_thermal_runaway "Blad ogrzewu        " //MK3
+#define MSG_sensor_runout "Blad czujnika       " //MK3
 #define WELCOME_MSG MACHINE_NAME "   " //MK3
 #define MSG_MAIN "Glowne menu" //MK3
 #define MSG_PREHEAT_ABS "Rozgrzewka" //MK3
@@ -852,7 +852,7 @@
 #define MSG_PREPARE "Ustawienia" //MK3
 #define MSG_TUNE "Ustawienia" //MK3
 #define MSG_INJECTION_TIME "Czas wtrysku" //MK3
-#define MSG_INJECTION_MODE "Tryb wtrysku..." //MK3
+#define MSG_INJECTION_MODE "Tryb wtrysku...     " //MK3
 #define MSG_ESTEPS "Ekroki/rev/100" //MK3
 #define MSG_PSTEPS "Pkroki/mm" //MK3
 #define MSG_A_RETRACT "Przysp. silnika" //MK3
@@ -870,9 +870,9 @@
 #define MSG_ENABLE_STATS "Wlaczyc Statyst." //MK3
 #define MSG_DISABLE_STATS "Pauza Statyst." //MK3
 #define MSG_VMAX "Vmax " //MK3
-#define MSG_EXTRUDER_RUNNING "Exstruder dziala" //MK3
-#define MSG_EXTRUDER_STOPPED "Exstruder zatrz." //MK3
-#define MSG_EXTRUDE_COMPLETE "Ekstruzja zakon." //MK3
+#define MSG_EXTRUDER_RUNNING "Exstruder dziala    " //MK3
+#define MSG_EXTRUDER_STOPPED "Exstruder zatrz.    " //MK3
+#define MSG_EXTRUDE_COMPLETE "Ekstruzja zakon.    " //MK3
   // LCD Menu Messages ferz
   #define MSG_SD_INSERTED "Card inserted"           
 	#define MSG_SD_REMOVED "Card removed"
@@ -1060,14 +1060,14 @@
 #define MSG_DISPLAY_rpm "rpm " //MK3
 #define MSG_DISPLAY_Puller "P:" //MK3
 #define MSG_SAFETY_COOLDOWN "Enfria. de seguridad" //MK3
-#define MSG_EX_WARM_UP "Calen. del extrusor" //MK3
+#define MSG_EX_WARM_UP "Calen. del extrusor " //MK3
 #define MSG_EX_COOL "Enfriam. del extrusor" //MK3
-#define MSG_AUTOT_SEQU "Secuencia de auto." //MK3
-#define MSG_AUTOT_COMPL "Autoajuste listo" //MK3
-#define MSG_MIN_TEMP "Min-Min" //MK3
-#define MSG_MAX_TEMP "Calor Max" //MK3
+#define MSG_AUTOT_SEQU "Secuencia de auto.  " //MK3
+#define MSG_AUTOT_COMPL "Autoajuste listo    " //MK3
+#define MSG_MIN_TEMP "Min-Min             " //MK3
+#define MSG_MAX_TEMP "Calor Max           " //MK3
 #define MSG_thermal_runaway "Fallo de calefaccion" //MK3
-#define MSG_sensor_runout "Fallo del sensor" //MK3
+#define MSG_sensor_runout "Fallo del sensor    " //MK3
 #define WELCOME_MSG MACHINE_NAME " " //MK3
 #define MSG_MAIN "Menu principal" //MK3
 #define MSG_PREHEAT_ABS "Precalentar" //MK3
@@ -1095,7 +1095,7 @@
 #define MSG_PREPARE "Ajustes" //MK3
 #define MSG_TUNE "Ajustes" //MK3
 #define MSG_INJECTION_TIME "Tiempo inyecc." //MK3
-#define MSG_INJECTION_MODE "Modo inyeccion..." //MK3
+#define MSG_INJECTION_MODE "Modo inyeccion...   " //MK3
 #define MSG_ESTEPS "Esteps/rev/100" //MK3
 #define MSG_PSTEPS "Psteps/mm" //MK3
 #define MSG_A_RETRACT "Acc motor" //MK3
@@ -1113,8 +1113,8 @@
 #define MSG_ENABLE_STATS "Stat. Activado" //MK3
 #define MSG_DISABLE_STATS "Stat. Vacaciones" //MK3
 #define MSG_VMAX "Vmax " //MK3
-#define MSG_EXTRUDER_RUNNING "Extrusor marcha" //MK3
-#define MSG_EXTRUDER_STOPPED "Extrusor parado" //MK3
+#define MSG_EXTRUDER_RUNNING "Extrusor marcha     " //MK3
+#define MSG_EXTRUDER_STOPPED "Extrusor parado     " //MK3
 #define MSG_EXTRUDE_COMPLETE "Extrusion finalizada" //MK3
   // LCD Menu Messages ferz
   #define MSG_SD_INSERTED "Card inserted"           
@@ -1303,15 +1303,15 @@
 #define MSG_DISPLAY_E "E:" //MK3
 #define MSG_DISPLAY_rpm "gir " //MK3
 #define MSG_DISPLAY_Puller "P:" //MK3
-#define MSG_SAFETY_COOLDOWN "Raffredd. Sicurezza" //MK3
-#define MSG_EX_WARM_UP "Riscald. Estrusore" //MK3
-#define MSG_EX_COOL "Raffredd. Estrusore" //MK3
-#define MSG_AUTOT_SEQU "Sequenza Autotune" //MK3
-#define MSG_AUTOT_COMPL "Autotune Completato" //MK3
-#define MSG_MIN_TEMP "Temp Bassa" //MK3
-#define MSG_MAX_TEMP "Temp Alta" //MK3
+#define MSG_SAFETY_COOLDOWN "Raffredd. Sicurezza " //MK3
+#define MSG_EX_WARM_UP "Riscald. Estrusore  " //MK3
+#define MSG_EX_COOL "Raffredd. Estrusore " //MK3
+#define MSG_AUTOT_SEQU "Sequenza Autotune   " //MK3
+#define MSG_AUTOT_COMPL "Autotune Completato " //MK3
+#define MSG_MIN_TEMP "Temp Bassa          " //MK3
+#define MSG_MAX_TEMP "Temp Alta           " //MK3
 #define MSG_thermal_runaway "Errore Riscaldamento" //MK3
-#define MSG_sensor_runout "Errore Sensore" //MK3
+#define MSG_sensor_runout "Errore Sensore      " //MK3
 #define WELCOME_MSG MACHINE_NAME "   " //MK3
 #define MSG_MAIN "Menu Princip." //MK3
 #define MSG_PREHEAT_ABS "Preriscalda" //MK3
@@ -1339,7 +1339,7 @@
 #define MSG_PREPARE "impostazioni" //MK3
 #define MSG_TUNE "impostazioni" //MK3
 #define MSG_INJECTION_TIME "Tempo iniezio." //MK3
-#define MSG_INJECTION_MODE "Iniezione..." //MK3
+#define MSG_INJECTION_MODE "Iniezione...        " //MK3
 #define MSG_ESTEPS "Esteps/rev/100" //MK3
 #define MSG_PSTEPS "Psteps/mm" //MK3
 #define MSG_A_RETRACT "Motor Acc" //MK3
@@ -1357,9 +1357,9 @@
 #define MSG_ENABLE_STATS "Attiva Statist." //MK3
 #define MSG_DISABLE_STATS "Pausa Statist." //MK3
 #define MSG_VMAX "Vmax " //MK3
-#define MSG_EXTRUDER_RUNNING "Estrusore attivo" //MK3
-#define MSG_EXTRUDER_STOPPED "Estrusore fermo" //MK3
-#define MSG_EXTRUDE_COMPLETE "Est. completata" //MK3
+#define MSG_EXTRUDER_RUNNING "Estrusore attivo    " //MK3
+#define MSG_EXTRUDER_STOPPED "Estrusore fermo     " //MK3
+#define MSG_EXTRUDE_COMPLETE "Est. completata     " //MK3
   // LCD Menu Messages ferz
   #define MSG_SD_INSERTED "Card inserted"           
 	#define MSG_SD_REMOVED "Card removed"
@@ -1545,15 +1545,15 @@
 #define MSG_DISPLAY_E "E:" //MK3
 #define MSG_DISPLAY_rpm "rpm " //MK3
 #define MSG_DISPLAY_Puller "D:" //MK3
-#define MSG_SAFETY_COOLDOWN "Arref. de Seguranca" //MK3
+#define MSG_SAFETY_COOLDOWN "Arref. de Seguranca " //MK3
 #define MSG_EX_WARM_UP "Aqueci. da Extrusora" //MK3
-#define MSG_EX_COOL "Arref. da Extrusora" //MK3
-#define MSG_AUTOT_SEQU "Seq. de Sint. Auto." //MK3
+#define MSG_EX_COOL "Arref. da Extrusora " //MK3
+#define MSG_AUTOT_SEQU "Seq. de Sint. Auto. " //MK3
 #define MSG_AUTOT_COMPL "Sint. Auto. Completa" //MK3
-#define MSG_MIN_TEMP "Tempmin" //MK3
-#define MSG_MAX_TEMP "Tempmax" //MK3
-#define MSG_thermal_runaway "Erro de Aquecimento" //MK3
-#define MSG_sensor_runout "Erro do Sensor" //MK3
+#define MSG_MIN_TEMP "Tempmin             " //MK3
+#define MSG_MAX_TEMP "Tempmax             " //MK3
+#define MSG_thermal_runaway "Erro de Aquecimento " //MK3
+#define MSG_sensor_runout "Erro do Sensor      " //MK3
 #define WELCOME_MSG MACHINE_NAME "   " //MK3
 #define MSG_MAIN "Menu Princi." //MK3
 #define MSG_PREHEAT_ABS "Pre-aquecimento" //MK3
@@ -1581,7 +1581,7 @@
 #define MSG_PREPARE "Definicoes" //MK3
 #define MSG_TUNE "Definicoes" //MK3
 #define MSG_INJECTION_TIME "Tempo injecao" //MK3
-#define MSG_INJECTION_MODE "Modo injecao..." //MK3
+#define MSG_INJECTION_MODE "Modo injecao...     " //MK3
 #define MSG_ESTEPS "Esteps/rev/100" //MK3
 #define MSG_PSTEPS "Psteps/mm" //MK3
 #define MSG_A_RETRACT "Motor Acc" //MK3
@@ -1599,9 +1599,9 @@
 #define MSG_ENABLE_STATS "Ativar Estatist." //MK3
 #define MSG_DISABLE_STATS "Pausar Estatist." //MK3
 #define MSG_VMAX "Vmax " //MK3
-#define MSG_EXTRUDER_RUNNING "Extrusora ativa" //MK3
-#define MSG_EXTRUDER_STOPPED "Extrusora parada" //MK3
-#define MSG_EXTRUDE_COMPLETE "Extrusao terminada" //MK3
+#define MSG_EXTRUDER_RUNNING "Extrusora ativa     " //MK3
+#define MSG_EXTRUDER_STOPPED "Extrusora parada    " //MK3
+#define MSG_EXTRUDE_COMPLETE "Extrusao terminada  " //MK3
   // LCD Menu Messages ferz
   #define MSG_SD_INSERTED "Card inserted"           
 	#define MSG_SD_REMOVED "Card removed"
@@ -1788,15 +1788,15 @@
 #define MSG_DISPLAY_E "E:" //MK3
 #define MSG_DISPLAY_rpm "r/m " //MK3
 #define MSG_DISPLAY_Puller "P:" //MK3
-#define MSG_SAFETY_COOLDOWN "Bez. chlazeni" //MK3
-#define MSG_EX_WARM_UP "Zahrivani extruderu" //MK3
-#define MSG_EX_COOL "Chlazeni extr." //MK3
-#define MSG_AUTOT_SEQU "Autotune sekvence" //MK3
-#define MSG_AUTOT_COMPL "Autotune dokoncen" //MK3
-#define MSG_MIN_TEMP "Mintepl" //MK3
-#define MSG_MAX_TEMP "Maxtepl" //MK3
-#define MSG_thermal_runaway "Chyba zahriv." //MK3
-#define MSG_sensor_runout "Senzor Chyba" //MK3
+#define MSG_SAFETY_COOLDOWN "Bez. chlazeni       " //MK3
+#define MSG_EX_WARM_UP "Zahrivani extruderu " //MK3
+#define MSG_EX_COOL "Chlazeni extr.      " //MK3
+#define MSG_AUTOT_SEQU "Autotune sekvence   " //MK3
+#define MSG_AUTOT_COMPL "Autotune dokoncen   " //MK3
+#define MSG_MIN_TEMP "Mintepl             " //MK3
+#define MSG_MAX_TEMP "Maxtepl             " //MK3
+#define MSG_thermal_runaway "Chyba zahriv.       " //MK3
+#define MSG_sensor_runout "Senzor Chyba        " //MK3
 #define WELCOME_MSG MACHINE_NAME "   " //MK3
 #define MSG_MAIN "Hlavni menu" //MK3
 #define MSG_PREHEAT_ABS "Predhrev" //MK3
@@ -1824,7 +1824,7 @@
 #define MSG_PREPARE "Nastav." //MK3
 #define MSG_TUNE "Nastav." //MK3
 #define MSG_INJECTION_TIME "Doba vstrikov." //MK3
-#define MSG_INJECTION_MODE "Rezim vstrikovani" //MK3
+#define MSG_INJECTION_MODE "Rezim vstrikovani   " //MK3
 #define MSG_ESTEPS "Ekroky/rev/100" //MK3
 #define MSG_PSTEPS "Pkroky/mm" //MK3
 #define MSG_A_RETRACT "Akc. motoru" //MK3
@@ -1842,9 +1842,9 @@
 #define MSG_ENABLE_STATS "Povolit Statist." //MK3
 #define MSG_DISABLE_STATS "Pozastavit Stat." //MK3
 #define MSG_VMAX "Vmax " //MK3
-#define MSG_EXTRUDER_RUNNING "Extruder bezi" //MK3
-#define MSG_EXTRUDER_STOPPED "Extruder stoji" //MK3
-#define MSG_EXTRUDE_COMPLETE "Exturze dokonc." //MK3
+#define MSG_EXTRUDER_RUNNING "Extruder bezi       " //MK3
+#define MSG_EXTRUDER_STOPPED "Extruder stoji      " //MK3
+#define MSG_EXTRUDE_COMPLETE "Exturze dokonc.     " //MK3
   // LCD Menu Messages ferz
   #define MSG_SD_INSERTED "Card inserted"           
 	#define MSG_SD_REMOVED "Card removed"
@@ -2029,15 +2029,15 @@
 #define MSG_DISPLAY_E "E:" //MK3
 #define MSG_DISPLAY_rpm "rpm " //MK3
 #define MSG_DISPLAY_Puller "T:" //MK3
-#define MSG_SAFETY_COOLDOWN "Racire de sig." //MK3
-#define MSG_EX_WARM_UP "Incalzire extrudor" //MK3
-#define MSG_EX_COOL "Racire extrudor" //MK3
-#define MSG_AUTOT_SEQU "Secventa Autotune" //MK3
-#define MSG_AUTOT_COMPL "Autotune Complet" //MK3
-#define MSG_MIN_TEMP "Tempmin" //MK3
-#define MSG_MAX_TEMP "Tempmax" //MK3
-#define MSG_thermal_runaway "Er. Incalzire" //MK3
-#define MSG_sensor_runout "Er. senzor" //MK3
+#define MSG_SAFETY_COOLDOWN "Racire de sig.      " //MK3
+#define MSG_EX_WARM_UP "Incalzire extrudor  " //MK3
+#define MSG_EX_COOL "Racire extrudor     " //MK3
+#define MSG_AUTOT_SEQU "Secventa Autotune   " //MK3
+#define MSG_AUTOT_COMPL "Autotune Complet    " //MK3
+#define MSG_MIN_TEMP "Tempmin             " //MK3
+#define MSG_MAX_TEMP "Tempmax             " //MK3
+#define MSG_thermal_runaway "Er. Incalzire       " //MK3
+#define MSG_sensor_runout "Er. senzor          " //MK3
 #define WELCOME_MSG MACHINE_NAME "   " //MK3
 #define MSG_MAIN "Meniu pr." //MK3
 #define MSG_PREHEAT_ABS "PreInc." //MK3
@@ -2065,7 +2065,7 @@
 #define MSG_PREPARE "Setari" //MK3
 #define MSG_TUNE "Setari" //MK3
 #define MSG_INJECTION_TIME "Timpul inject." //MK3
-#define MSG_INJECTION_MODE "Mod injectie..." //MK3
+#define MSG_INJECTION_MODE "Mod injectie...     " //MK3
 #define MSG_ESTEPS "Esteps/rev/100" //MK3
 #define MSG_PSTEPS "Psteps/mm" //MK3
 #define MSG_A_RETRACT "Acc Motor" //MK3
@@ -2083,9 +2083,9 @@
 #define MSG_ENABLE_STATS "Activare statist." //MK3
 #define MSG_DISABLE_STATS "Pauza Statistici" //MK3
 #define MSG_VMAX "Vmax " //MK3
-#define MSG_EXTRUDER_RUNNING "Extrudorul funct" //MK3
-#define MSG_EXTRUDER_STOPPED "Extrudor oprit" //MK3
-#define MSG_EXTRUDE_COMPLETE "Extrudare completa" //MK3
+#define MSG_EXTRUDER_RUNNING "Extrudorul funct    " //MK3
+#define MSG_EXTRUDER_STOPPED "Extrudor oprit      " //MK3
+#define MSG_EXTRUDE_COMPLETE "Extrudare completa  " //MK3
   // LCD Menu Messages ferz
   #define MSG_SD_INSERTED "Card inserted"           
 	#define MSG_SD_REMOVED "Card removed"
@@ -2270,15 +2270,15 @@
 #define MSG_DISPLAY_E "E:" //MK3
 #define MSG_DISPLAY_rpm "rpm" //MK3
 #define MSG_DISPLAY_Puller "P:" //MK3
-#define MSG_SAFETY_COOLDOWN "Koeling (vlghd)" //MK3
-#define MSG_EX_WARM_UP "Extruder Opwarmen" //MK3
-#define MSG_EX_COOL "Extruder Koelen" //MK3
-#define MSG_AUTOT_SEQU "Autotune Sequence" //MK3
-#define MSG_AUTOT_COMPL "Autotune Klaar" //MK3
-#define MSG_MIN_TEMP "Mintemp" //MK3
-#define MSG_MAX_TEMP "Maxtemp" //MK3
-#define MSG_thermal_runaway "Warmtefout" //MK3
-#define MSG_sensor_runout "Sensorfout" //MK3
+#define MSG_SAFETY_COOLDOWN "Koeling (vlghd)     " //MK3
+#define MSG_EX_WARM_UP "Extruder Opwarmen   " //MK3
+#define MSG_EX_COOL "Extruder Koelen     " //MK3
+#define MSG_AUTOT_SEQU "Autotune Sequence   " //MK3
+#define MSG_AUTOT_COMPL "Autotune Klaar      " //MK3
+#define MSG_MIN_TEMP "Mintemp             " //MK3
+#define MSG_MAX_TEMP "Maxtemp             " //MK3
+#define MSG_thermal_runaway "Warmtefout          " //MK3
+#define MSG_sensor_runout "Sensorfout          " //MK3
 #define WELCOME_MSG MACHINE_NAME "   " //MK3
 #define MSG_MAIN "Hoofdmenu" //MK3
 #define MSG_PREHEAT_ABS "Voorvrw" //MK3
@@ -2306,7 +2306,7 @@
 #define MSG_PREPARE "Instel." //MK3
 #define MSG_TUNE "Instel." //MK3
 #define MSG_INJECTION_TIME "Injectietijd" //MK3
-#define MSG_INJECTION_MODE "Injectie modus..." //MK3
+#define MSG_INJECTION_MODE "Injectie modus...   " //MK3
 #define MSG_ESTEPS "Esteps/rev/100" //MK3
 #define MSG_PSTEPS "Psteps/mm" //MK3
 #define MSG_A_RETRACT "Motor Acc" //MK3
@@ -2324,9 +2324,9 @@
 #define MSG_ENABLE_STATS "Stats Inschak." //MK3
 #define MSG_DISABLE_STATS "Stats Pauzeren" //MK3
 #define MSG_VMAX "Vmax " //MK3
-#define MSG_EXTRUDER_RUNNING "Extruder actief" //MK3
-#define MSG_EXTRUDER_STOPPED "Extruder gestopt" //MK3
-#define MSG_EXTRUDE_COMPLETE "Extrusion klaar" //MK3
+#define MSG_EXTRUDER_RUNNING "Extruder actief     " //MK3
+#define MSG_EXTRUDER_STOPPED "Extruder gestopt    " //MK3
+#define MSG_EXTRUDE_COMPLETE "Extrusion klaar     " //MK3
   // LCD Menu Messages ferz
   #define MSG_SD_INSERTED "Card inserted"           
 	#define MSG_SD_REMOVED "Card removed"
@@ -2511,15 +2511,15 @@
 #define MSG_DISPLAY_E "E:" //MK3
 #define MSG_DISPLAY_rpm "rpm " //MK3
 #define MSG_DISPLAY_Puller "H:" //MK3
-#define MSG_SAFETY_COOLDOWN "Biztonsagi lehules" //MK3
-#define MSG_EX_WARM_UP "Extruder melegites" //MK3
-#define MSG_EX_COOL "Extruder hutes" //MK3
-#define MSG_AUTOT_SEQU "Autotune szekvencia" //MK3
-#define MSG_AUTOT_COMPL "Autotune Kesz" //MK3
-#define MSG_MIN_TEMP "Minho" //MK3
-#define MSG_MAX_TEMP "Maxho" //MK3
-#define MSG_thermal_runaway "Futesi hiba" //MK3
-#define MSG_sensor_runout "erzekelo hiba" //MK3
+#define MSG_SAFETY_COOLDOWN "Biztonsagi lehules  " //MK3
+#define MSG_EX_WARM_UP "Extruder melegites  " //MK3
+#define MSG_EX_COOL "Extruder hutes      " //MK3
+#define MSG_AUTOT_SEQU "Autotune szekvencia " //MK3
+#define MSG_AUTOT_COMPL "Autotune Kesz       " //MK3
+#define MSG_MIN_TEMP "Minho               " //MK3
+#define MSG_MAX_TEMP "Maxho               " //MK3
+#define MSG_thermal_runaway "Futesi hiba         " //MK3
+#define MSG_sensor_runout "erzekelo hiba       " //MK3
 #define WELCOME_MSG MACHINE_NAME " " //MK3
 #define MSG_MAIN "Fomenu" //MK3
 #define MSG_PREHEAT_ABS "Elomelegites" //MK3
@@ -2547,7 +2547,7 @@
 #define MSG_PREPARE "Beallitasok" //MK3
 #define MSG_TUNE "Beallitasok" //MK3
 #define MSG_INJECTION_TIME "Injekcios ido" //MK3
-#define MSG_INJECTION_MODE "injekcio..." //MK3
+#define MSG_INJECTION_MODE "injekcio...         " //MK3
 #define MSG_ESTEPS "Esteps/rev/100" //MK3
 #define MSG_PSTEPS "Psteps/mm" //MK3
 #define MSG_A_RETRACT "Motor Acc" //MK3
@@ -2565,8 +2565,8 @@
 #define MSG_ENABLE_STATS "Stat. Enged." //MK3
 #define MSG_DISABLE_STATS "Stat. Szün." //MK3
 #define MSG_VMAX "Vmax " //MK3
-#define MSG_EXTRUDER_RUNNING "Extruder fut" //MK3
-#define MSG_EXTRUDER_STOPPED "Extruder leallitva" //MK3
+#define MSG_EXTRUDER_RUNNING "Extruder fut        " //MK3
+#define MSG_EXTRUDER_STOPPED "Extruder leallitva  " //MK3
 #define MSG_EXTRUDE_COMPLETE "Extrudalas befejezve" //MK3
   // LCD Menu Messages ferz
   #define MSG_SD_INSERTED "Card inserted"           
@@ -2753,15 +2753,15 @@
 #define MSG_DISPLAY_E "E:" //MK3
 #define MSG_DISPLAY_rpm "rpm " //MK3
 #define MSG_DISPLAY_Puller "P:" //MK3
-#define MSG_SAFETY_COOLDOWN "Penyejukan Aman" //MK3
-#define MSG_EX_WARM_UP "Memanaskan Extruder" //MK3
-#define MSG_EX_COOL "Sejukan Extruder" //MK3
-#define MSG_AUTOT_SEQU "Urutan Autotune" //MK3
-#define MSG_AUTOT_COMPL "Autotune Selesai" //MK3
-#define MSG_MIN_TEMP "Mintemp" //MK3
-#define MSG_MAX_TEMP "Maxtemp" //MK3
-#define MSG_thermal_runaway "Memanasi Eror" //MK3
-#define MSG_sensor_runout "Sensor Eror" //MK3
+#define MSG_SAFETY_COOLDOWN "Penyejukan Aman     " //MK3
+#define MSG_EX_WARM_UP "Memanaskan Extruder " //MK3
+#define MSG_EX_COOL "Sejukan Extruder    " //MK3
+#define MSG_AUTOT_SEQU "Urutan Autotune     " //MK3
+#define MSG_AUTOT_COMPL "Autotune Selesai    " //MK3
+#define MSG_MIN_TEMP "Mintemp             " //MK3
+#define MSG_MAX_TEMP "Maxtemp             " //MK3
+#define MSG_thermal_runaway "Memanasi Eror       " //MK3
+#define MSG_sensor_runout "Sensor Eror         " //MK3
 #define WELCOME_MSG MACHINE_NAME "   " //MK3
 #define MSG_MAIN "Menu awal" //MK3
 #define MSG_PREHEAT_ABS "Pns.awl" //MK3
@@ -2789,7 +2789,7 @@
 #define MSG_PREPARE "Setelan" //MK3
 #define MSG_TUNE "Setelan" //MK3
 #define MSG_INJECTION_TIME "Waktu Injeksi" //MK3
-#define MSG_INJECTION_MODE "injeksi..." //MK3
+#define MSG_INJECTION_MODE "injeksi...          " //MK3
 #define MSG_ESTEPS "Esteps/rev/100" //MK3
 #define MSG_PSTEPS "Psteps/mm" //MK3
 #define MSG_A_RETRACT "Motor Acc" //MK3
@@ -2807,9 +2807,9 @@
 #define MSG_ENABLE_STATS "Mulai Statistik" //MK3
 #define MSG_DISABLE_STATS "Jeda Statistik" //MK3
 #define MSG_VMAX "Vmax " //MK3
-#define MSG_EXTRUDER_RUNNING "Extruder aktif" //MK3
-#define MSG_EXTRUDER_STOPPED "Extruder henti" //MK3
-#define MSG_EXTRUDE_COMPLETE "Ekstrusi selesai" //MK3
+#define MSG_EXTRUDER_RUNNING "Extruder aktif      " //MK3
+#define MSG_EXTRUDER_STOPPED "Extruder henti      " //MK3
+#define MSG_EXTRUDE_COMPLETE "Ekstrusi selesai    " //MK3
   // LCD Menu Messages ferz
   #define MSG_SD_INSERTED "Card inserted"           
 	#define MSG_SD_REMOVED "Card removed"
@@ -2994,15 +2994,15 @@
 #define MSG_DISPLAY_E "E:" //MK3
 #define MSG_DISPLAY_rpm "rpm " //MK3
 #define MSG_DISPLAY_Puller "c:" //MK3
-#define MSG_SAFETY_COOLDOWN "Bekleme Suresi" //MK3
-#define MSG_EX_WARM_UP "Ekstruder isinma" //MK3
-#define MSG_EX_COOL "Ekstruder Soguma" //MK3
-#define MSG_AUTOT_SEQU "Oto Ayar Sekansi" //MK3
-#define MSG_AUTOT_COMPL "Oto Ayar Tamam" //MK3
-#define MSG_MIN_TEMP "Minsick" //MK3
-#define MSG_MAX_TEMP "Mkssick" //MK3
-#define MSG_thermal_runaway "isinma Hatasi" //MK3
-#define MSG_sensor_runout "Sensor Hata" //MK3
+#define MSG_SAFETY_COOLDOWN "Bekleme Suresi      " //MK3
+#define MSG_EX_WARM_UP "Ekstruder isinma    " //MK3
+#define MSG_EX_COOL "Ekstruder Soguma    " //MK3
+#define MSG_AUTOT_SEQU "Oto Ayar Sekansi    " //MK3
+#define MSG_AUTOT_COMPL "Oto Ayar Tamam      " //MK3
+#define MSG_MIN_TEMP "Minsick             " //MK3
+#define MSG_MAX_TEMP "Mkssick             " //MK3
+#define MSG_thermal_runaway "isinma Hatasi       " //MK3
+#define MSG_sensor_runout "Sensor Hata         " //MK3
 #define WELCOME_MSG MACHINE_NAME "   " //MK3
 #define MSG_MAIN "Ana menu" //MK3
 #define MSG_PREHEAT_ABS "On ist." //MK3
@@ -3030,7 +3030,7 @@
 #define MSG_PREPARE "Ayarlar" //MK3
 #define MSG_TUNE "Ayarlar" //MK3
 #define MSG_INJECTION_TIME "Suresi Enjeks." //MK3
-#define MSG_INJECTION_MODE "Enjeksiyon Modu.." //MK3
+#define MSG_INJECTION_MODE "Enjeksiyon Modu..   " //MK3
 #define MSG_ESTEPS "Esteps/rev/100" //MK3
 #define MSG_PSTEPS "Psteps/mm" //MK3
 #define MSG_A_RETRACT "Motor Acc" //MK3
@@ -3048,9 +3048,9 @@
 #define MSG_ENABLE_STATS "Istatistikleri Ac" //MK3
 #define MSG_DISABLE_STATS "Istatistk Durdur" //MK3
 #define MSG_VMAX "Vmax " //MK3
-#define MSG_EXTRUDER_RUNNING "Ekstrd calisiyor" //MK3
-#define MSG_EXTRUDER_STOPPED "Ekstruder durdu" //MK3
-#define MSG_EXTRUDE_COMPLETE "Ekstruzyon bitti" //MK3
+#define MSG_EXTRUDER_RUNNING "Ekstrd calisiyor    " //MK3
+#define MSG_EXTRUDER_STOPPED "Ekstruder durdu     " //MK3
+#define MSG_EXTRUDE_COMPLETE "Ekstruzyon bitti    " //MK3
   // LCD Menu Messages ferz
   #define MSG_SD_INSERTED "Card inserted"           
 	#define MSG_SD_REMOVED "Card removed"
