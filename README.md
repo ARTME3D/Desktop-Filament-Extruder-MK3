@@ -12,10 +12,7 @@ This firmware was updated to control a "Desktop Filament Extruder of the NK Seri
 
 Availible versions
 ===================
-Choose the branch für different Versions:
-MK3
-MK3S
-MK3.9 - newest version with newest safety funktions
+Choose the branch für different Versions:MK3, MK3S, MK3.9.
 
 How to change the languages:
 ===================
