@@ -1,4 +1,4 @@
-MK3 - Firmware for Desktop Filament Extruder MK3 by ARTME 3D
+MK3 - Firmware for Desktop Filament Extruders by ARTME 3D
 ==========================
 This software has a GPL license.
 Please do not use this code in products (extruders, 3D printers, CNC etc) that are closed source or are crippled by a patent.
@@ -8,7 +8,14 @@ Quick Information
 ===================
 The firmware is currently designed to support the MKS Gen L V2.1 with Smart LCD 2004.
 This firmware is a version of the Marlin-Mackerel from Filip Mulier (https://github.com/filipmu/Marlin-Mackerel)
-This firmware was updated to control a "Desktop Filament Extruder MK3 by ARTME 3D". It can control the extruder motor, puller motor, Extruder heater (PID) with thermistor, winder motor, filament cooling fan and has input for a filament sensor. The processes and menus have been adapted to control a filament extruder. This code is currently in design, development, and testing and so might not be ready for casual users. This firmware is based on Marlin 3D Printer Firmware but also has many original parts.
+This firmware was updated to control a "Desktop Filament Extruder of the NK Series by ARTME 3D". It can control the extruder motor, puller motor, Extruder heater (PID) with thermistor, winder motor, filament cooling fan and has input for a filament sensor. The processes and menus have been adapted to control a filament extruder. This code is currently in design, development, and testing and so might not be ready for casual users. This firmware is based on Marlin 3D Printer Firmware but also has many original parts.
+
+Availible versions
+===================
+Choose the branch für different Versions:
+MK3
+MK3S
+MK3.9 - newest version with newest safety funktions
 
 How to change the languages:
 ===================
