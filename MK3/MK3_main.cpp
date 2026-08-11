@@ -896,7 +896,7 @@ void loop()
     // MYSERIAL.println("not watching filwidth");
   }
 
-  // stop and cooldown when heated, extruder running and auto mode has not been set for more than 20 minutes-safety cooldown
+  // stop extruder and beep when heated, extruder running and auto mode has not been set for more than 10 minutes-stop extruder
   if  ((extrude_status & ES_HOT_SET) > 0 && extruder_rpm > 1 && (extrude_status & ES_AUTO_SET) == 0)  {
     
     if (safetycooldownWhenExtrudingStartTimeMS == 0) {
@@ -906,7 +906,7 @@ void loop()
       unsigned long elapsedTimeMS = millis() - safetycooldownWhenExtrudingStartTimeMS;
       //MYSERIAL.print("elapsed time: ");
       //MYSERIAL.println(elapsedTimeMS, DEC);
-      if (elapsedTimeMS > 1200000) {
+      if (elapsedTimeMS > 600000) {
         int beepSequence[5] = {1000, 500, 1000, 500, 1000};
         setBeepSequence(beepSequence, 5);
         extrude_status=extrude_status & ES_ENABLE_CLEAR_NO_AUTO;
