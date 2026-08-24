@@ -897,31 +897,46 @@ void loop()
     // MYSERIAL.println("not watching filwidth");
   }
 
-  // stop extruder and beep when heated, extruder running and auto mode has not been set for more than 10 minutes-stop extruder
-  if  ((extrude_status & ES_HOT_SET) > 0 && extruder_rpm > 1 && (extrude_status & ES_AUTO_SET) == 0)  {
-    
+  // Beep twice every 10 minutes when:
+  // 1. Extruder is heated
+  // 2. Extruder is running
+  // 3. Auto mode is not active
+  //
+  // The machine will NOT stop and NO message will be shown.
+
+  if ((extrude_status & ES_HOT_SET) > 0 &&
+      extruder_rpm > 1 &&
+      (extrude_status & ES_AUTO_SET) == 0) {
+
+    // Start the 10 minute timer
     if (safetycooldownWhenExtrudingStartTimeMS == 0) {
-      // MYSERIAL.println("starting timeout");
       safetycooldownWhenExtrudingStartTimeMS = millis();
+
     } else {
-      unsigned long elapsedTimeMS = millis() - safetycooldownWhenExtrudingStartTimeMS;
-      //MYSERIAL.print("elapsed time: ");
-      //MYSERIAL.println(elapsedTimeMS, DEC);
-      if (elapsedTimeMS > 600000) {
-        int beepSequence[5] = {1000, 500, 1000, 500, 1000};
-        setBeepSequence(beepSequence, 5);
-        extrude_status=extrude_status & ES_ENABLE_CLEAR_NO_AUTO;
-        puller_feedrate_default = puller_feedrate;   //save default feed rate
-        injectionModeStartMillis = -1;
-        
-        extrude_status = extrude_status & ES_STATS_CLEAR;
-        
-        LCD_MESSAGEPGM(MSG_EXTRUDER_STOPPED);
+
+      unsigned long elapsedTimeMS =
+        millis() - safetycooldownWhenExtrudingStartTimeMS;
+
+      // 10 minutes = 600000 ms
+      if (elapsedTimeMS > 600000UL) {
+
+        // Two beeps:
+        // 1000 ms beep
+        // 500 ms pause
+        // 1000 ms beep
+        int beepSequence[3] = {1000, 500, 1000};
+        setBeepSequence(beepSequence, 3);
+
+        // Restart the timer so it will beep again
+        // after another 10 minutes
+        safetycooldownWhenExtrudingStartTimeMS = millis();
       }
     }
+
   } else {
+
+    // Reset timer if one of the conditions is no longer true
     safetycooldownWhenExtrudingStartTimeMS = 0;
-    // MYSERIAL.println("not watching filwidth");
   }
 
 
