@@ -819,6 +819,7 @@ void loop()
     
   
   // puller stop when filament width stable for more than 30 seconds
+  /*
   if ((extrude_status & ES_AUTO_SET) > 0) {
     float delta_filwidth = fabsf(current_filwidth - last_filwidth);
     MYSERIAL.print("delta_filwidth: ");
@@ -852,7 +853,7 @@ void loop()
   } else {
     positionSensorStableTimerMS = millis();
   }
-  
+  */
   last_filwidth = current_filwidth;
 
 // stop and cooldown when heated and extruder does not run for more than 20 minutes-safety cooldown
